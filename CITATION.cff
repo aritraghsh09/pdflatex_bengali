@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: "You are encouraged to cite this repository to prmarily make others aware of its existence"
+authors:
 - family-names: "Ghosh"
   given-names: "Aritra"
   orcid: "https://orcid.org/0000-0002-2525-9647"
