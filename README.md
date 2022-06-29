@@ -1,5 +1,6 @@
 [![DOI](https://zenodo.org/badge/508559520.svg)](https://zenodo.org/badge/latestdoi/508559520)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Compile demo.tex](https://github.com/aritraghsh09/pdflatex_bengali/actions/workflows/compile_demo_tex.yml/badge.svg)
 
 ***
 
