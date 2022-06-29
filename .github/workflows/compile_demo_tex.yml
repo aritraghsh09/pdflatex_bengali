@@ -1,0 +1,38 @@
+name: Github Action for LaTeX by xu-cheng
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Compile demo.tex
+        uses: xu-cheng/latex-action@master
+        with:
+          # The root LaTeX file to be compiled
+          root_file: demo.tex
+          
+          # extra_fonts: mf/*.mf      
+          
+          # The working directory for the LaTeX engine
+          # working_directory: src/
+          # The LaTeX engine to be invoked
+          # compiler: 
+          # optional, default is latexmk
+          # Extra arguments to be passed to the LaTeX engine
+          # args: # optional, default is -pdf -file-line-error -interaction=nonstopmode
+          # Install extra packages by apk
+          #extra_system_packages: # optional
+  
+
+        # Wildcards are not supported yet: https://github.com/actions/upload-artifact/issues/11
+      - name: Upload demo.pdf
+        uses: actions/upload-artifact@v1
+        with:
+          name: demo
+          path: demo.pdf
+      
