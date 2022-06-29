@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "You are encouraged to cite this repository to prmarily make others aware of its existence"
+- family-names: "Ghosh"
+  given-names: "Aritra"
+  orcid: "https://orcid.org/0000-0002-2525-9647"
+title: "pdfLaTeX Bengali"
+version: 0.1
+doi: 10.5281/zenodo.6780445
+date-released: 2022-06-29
+url: "https://github.com/aritraghsh09/pdflatex_bengali"
