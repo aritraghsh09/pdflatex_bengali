@@ -1,3 +1,8 @@
+[![DOI](https://zenodo.org/badge/508559520.svg)](https://zenodo.org/badge/latestdoi/508559520)
+
+***
+
+
 # Introduction
 Writing বাংলা in LaTeX is pretty straightforward these days using XeLaTeX or LuaTeX. However, there arises instances when one needs to write বাংলা only using pdflatex.
 
@@ -58,6 +63,22 @@ while also not needing any extensive installation or dependencies on other softw
 - Note that if you are trying to write a more extensive document with advanced features, you should not expect this simple repository to work properly
 and should use the original [bangtex](http://www.saha.ac.in/theory/palashbaran.pal/bangtex/bangtex.html) package instead. 
 
-# Contact
+# Citation & Contact
 
-You can reach out to me using the contact information on [my website](http://www.ghosharitra.com/)
+I was not aware that I could write my name or other content in বাংলা for my arXiv submissions for many years. I encourage you to cite this repository
+(in the Software Section of your academic publications) to make others aware of its existence.  To do this you can use the following Zeondo DOI and bibtex code
+
+```bib
+@software{Ghosh_pdfLaTeX_Bengali_2022,
+author = {Ghosh, Aritra},
+doi = {10.5281/zenodo.6780445},
+month = {6},
+title = {{pdfLaTeX Bengali}},
+url = {https://github.com/aritraghsh09/pdflatex_bengali},
+version = {0.1},
+year = {2022}
+}
+```
+
+You can reach out to me using the contact information on [my website](http://www.ghosharitra.com/). If you want to contribute, feel free to open a pull
+request directly if you know how to/are comfortable doing that. 
