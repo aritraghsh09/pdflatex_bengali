@@ -1,5 +1,4 @@
-name: compile demo.tex
-# This is based on the Github Action for LaTeX by xu-cheng
+name: Github Action for LaTeX by xu-cheng
 
 on: [push]
 
