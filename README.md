@@ -73,7 +73,7 @@ I was not aware that I could write my name or other content in বাংলা f
 ```bib
 @software{Ghosh_pdfLaTeX_Bengali_2022,
 author = {Ghosh, Aritra},
-doi = {10.5281/zenodo.6780445},
+doi = {10.5281/zenodo.6780690},
 month = {6},
 title = {{pdfLaTeX Bengali}},
 url = {https://github.com/aritraghsh09/pdflatex_bengali},
