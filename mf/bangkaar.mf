@@ -1,0 +1,146 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangkaar.mf: METAFONT file that defines the Bangla conjunct vowels
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+beginchar("a",7u#, stht#,stdp#); "A-kar";
+  numeric xstem; xstem=.45w;
+  matra(0,w);
+  stem(xstem);
+endchar;
+
+
+beginchar("i",7u#, stht#, stdp#); "hraswa i-kar";
+  numeric xstem,height; xstem = .5w; height = matra_f*h;
+  matra(0,w);
+  stem(xstem);
+  pickup pencircle xscaled 0.2pt yscaled 0.6pt rotated 45;
+  z1 = (xstem,matra_h*h);
+  bot z6 = (25/20w,70/50*matra_f*h);
+  lft x5 = 0; y5=.3[y1,y6];
+  z7 = (53/20w,57/50height);
+  draw z1..tension1.5..z5..{right}z6..tension1.2..z7;
+  penlabels(1,2,3,4,5,6,7);
+endchar;
+
+beginchar(140, 6u#,stht#,stdp#); "dirgha i-kar";
+  numeric xstem,height; xstem = w-rindent; height = matra_f*h;
+  matra(-rindent,w);
+  stem(xstem);
+  pickup pencircle xscaled 0.2pt yscaled 0.6pt rotated 45;
+  z3 = (xstem,matra_h*h); 
+  z5 = (-20/17w,73/50height);
+  z6 = (-33/17w,65/50height);
+  z7 = (-21/17w,59/50height);
+  lft z8 = (-rindent,matra_h*h);
+  draw z3{up}..{left}z5{left}..{down}z6{down}..z7{right}..{dir -120}z8;
+  penlabels(1,2,3,4,5,6,7,8);
+endchar;
+
+beginchar("u",0stwd#,stht#,stdp#); "hraswa-u-kar";
+  numeric width; width = stem_width/abs(sind(stem_slope));
+  z1l = (-rindent-.5stem_width,stem_width*sind(stem_slope));
+  z1r = (-rindent+.5stem_width,0);
+  z2r = (-rindent,-.25d); penpos2(.5width,0);
+  z3 = (-2rindent,-.6d); penpos3(.5width,-90);
+  z4 = (-3rindent,-.3d); penpos4(.5width,180);
+  z5 = (-2.2rindent,0); penpos5(.8width,90);
+  z6 = (+1.1rindent,-d); penpos6(.5width,0);
+  fill z1r{down}..{left}z3r..z4r..{right}z5r{right}..z2r..tension 2..z6r--z6l--z2l..{up}z1l--cycle;
+  unfill z3l..z4l..{right}z5l..{dir -30}z2l{dir -130}..cycle;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+beginchar(142,0stwd#,stht#,stdp#); "dirgha-u-kar";
+  numeric width; width = stem_width/abs(sind(stem_slope));
+  z1r = (-rindent-.5stem_width,stem_width*sind(stem_slope));
+  z1l = (-rindent+.5stem_width,0);
+  z2r = (0,-.25d); penpos2(.5width,0);
+  z3 = (-1.5rindent,-.6d); penpos3(.6width,-90);
+  z4 = (-2.7rindent,-.3d); penpos4(.6width,180);
+  z5 = (-2.2rindent,0); penpos5(.5width,90);
+  z6 = (+1.5rindent,-d); penpos6(.5width,0);
+  fill z1r..z5r..z4r..z3r..z2r--z2l..z3l..z4l..z5l..{right}z1l--cycle;
+  penstroke z2e--z6e;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+beginchar(144,0stwd#,stht#,stdp#); "ri-kar";
+z1 = (w-0.9pt,0); z2 = (w-2.1pt,-1/3d); z3 = (w,-d);
+pickup pencircle xscaled 0.3pt yscaled 0.6pt rotated 30;
+draw z1--z2--z3;
+endchar;
+
+beginchar(146,8u#,stht#,stdp#); "ae-kar";
+  numeric balld; balld = 1.5dot_diam;
+  z1 = (w-.5balld,.5balld);
+  fill fullcircle scaled balld shifted z1;
+  z3l = (.5w,matra_f*h-.5matra_thickness); z3r = (w,y3l);
+  z4l = (.15w,.5matra_f*h); z4r = z4l + (.15w,0);
+  z5l = (x1,0); z5r = z1;
+  penstroke z3e..{down}z4e..{right}z5e;
+  picture shape_ekar; shape_ekar = currentpicture;
+  matra(0,w);
+  z9 = (0,.4h); z10 = (.8w,y9);
+  pickup penrazor xscaled 1.5stem_width rotated 90;
+  draw z9--z10;
+  matra(0,w);
+  penlabels (1,3,4,5,9,10);
+endchar;
+
+beginchar("e",8u#,stht#,stdp#); "e-kar";
+  currentpicture := shape_ekar;
+  matra(0,w);
+endchar;
+
+beginchar(148,8u#,stht#,stdp#); "oi-kar";
+  currentpicture := shape_ekar;
+  Tiki(.9w,0);
+  matra(0,w);
+endchar;
+
+
+beginchar("o",0,stht#,stdp#); "o-kar";
+endchar;
+
+beginchar(150,6u#,stht#,stdp#); "ou-kar";
+  numeric xstem; xstem=.5w;
+  Tiki(xstem,-3rindent);
+  matra(0,w);
+  stem(xstem);
+endchar;
+
+
+%%% End of bangkaar.mf
+

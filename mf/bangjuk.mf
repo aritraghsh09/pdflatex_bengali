@@ -1,0 +1,800 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangjuk.mf: METAFONT file that defines jukto byanjons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+beginchar(22,16u#, stht#,stdp#); "d+R";
+  numeric wda; wda = 14/16w;
+  da(w-wda,0,wda,h);
+  z1 = (da_tiplx+w-wda,da_tiply);
+  z2 = (.05w,.25h);
+  Ebase(z1,z2,.06h);
+  matra(0,w);
+endchar;
+
+
+beginchar(23,18u#, stht#,stdp#); "p+R";
+  numeric xstem,wpa; wpa = 17/18w; xstem = w-rindent;
+  stem(xstem);
+  matra(xstem,w);
+  pa_(w-wpa,0,wpa-rindent,h);
+  z1 = (xstem+.5stem_width,0);
+  z2 = (.05w,.3h);
+  Ebase(z1,z2,.06h);
+endchar;
+
+
+beginchar(24,18u#, stht#,stdp#); "sh+R";
+  numeric xstem,wsha; wsha=w; xstem = w-rindent;
+  sha_(w-wsha,0,wsha-rindent,h);
+  stem(xstem);
+  matra(xstem,w);
+  z1 = (xstem+.5stem_width,0); z2 = (.05w,.3h);
+  Ebase(z1,z2,.06h);
+  z3r = (0,matra_f*h); penpos3(matra_t*h,90);
+  z4r = z3r + (w-wsha,0); penpos4(matra_t*h,matra_slope);
+  penstroke z3e--z4e;
+endchar;
+
+beginchar(180,17u#, stht#,stdp#); "k+k";
+  numeric hrise,hh,xstem;
+  xstem = .75w; hh = .75h; hrise = matra_f*(h-hh); 
+  ka(0,hrise,xstem,hh);
+  ba_remove(0,0,xstem-rindent,hh);
+  ka(0,0,xstem,hh);
+  ka(0,0,xstem,hh);
+  ka(0,0,xstem,hh);
+  matra(0,w);
+endchar;
+
+beginchar(181,16u#, stht#,stdp#); "k+t";
+  numeric hka,wka,rise_ka,hta,wta,rise_ta;
+  hka = .65h; rise_ka = matra_f*(h - hka); wka = .7w;
+  hta = .65matra_f*h; wta = .9w; rise_ta = -.035h;
+  ka(.05w,rise_ka,wka,hka);
+  ta(-.04w,rise_ta,wta,hta);
+  unfill (0,0)--(0,top_ta)--(w,top_ta)--(w,0)--cycle;
+  unfill (0,0)--(0,top_ta)--(w,top_ta)--(w,0)--cycle;
+  ta(-.04w,rise_ta,wta,hta);
+  ta(-.04w,rise_ta,wta,hta);
+  matra(0,w);
+endchar;
+
+beginchar(182,14u#, stht#,stdp#); "k+t+r";
+  numeric hka,wka,hrise;
+  hka = .55h; hrise = matra_f*(h - hka); wka = .75w;
+  ka(0,hrise,wka,hka);
+  E(.04w,-.02h,.9w,.6h);
+  matra(0,w);
+endchar;
+
+beginchar(183,19u#, stht#,stdp#); "k+n";
+  numeric xstem,hh,hrise,nashift;
+  xstem = 14/19w; hh = .9h; hrise = matra_f*(h-hh); 
+  z1 = (xstem-rindent+.5stem_width,0);
+  nashift = 0.2x1;
+  ka(0,hrise,xstem,hh);
+  na(nashift,0,xstem-nashift,.3h,1);
+  matra(0,w);
+endchar;
+
+beginchar(184,19u#, stht#,stdp#); "k+r";
+  numeric xstem,hh,hrise; 
+  xstem = 14/19w; hh = h; hrise = matra_f*(h-hh);
+  z1 = (xstem-rindent+.5stem_width,0); z2 = (.02w,.23h); 
+  ka(0,hrise,xstem,hh);
+  Ebase(z1,z2,.06h);
+  matra(0,w);
+  stem(x1-.5stem_width);
+endchar;
+
+beginchar(185,19u#, stht#,stdp#); "k+l";
+  numeric xstem,hh,hrise;
+  xstem = 14/19w; hh = .86h; hrise = matra_f*(h-hh);
+  z1 = (xstem-rindent,0); 
+  ka(0,hrise,xstem,hh);
+  la_(-.03w,-.18h,x1+.5stem_width,.7h);
+  matra(0,w);
+  stem(x1);
+endchar;
+
+beginchar(186,17u#, stht#,stdp#); "k+w";
+  numeric hrise,hh,xstem;
+  xstem = 13/17w; hh = .75h; hrise = matra_f*(h-hh);
+  ka(0,hrise,xstem,hh);
+  ba_remove(0,0,xstem-rindent,hh);
+  ba(0,0,xstem-rindent,hh);
+  ba(0,0,xstem-rindent,hh);
+  ba(0,0,xstem-rindent,hh);
+  matra(0,w);
+endchar;
+
+beginchar(187,18u#, stht#,stdp#); "k+s";
+  numeric xstem;
+  xstem = w-rindent; 
+  matra(0,w);
+  stem(xstem);
+% The wavy line
+  sa_(0,-.15h,xstem,.75matra_f*h);
+  z11l = (midxl_sa,midyl_sa);
+  z11r = (midxr_sa,midyr_sa);
+  unfill z11l--z11r--(x11r,(matra_f-matra_t)*h)--(0,(matra_f-matra_t)*h)--(0,y11l)--cycle;
+  numeric ww,hh,hrise;
+  ww=x11l+rindent; hh=h-y11r; hrise = matra_f*(h-hh);
+  ka(0,hrise,ww,hh);
+  ka(0,hrise,ww,hh);
+  penlabels(11);
+endchar;
+
+beginchar(189,27u#,stht#,stdp#); "khiyo + m";
+  numeric ww,th; ww = 22/27w; th = 60;
+  khiyo(0,0,ww,h);
+  matra(0,w);
+  z11l = (ballx,bally); penpos11(.5balld,th);
+  z12 = (w-rindent,matra_h*h);
+  hookstem(z11r,z11l,z12,th-70,th-90);
+  penlabels(11,12);
+endchar;
+
+
+beginchar(190,13u#,stht#,stdp#); "g + g";
+  numeric xstem,ww,hh,hrise;
+  xstem = ww = w-rindent; hh = .67h; hrise = matra_h*(h-hh);
+  matra(xstem,w);
+  stem(xstem);
+  ga_(0,hrise,ww,hh);
+  ga_(0,-.1h,ww,hh);
+endchar;
+
+beginchar(192,14u#,stht#,stdp#); "ch + r";
+  numeric hh,hrise; hh=.8h;
+  hrise = matra_f*(h-hh);
+  cha(0,hrise,w,hh);
+  matra(0,w);
+  z1 = (w-rindent,0); z2 = (0,.2h);
+  Ebase(z1,z2,.06h);
+  halfstem(x1,0,.18h);
+endchar;
+
+beginchar(193,13u#,stht#,stdp#); "ch + W";
+  numeric hh,hrise,hb,wb,shxb;
+  hh=.7h; hrise = matra_f*(h-hh);
+  hb = .4h; wb = .5w; shxb = .15w;
+  cha(0,hrise,w,hh);
+  matra(0,w);
+  ba(shxb,0,wb,hb);
+endchar;
+
+beginchar(194,24u#, stht#,stdp#); "j+j";
+  numeric hrise,hha,hhb,ww,width,xshift,yshift;
+  ww = .7w; hha = .6h; hrise = matra_h*(h-hha); width = .18ww;
+  xshift = .31w; hhb = .8h; yshift = matra_f*(h-hhb);
+  ja_bare(0,hrise,7/8*37/56ww,hha);
+  z1'l = (topl_ja,matra_h*h);
+  z1'r = (topr_ja,matra_h*h);
+  ja_full(xshift,0,ww,hhb);
+  z2'l = (topl_ja+xshift,matra_h*hhb);
+  z2'r = (topr_ja+xshift,matra_h*hhb);
+  matra(0,w);
+  penstroke z1'e..tension1.2..{right}z2'e;
+  penlabels(1',2');
+endchar;
+
+beginchar(195,24u#, stht#,stdp#); "j+j+W";
+  numeric hrise,hha,hhb,ww,width,xshift,yshift;
+  ww = .7w; hha = .6h; hrise = matra_f*(h-hha); width = .18ww;
+  xshift = .25w; hhb = .8h; yshift = matra_f*(h-hhb);
+  ja_bare(0,hrise,7/8*37/56ww,hha);
+  ja_full(xshift,yshift,ww,3/4hhb);
+  matra(0,w);
+  z11r = (.5ww,matra_f*h-.5matra_thickness); penpos11(.5width,0);
+  z12 = z11 + (xshift,-yshift); penpos12(width,0);
+  z13 = .5[z11,z12] + (0,-.04h); penpos13(.8width,0);
+  penstroke z11e..z13e..z12e;
+  ba_(.45w,0,.35w,.35h);
+  halfstem(.8w,.3h,0);
+  penlabels(11,12,13);
+endchar;
+
+beginchar(196,20u#, stht#,stdp#); "j+ina";
+  numeric ww; ww = 37/56w; 
+  ja_bare(0,0,ww,h);
+  matra(0,w);
+  z11l = (topl_ja,matra_h*h);
+  z11r = (topr_ja,matra_h*h);
+  z12r = (midlx_ja,midly_ja);
+  z12l = (midrx_ja,midry_ja); z12 = .5[z12l,z12r];
+  penstroke z11e..z12e;
+  clover(z12,w-ww,.23h,.08h);
+  penlabels(11,12,13);
+endchar;
+
+beginchar(197,18u#, stht#,stdp#); "j+r";
+  numeric width,hrise,hh,ww;
+  hh = .84h; hrise = matra_f*(h-hh); width = .18w;
+  ja_bare(0,hrise,37/56w,hh);
+  matra(0,w);
+  z7r = (.5w,matra_f*h-.5matra_thickness); penpos7(.5width,0);
+  z8 = (.68w,.54hh+hrise); penpos8(.5width,90);
+  z9 = (.84w,.54hh+hrise); penpos9(.7width,80);
+  penstroke z7e..z8e..z9e;
+  z10= (.79w,.18h); penpos10(.5length(z9l-z9r),-45);
+  z11= (.84w,0);penpos11(.5length(z9l-z9r),-30);
+  x12r = .96w; y12r = y9l;
+  z12l = z9r;
+  penstroke z12e..z10e{down}..z11e;
+  z13 = (.03w,.22h);
+  Ebase(z11,z13,.07h);
+  penlabels(7,8,9,10,11,12,13);
+endchar;
+
+beginchar(198,18u#, stht#,stdp#); "j+W";
+  numeric width,hrise,hj,hb,wb,ofxb;
+  hj = .8h; hrise = matra_f*(h-hj); width = .18w;
+  hb = .5h; wb = .4w; ofxb = x10-wb;
+  ja_bare(0,hrise,37/56w,hj);
+  matra(0,w);
+  z7r = (.5w,matra_f*h-.5matra_thickness); penpos7(.5width,0);
+  z8 = (.68w,.54hj+hrise); penpos8(.5width,90);
+  z9 = (.84w,.54hj+hrise); penpos9(.7width,80);
+  penstroke z7e..z8e..z9e;
+  z10= (w-1.3rindent,matra_f*hb); penpos10(stem_width,0);
+  x11r = .96w; y11r = y9l;
+  z11l = z9r;
+  penstroke z11e..z10e{down};
+  ba(x10-wb,0,wb,hb);
+  penlabels(7,8,9,10,11);
+endchar;
+
+beginchar(199,17u#, stht#,stdp#); "ina+ca";
+  numeric hrise,hh,xstem,ww,clovh;
+  xstem = .35w; hh = .4h; hrise = matra_f*(h-hh); ww = w-xstem;
+  clovh = .18h;
+  Estem(lindent,hrise,xstem,hh);
+  ca(xstem,0,ww,matra_f*h);
+  z11 = (xstem+lindent,matra_f*h-clovh);
+  clover(z11,.6ww,clovh,.13hh);
+  penlabels(11);
+endchar;
+
+beginchar(200,16u#, stht#,stdp#); "ina+cha";
+  numeric hrise,hh,xstem,ww,clovh;
+  xstem = .3w; hh = .4h; hrise = matra_f*(h-hh); ww = w-xstem;
+  clovh = .2h;
+  Estem(lindent,hrise,xstem,hh);
+  cha(xstem,0,ww,matra_f*(h-hh)/matra_h);
+  z11 = (xstem+lindent,matra_f*h-clovh);
+  clover(z11,.6ww,clovh,.12hh);
+  penlabels(11);
+endchar;
+
+beginchar(201,18u#, stht#,stdp#); "ina+ja";
+  numeric hrise,hh,hja,xshift,clovh;
+  xshift = .1w; clovh = .18h;
+  hh = .35h; hrise = matra_f*(h-hh);
+  hja = hrise/matra_h; wina = xstem-xshift;
+% The ja at the bottom
+  ja_full(0,0,w,hja);
+% The E-like stem at the top
+  numeric xstem,wina;
+  xstem = .5[topl_ja,topr_ja];
+  wina = xstem - xshift;
+  Estem(xshift,hrise,wina,hh);
+% The clover
+  z11 = (xstem,matra_f*h-.5hh);
+  clover(z11,.65(w-xstem),clovh,.12hh);
+  penlabels(11);
+endchar;
+
+beginchar(202,16u#, stht#,stdp#); "ina+jha";
+%   I decided not to use a separate form for this.
+endchar;
+
+beginchar(203,12u#, stht#,stdp#); "Ta+Ta";
+  numeric hh,hrise; hh = .9h; hrise = matra_f*(h-hh);
+  Dha(0,hrise,w,hh);
+  matra(0,w);
+  Tiki(.9w,.1w);
+  z11 = (.65w,.3h);
+  z12 = (.4w,0);
+  z13 = (.05w,.1h);
+  pickup pencircle xscaled stem_width yscaled .6stem_width rotated 120;
+  draw z11..z12..z13;
+  penlabels(11,12,13);
+endchar;
+
+beginchar(204,20u#, stht#,stdp#); "Na+Ta";
+  numeric wNa,wTa,hh,hrise;
+  wNa=9/20w; hh = .7h; hrise = matra_f*(h-hh); wTa = 13/20w;
+  Dha(wNa-lindent,0,wTa,h);
+  Na_(0,hrise,wNa,hh);
+  pickup penrazor scaled matra_thickness rotated matra_slope;
+  draw (wNa-.5stem_width,matra_f*h)..(w,matra_f*h);
+  Tiki(.9w,.3w);
+endchar;
+
+beginchar(205,15u#, stht#,stdp#); "Na+Tha";
+  numeric ww,hh,hrise; ww=.65w; hh = .7h; hrise = matra_f*(h-hh);
+  currentpicture := currentpicture + shape_Tha;
+  currentpicture := currentpicture shifted (.1w,0);
+  Na_(0,hrise,ww,hh);
+  pickup penrazor scaled matra_thickness rotated matra_slope;
+  draw (ww,matra_f*h)..(w,matra_f*h);
+endchar;
+
+beginchar(206,18u#, stht#,stdp#); "N+D";
+  numeric hh,hrise;
+  hh = .65h; hrise = matra_f*(h-hh); 
+  Da(0,0,w,matra_f*h,.6);
+  Na_(0,hrise,.5w,hh);
+  matra(.5w,w);
+endchar;
+
+beginchar(207,17u#, stht#,stdp#); "N+D+R";
+  numeric wDa,hDa,hNa,Darise,Narise;
+  hNa = .65h; wDa = w; hDa = .9h;
+  Narise = matra_f*(h-hNa); Darise = matra_f*(h-hDa); 
+  numeric Ewidth; Ewidth = .05h;
+  Da(w-wDa,Darise,wDa,matra_f*hDa,.6);
+  Na_(0,Narise,.5w,hNa);
+  x1 = w-rindent; y1=0; 
+  z3 = (.05w,.15h);
+  Ebase(z1,z3,Ewidth);
+  halfstem(x1,.28h,y1-.5Ewidth);
+  matra(.5wDa,w);
+endchar;
+
+beginchar(208,13u#, stht#,stdp#); "N+N";
+  numeric ww,hh,hrise; ww = w-rindent; hh=.8h; hrise = matra_f*(h-hh);
+  matra(ww,w);
+  stem(ww);
+  Na_(0,hrise,ww,hh);
+  Na_(0,-.18h,ww,hh);
+endchar;
+
+beginchar(209,17u#, stht#,stdp#); "t+t";
+  O(0,0,w,h);
+  matra(0,w);
+endchar;
+
+beginchar(210,14u#, stht#,stdp#); "t+t+W";
+  numeric hh,hrise,wba,hba,shiftba;
+  hh = .6h; hrise = (matra_h-matra_t)*(h-hh);
+  wba = .5w; hba = .48h; shiftba = .2w;
+  O(0,hrise,w,hh);
+  ba(shiftba,0,wba,hba);
+  matra(0,w);
+endchar;
+
+beginchar(211,15u#, stht#,stdp#); "t+th";
+  numeric xstem,balld,phi,height;
+  balld = .18h; phi=65; xstem=w-rindent; height = matra_f*h;
+  z1 = (.17w,.56h);
+  fill fullcircle scaled balld shifted (z1);
+  z2l = z1 + .5balld * dir (-179); z2r = z1;
+  z3l = (.05w,.63h);
+  z3r = (.1w,.6h);
+  z4l = (.28w,matra_h*h); penpos4(.08h,-90);
+  z6l = (.56w,y4l);  penpos6(length(z4r-z4l),-90);
+  y5l = y4l-.5balld; x5l = .5[x4l,x6l]; penpos5(.09h,-90);
+  penstroke z2e{up}..{right}z4e..{dir -phi}z5e;
+%
+  z7r = (.64w,.52h); penpos7(.08w,180);
+  z8r = (5/42w,27/50height);
+  z8l = (8.5/42w,20/50height);
+  penstroke z5e{dir phi}..z6e{right}..z7e..{left}z8e;
+  z9 = (xstem,height);
+  hookstem(z8r,z8l,z9,0,0);
+  matra(xstem,w);
+  penlabels(1,2,3,4,5,6,7,8,9,10);
+endchar;
+
+beginchar(212,15u#, stht#,stdp#); "t+n";
+  numeric xstem,xshift,hh,hrise,nafrac;
+  xstem = w-rindent; xshift = .15w; hh = .7h; hrise = matra_f*(h-hh);
+  nafrac = .42;
+  matra(0,w);
+  ta(.05w,hrise,.9w,matra_f*hh);
+  na(xshift,0,.9w-xshift,nafrac*h,.35/nafrac);
+endchar;
+
+beginchar(213,17.5u#, stht#,stdp#); "t+r";
+  E(0,0,w,.94h);
+  matra(0,w);
+endchar;
+
+beginchar(214,16u#, stht#,stdp#); "d+d";
+  numeric wbar;
+%% Initial definitions
+  z1 = (lindent,matra_f*h); penpos1(stem_width,0);
+  z2l = (x1l,.43h);
+  z2r = (x1r,.35h);
+  wbar = length(z2r-z2l);
+%% The first diagonal line
+  z3l = (.5w,.65h); z3l-z3r=z2l-z2r; z3 = .5[z3l,z3r];
+  penstroke z2e..z3e;
+%% The first hanging line
+  x4 = .1[x3l,x2l]; y4 = .5y2l;
+  penpos4(.4wbar,angle(z3l-z2l));
+  penstroke z3e..{down}z4e;
+  currentpicture := currentpicture + currentpicture shifted (z4l-z2l - ((y2l/h)*slantval*w,0));
+%% The vertical bar at the left
+  penstroke z1e..z2e;
+  matra(0,w);
+  penlabels(1,2,3,4,5);
+endchar;
+
+beginchar(215,12u#, stht#,stdp#); "d+bh";
+  numeric hh,hrise; hh = .65h; hrise = matra_f*(h-hh);
+  da(0,hrise,w,hh);
+  bha(0,-.1hh,w,matra_f*hh);
+  matra(0,w);
+endchar;
+
+beginchar(216,12u#, stht#,stdp#); "d+W";
+  matra(0,w);
+%% The vertical bar at the left
+  z1 = (lindent,matra_f*h); penpos1(stem_width,0);
+  z2l = (x1l,.4h);
+  z2r = (x1r,.32h);
+  penstroke z1e..z2e;
+%% The diagonal line
+  y3r = .52h;
+  y3l-y3r=y2l-y2r;
+  x3r-x3l=stem_width;
+  z3 = .5[z3l,z3r];
+  x3 = w - rindent;
+  penstroke z2e{z3-z2r}..z3e;
+%% The "ba"
+  ba(x2l,0,w-rindent-lindent,.55h);
+% Connecting the ba-part and the da-part
+  z4l = (ba_topxl,ba_topy);
+  z4r = (ba_topxr,ba_topy);
+  penstroke z3e..{down}z4e;
+  penlabels(1,2,3,4,5);
+endchar;
+
+beginchar(217,14u#, stht#,stdp#); "dh+W";
+  numeric hh,ba_shift; hh = .7h; ba_shift = 2/14w;
+  currentpicture := currentpicture + shape_dha;
+  ba_remove(ba_shift,0,w-rindent-ba_shift,hh);
+  ba(ba_shift,0,w-rindent-ba_shift,hh);
+  ba(ba_shift,0,w-rindent-ba_shift,hh);
+  ba(ba_shift,0,w-rindent-ba_shift,hh);
+endchar;
+
+beginchar(218,15u#, stht#,stdp#); "n+t";
+  numeric xstem,xshift,hh,hrise,fracrise,wna;
+  xstem = w-rindent; xshift = .1w; hh = .5h; hrise = .3h;
+  fracrise = (matra_f*h-hh)/hrise; wna = .8w;
+  matra(0,w);
+  na(xshift,hrise,wna-xshift,hh,fracrise);
+  ta(.1w,-.03h,xstem,.7matra_f*h);
+endchar;
+
+beginchar(219,13u#, stht#,stdp#); "n+t+r";
+  numeric xshift,hna,hrise,stem_frac;
+  xshift = .06w; hna = .6h;
+  hrise = matra_f*h-(hna*stem_frac); stem_frac = .8;
+  matra(0,w);
+  na(xshift,hrise,w-xshift,hna,stem_frac);
+  E(0,0,w,.6h);
+endchar;
+
+beginchar(220,13u#, stht#,stdp#); "n+t+W";
+  numeric hh,hrise,xstem,xshift,bashift;
+  hh = .8h; hrise = matra_f*(h-hh); xstem = w-rindent; xshift = .06w;
+  bashift = .3w;
+  matra(0,w);
+  na(xshift,.25hh+hrise,w-xshift,.6hh,.8);
+  ta(0,hrise,xstem+.1w,.5hh);
+  ba(.7bashift,-.05h,xstem-bashift,.4h);
+endchar;
+
+beginchar(221,21u#, stht#,stdp#); "n+d";
+  numeric wna,hna,hrise;
+  wna=1/3w; hna = 33/50matra_f*h;
+  hrise = matra_f*h-hna; 
+  matra(0,w);
+  na(0,hrise,wna+lindent+rindent,hna,1);
+  da(wna,0,w-wna,h);
+  matra(0,w);
+  picture shape_nd; shape_nd = currentpicture;
+endchar;
+
+beginchar(222,21u#, stht#,stdp#); "n+d+R";
+  currentpicture := currentpicture + shape_nd;
+  z1 = (w-rindent+.5stem_width,0); z2 = (.04w,.3h);
+  Ebase(z1,z2,.06h);
+endchar;
+
+
+beginchar(223,14.5u#, stht#,stdp#); "n+n";
+  numeric xstem,ww,hh; xstem =  ww = w-rindent; hh=.6h;
+  matra(0,w);
+  na(0,0,w,hh,.8);
+  na(0,.25h,w,hh,.8);
+endchar;
+
+beginchar(224,13u#, stht#,stdp#); "n+W";
+  numeric xstem,ww,hh,hrise,bashift;
+  xstem =  ww = w-rindent; hh=.5h; hrise = matra_f*h-hh; bashift = .15w;
+  matra(0,w);
+  na(0,hrise,w,hh,1);
+  ba(bashift,0,ww-bashift,.6h);
+endchar;
+
+beginchar(225,14u#, stht#,stdp#); "p+t";
+  numeric hrise,hh,xstem,xshift; xstem = w-rindent; xshift = .08xstem;
+  hh = .68h; hrise = matra_f*(h-hh);
+  pa_(xshift,hrise,xstem-xshift,hh);
+  ta(.09w,-.03h,.9w,.49h);
+  halfstem(xstem,matra_f*h,.33h);
+  matra(xstem,w);
+endchar;
+
+beginchar(226,14u#, stht#,stdp#); "p+p";
+  numeric ww,hh,hrise; ww=w-rindent; hh=.7h;
+  hrise = matra_f*(h-hh);
+  pa_(0,hrise,ww,hh);
+  pa_(0,-.08h,ww,hh);
+  matra(ww,w);
+  stem(ww);
+endchar;
+
+beginchar(227,18.5u#, stht#,stdp#); "ph+r";
+  numeric wpha; wpha = 28/37w;
+  currentpicture := currentpicture + shape_pha;
+  z1 = (wpha-rindent+.5stem_width,0);
+  z2 = (0,.2h);
+  Ebase(z1,z2,.06h);
+endchar;
+
+beginchar(228,18.5u#, stht#,stdp#); "ph+l";
+  numeric wpha; wpha = 28/37w;
+  currentpicture := currentpicture + shape_pha;
+  z1 = (wpha-rindent,0);
+  z2 = (0,.2h);
+  la_(0,-.2h,wpha-rindent,.6h);
+endchar;
+
+beginchar(229,20u#, stht#,stdp#); "b+j";
+  numeric ww, hh, hrise; ww = .4w; hh = .54h; hrise = matra_f*(h-hh);
+  ja_full(0,0,w,h);
+  ba_remove(0,hrise,ww,hh);
+  ba(0,hrise,ww,hh);
+  ba(0,hrise,ww,hh);
+  ba(0,hrise,ww,hh);
+  matra(0,w);
+endchar;
+
+
+
+beginchar(230,14u#, stht#,stdp#); "b+b";
+  numeric xstem,hh,hrise;
+  xstem = w - rindent; hh = .75h; hrise = matra_f*(h-hh);
+  ba(0,hrise,xstem,hh);
+  ba_remove(0,0,xstem,hh);
+  ba(0,0,xstem,hh);
+  ba(0,0,xstem,hh);
+  ba(0,0,xstem,hh);
+  matra(0,w);
+endchar;
+
+beginchar(231,17.5u#, stht#,stdp#); "bh+r";
+  numeric balld,height;
+  balld = .25w; height=matra_f*h;
+% The circle
+  z4 = (w-rindent,25/50height); penpos4(stem_width,0);
+  x1r = .5x4; y1r = 34/50height; penpos1(.5balld,60);
+  fill fullcircle scaled balld shifted (z1r);
+% The connector between the circle and the stem
+  z2l = (.7x4,26/50height); z2r = (32/54w,31/50height);
+  x3r = 42/54w; y3r = 39.5/50height; penpos3(stem_width,100);
+  penstroke z1e..z2e..z3e;
+  fill z3r{right}..{down}z4r--z4l{up}..z3l--cycle;
+% The wavy line
+  z5 = (.51w,.18h); penpos5(6/50height,90);
+  z6 = (.27w,.21h); penpos6(6/50height,90);
+  z7 = (4/48w,24/50height); penpos7(3/50height,0);
+  z8 = (6.5/48w,33/50height); penpos8(2/50height,-30);
+  penstroke z5e{left}..z6e..z7e..tension1.2..z8e;
+  hookstem(z5r,z5l,z4,0,0);
+  penlabels(1,2,3,4,5,6,7,8);
+  matra(0,w);
+endchar;
+
+beginchar(232,13u#, stht#,stdp#); "m+b";
+  numeric xstem,hh,hrise,bashift;
+  xstem = w - rindent; hh = .65h; hrise = matra_f*(h-hh); bashift = .1w;
+  ba(bashift,0,xstem-bashift,hh);
+  ma_(0,hrise,xstem+rindent,hh);
+  matra(0,w);
+endchar;
+
+beginchar(233,16u#, stht#,stdp#); "m+bh";
+  numeric hh;  hh = .52h; 
+  bha(0,0,w,hh);
+  currentpicture := currentpicture + shape_halfma shifted (.08w,0);
+  matra(0,w);
+endchar;
+
+beginchar(234,17u#, stht#,stdp#); "l+l";
+  numeric hh,xstem;
+  xstem = w-rindent; hh = .85h; 
+  la_(0,.15h,xstem,hh);
+  la_(0,-.2h,xstem,hh);
+  stem(xstem);
+  matra(0,w);
+endchar;
+
+beginchar(235,20u#, stht#,stdp#); "Sh+T";
+  numeric hh,hrise,Tashift;
+  hh = .75h; hrise = matra_f*(h-hh); Tashift = .4w;
+  Sha_(0,hrise,Tashift+lindent-.5stem_width,hh);
+  Dha(Tashift,0,w-Tashift,h);
+  matra(0,w);
+  Tiki(.9w,Tashift);
+endchar;
+
+beginchar(236,15u#, stht#,stdp#); "Sh+Th";
+  numeric hh,hrise;
+  hh = .65h; hrise = matra_f*(h-hh);
+  Sha_(0,hrise,.55w,hh);
+  currentpicture := currentpicture + shape_Tha shifted (.08w,0);
+  matra(0,w);
+endchar;
+
+beginchar(237,22u#, stht#,stdp#); "Sh+N";
+  numeric wSha; wSha = 15/22w;
+  currentpicture := currentpicture + shape_Sha;
+  matra(0,wSha-rindent+.5stem_width);
+  z1 = (wSha-rindent+.25stem_width,.5h);
+  clover(z1,w-wSha,matra_f*h-y1,.08h);
+endchar;
+
+beginchar(238,16u#, stht#,stdp#); "s+k";
+  numeric hrise,hh,xstem,xshift;
+  xstem = w-2rindent; hh = .5h; hrise = matra_h*h-hh; xshift=.2w;
+  halfstem(xstem,matra_f*h,.35h);
+  sa_(0,hrise,xstem,hh);
+  ka(xshift,0,xstem+2rindent-xshift,.65h);
+  matra(0,w);
+endchar;
+
+beginchar(239,15u#, stht#,stdp#); "s+t";
+  numeric hrise,hh,xstem,xshift;
+  xstem = w-rindent; hh = .45h; hrise = matra_h*h-hh;
+  xshift=0w;
+  halfstem(xstem,matra_f*h,.33h);
+  sa_(xshift,hrise,xstem-xshift,hh);
+  ta(.09w,-.03h,.9w,.65matra_f*h);
+  matra(0,w);
+endchar;
+
+beginchar(240,14u#, stht#,stdp#); "s+t+r";
+  numeric hrise,hh,xstem,xshift;
+  xstem = w-rindent; hh = .45h; hrise = matra_h*h-hh; xshift=-.04w;
+  halfstem(xstem,matra_f*h,.33h);
+  sa_(xshift,hrise,xstem-xshift,hh);
+  E(0,0,w,.6h);
+  matra(0,w);
+endchar;
+
+beginchar(241,14u#, stht#,stdp#); "H+N";
+  numeric ww,shiftNa,hHa,hrise; 
+  ww = .6w; shiftNa = .1w; hHa = .85h; hrise = matra_f*(h-hHa);
+  Na_(shiftNa,-.22h,ww,.6h);
+  Ha(0,hrise,w,matra_f*hHa);
+  halfstem(ww+shiftNa,.25h,-ha_dip);
+  matra(0,w);
+endchar;
+
+beginchar(242,21u#, stht#,stdp#); "H+n";
+  numeric ww,hh;
+  ww = .4w; hh = .7h;
+  na_(-.0w,.2h,ww,hh);
+  currentpicture := currentpicture reflectedabout ((w/2,0),(w/2,h)) shifted (1.2w*slantval,0);
+  Ha(0,0,14.5/21w,matra_f*h);
+  matra(0,w);
+endchar;
+
+beginchar(243,22u#, stht#,stdp#); "H+m";
+    numeric xstem,balld,thinness,height,theta;
+    xstem=42/63w; thinness=.45; height = matra_f*h; balld=11/50height;
+    theta = -60;
+    matra(0,w);
+% The two balls
+    z0 = (xstem,height);
+    z1= (11/63w,34.5/50height);
+    z2= (24/63w,20/50height);
+    fill fullcircle scaled balld shifted (z1);
+    fill fullcircle scaled balld shifted (z2);
+% Points on the two circles
+    z1a = z1 + .5 * balld * dir(0);
+    z1b = thinness[z1a,z1];
+    z1c = z1 + .5balld * dir(90);
+    z2a = z2 + .5balld * dir(0);
+    z2b = thinness[z2a,z2];
+    z2c = z2 + .5balld * dir(90);
+% The line from the matra to the first dot
+    z6l = (7/63w,matra_h*h); penpos6(6.5/63w,0);
+    fill z6l..{down}z1b--z1a{up}..z6r--cycle;
+% The line between the two dots
+    fill z1c{right}..{down}z2a--z2b{up}..tension0.8..{left}z1b--cycle;
+% The stem
+    hookstem(z2c,z2a,z0,0,0);
+% This part is for the ball at the end of the hook
+    z3r = (w-rindent,0);
+    x3l = x5l;
+    y3l = stem_width/sind(stem_slope);
+% The hook 
+    z4l = (xstem,34.5/50height); penpos4(.5balld,90);
+    z5r = (w-rindent,.9[y3l,y4l]); penpos5(stem_width,0);
+    z7 = (24/63w,matra_h*h); penpos7(4/63w,0);
+    penstroke z3e{up}..{up}z5e..z4e{left};
+    fill z4l--z1a--z1c--z4r--cycle;
+    penlabels (0,1,1a,1b,1c,2,2a,2b,2c,3,4,5,6,7);
+endchar;
+
+beginchar(244,14u#, stht#,stdp#); "H+r";
+  numeric hHa,hrise; 
+  hHa = .85h; hrise = matra_f*(h-hHa);
+  Ha(0,hrise,w,matra_f*hHa);
+  z1 = (w-rindent,0); z2 = (.02w,.23h);
+  Ebase(z1,z2,.06h);
+  halfstem(x1-.5stem_width,.2h,0);
+  matra(0,w);
+endchar;
+
+beginchar(245,14u#, stht#,stdp#); "H+l";
+  numeric ww,hh,hHa,hrise,lashift; 
+  ww = w-rindent; hh = .6h; hHa = .85h; hrise = matra_f*(h-hHa);
+  lashift = -.07w;
+  la_(lashift,-.18h,ww-lashift,hh);
+  Ha(0,hrise,w,matra_f*hHa);
+  halfstem(ww,.2h,-ha_dip);
+  matra(0,w);
+endchar;
+
+beginchar(246,14u#, stht#,stdp#); "H+W";
+  numeric hrise,hHa;
+  hHa = .85h; hrise = matra_f*(h-hHa);
+  matra(0,w);
+  Ha(0,hrise,w,matra_f*hHa);
+  ba(.13w,0,.5w,.42h);
+endchar;
+
+
+%%% End of bangjuk.mf
+

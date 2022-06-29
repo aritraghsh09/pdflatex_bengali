@@ -1,0 +1,483 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangconso.mf: METAFONT file that defines bangla consonants
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+beginchar("k", 19u#, stht#,stdp#); "The letter ka";
+  numeric wba; wba = 14/19w; 
+  ka(0,0,wba,h);
+  matra(0,w);
+endchar;
+
+
+beginchar("x", 16u#, stht#,stdp#); "The letter kha";
+  numeric xstem,height,balld,phi;
+  xstem=w-rindent; height=matra_f*h; balld=.18h; phi=-90;
+  matra(xstem,w);
+  z2l = (7.5/43w,43/50height);
+  z2r = z2l + .5balld * dir(phi) + .02w * dir(phi+90); 
+  z3l = (.5w,matra_f*h);
+  z3r = (.52w,.63h);
+  z4r = (26.5/43w,41/50height);
+  z4l = (30/43w,38/50height);
+  z5r = (6/43w,30/50height);
+  z6l = (13/43w,22/50height);
+  z5l = .7[z5r,z6l];
+  z6r = z5r;
+  z7 = (xstem,height);
+  fill fullcircle scaled balld shifted (z2l);
+  penstroke z2e{right}..z3e;
+  penstroke z3e..z4e{down}..{left}z5e;
+  hookstem(z6r,z6l,z7,0,0);
+  penlabels(1,2,3,4,5,6,7);
+endchar;
+
+beginchar("g", 14u#, stht#,stdp#); "The letter ga";
+  numeric xstem,hh,hrise; hh = .9h; hrise = matra_f*(h-hh);
+  xstem=w-rindent;
+  stem(xstem);
+  matra(xstem,w);
+  ga_(0,hrise,xstem,hh);
+endchar;
+
+beginchar("G", 15u#, stht#,stdp#); "The letter gha";
+  numeric xstem,height; xstem = w-rindent; height = matra_f*h;
+  matra(0,w);  stem(xstem);
+% The upper left portion
+  z1l = (4/42w,matra_h*h); penpos1(11/42w,0);
+  z2l = (22/42w,37/50height);
+  z2r = (28/42w,34/50height);
+  z3 = (12.5/42w,20/50height);
+  fill z1l..{z2r-z3}z2r--z2l{z3-z2r}..z1r--cycle;
+% The portion going towards lower left
+  cwbar(z2l,z2r,z3,angle(z1r-z2r));
+% The hook and the stem
+  z4 = 7/21[z3,z2r];
+  z5 = (xstem,matra_h*h);
+  hookstem(z4,z3,z5,0,angle(z2r-z2l));
+  penlabels(1,2,3,4,5);
+endchar;
+
+beginchar(130, 17u#, stht#,stdp#); "The letter unga";
+  unga(0,0,w,matra_f*h);
+endchar;
+
+beginchar("c", 13u#, stht#,stdp#); "The letter ca";
+  ca(0,0,w,h);
+  matra(0,w);
+endchar;
+
+beginchar("q",15.5u#,stht#,stdp#); "The letter cha";
+  numeric hh,hrise; hh=h;
+  hrise = matra_f*(h-hh);
+  cha(0,hrise,w,hh);
+  currenttransform := identity slanted slantval;
+  matra(0,w);
+endchar;
+
+beginchar("j", 20u#, stht#,stdp#); "The letter ja";
+  ja_full(0,0,w,h);
+  matra(0,w);
+endchar;
+
+beginchar("C", 18u#, stht#,stdp#); "The letter jha";
+  numeric wba,xstem; wba = 14/18w; xstem = wba-rindent;
+  ba(0,0,xstem,h);
+  matra(0,xstem);
+% Now the part to the right
+  z6 = (.87w,.14h);
+  z7 = (xstem,.43h);
+  z8 = (x7,.35h);
+  hookjt(z8,z7,z6,.07h,.4,90);
+  halfstem(x6,matra_f*h,.13h);
+  matra(x6,w);
+  penlabels (1,2,3,4,5,6,7,8);
+endchar;
+
+beginchar(131, 26u#, stht#,stdp#); "The letter ina";
+  ina(0,0,w,h);
+endchar;
+
+beginchar("T", 13u#, stht#,stdp#); "The letter Ta";
+  numeric balld; balld = .19h;
+  matra(0,w);
+  Dha(0,0,w,h);
+% The Tiki
+  Tiki (.9w,.1w);
+endchar;
+
+beginchar("F", 13u#, stht#,stdp#); "The letter Tha";
+  numeric width; width = .13w;
+% The bag
+  z1 = (.61w,matra_f*h-.5matra_thickness); penpos1(width,0);
+  z2 = (.23w,.3h); penpos2(1.4width,-45);
+  z3l= (.5w,.06h); penpos3(.8width,90);
+  z4l= (.93w,.32h); penpos4(.8width,180);
+  z5 = z1; z5l = z1r; z5r = z1l;
+  penstroke z1e..{left}z2e;
+  penstroke z2e..{right}z3e;
+  penstroke z3e{right}..z4e{up}..z5e;
+% The antenna
+  numeric antwid; antwid = length(z1l-z1r);
+  z6 = (x1l,h);
+  pickup pencircle xscaled antwid yscaled 1.4antwid rotated 0;
+  draw z1{z1-z4}..{dir 45}z6;
+  picture shape_Tha; shape_Tha = currentpicture;
+% matra
+  matra(0,w);
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+beginchar("D", 18u#, stht#,stdp#); "The letter Da";
+  numeric height; height = matra_f*h;
+  matra(0,w);
+  Da(0,0,w,height,.88);
+endchar;
+
+beginchar("Z", 13u#, stht#,stdp#); "The letter Dha";
+  matra(0,w);
+  Dha(0,0,w,h);
+endchar;
+
+beginchar("N", 13.5u#, stht#,stdp#); "The letter murdhanya na";
+  numeric xstem;
+  xstem = w - rindent; 
+  matra (xstem,w);
+  stem(xstem);
+  Na_(0,0,xstem,h);
+endchar;
+
+beginchar("t", 19u#, stht#,stdp#); "The letter ta";
+  numeric height; height = matra_f*h;
+  ta(0,0,w,height);
+  matra(0,w);
+endchar;
+
+beginchar("Q", 15u#, stht#,stdp#); "The letter tha";
+  numeric xstem,balld,phi,height;
+  xstem=w-rindent; balld=.18h; height = matra_f*h;
+  matra(xstem,w);
+  z1l = (.5lindent,.6h); penpos1(.5balld,0);
+  z2r = (.4w,.68h);
+  z2l = (.33w,height);
+  z3r = (23.5/42w,36/50height); penpos3(3.5/42w,180);
+  z4r = (5/42w,27/50height);
+  z4l = (8.5/42w,20/50height);
+  z5 = (xstem,height);
+  fill fullcircle scaled balld shifted (z1r);
+  penstroke z1e{up}..{right}z2e..{down}z3e..tension1.2..{left}z4e;
+  hookstem(z4r,z4l,z5,0,0);
+  penlabels(1,2,3,4,5);
+endchar;
+
+
+beginchar("d", 14u#, stht#,stdp#); "The letter da";
+  matra(0,w);
+  da(0,0,w,h);
+endchar;
+
+beginchar("z", 14u#, stht#,stdp#); "The letter dha";
+  numeric xstem,height,theta;
+  xstem = w - rindent; height = matra_f*h; theta = 20;
+  ba(0,0,xstem,h);
+  matra(xstem,w);
+  z8l = point 16/34 of ba_pl;
+  z8r = point 22/34 of ba_pl;
+  z9l = (10.5/39w,43/50height);
+  z9r = (7/39w,43/50height);
+  z10l = (17/39w,(matra_f-matra_t)*h); penpos10(.5dot_diam,theta);
+  fill fullcircle scaled dot_diam shifted z10l;
+  fill z10r{dir (theta+90)}..z9r..{right}z8r--z8l{left}..z9l..z10l--cycle;
+  picture shape_dha;
+  currentpicture = shape_dha;
+  penlabels(8,9,10);
+endchar;
+
+
+beginchar("n", 15.5u#, stht#,stdp#); "The letter na";
+  numeric ww,xstem,height; xstem = ww = w-rindent; height = matra_f*h;
+  na(0,0,w,height,1);
+  matra(0,w);
+endchar;
+
+beginchar("p", 17u#, stht#,stdp#); "The letter pa";
+  numeric xstem,height; xstem=w-rindent; height = matra_f*h;
+  matra(xstem,w);
+  stem(xstem);
+  pa_(0,0,xstem,h);
+endchar;
+
+beginchar("f", 18.5u#, stht#,stdp#); "The letter pha";
+  numeric xstem,wJa,balld,fracrise;
+  wJa = 28/37w; xstem = wJa-rindent; balld = .16h; fracrise=.8;
+  matra(0,w);
+% The upper left portion
+  Ja(0,0,wJa,h,fracrise);
+  z6r = (xstem+.5stem_width,fracrise*matra_h*h); penpos6(stem_width,90);
+% This part is for the ball at the end of the hook
+  z7 = (.83w,.38h);
+  fill fullcircle scaled balld shifted (z7);
+% The hook
+  z8r = z7 + .5balld * dir(0); penpos8(.2balld,0);
+  penstroke z6e{right}..{down}z8e;
+  penlabels(6,7,8);
+  picture shape_pha; shape_pha = currentpicture;
+endchar;
+
+beginchar("b", 14u#, stht#,stdp#); "The letter ba";
+  numeric xstem; xstem = w - rindent;
+  matra(0,w);
+  ba(0,0,xstem,h);
+endchar;
+
+beginchar("v", 20u#, stht#,stdp#); "The letter bha";
+  numeric balld; balld = .25h;
+  matra(0,w);
+  bha(0,0,w,matra_f*h);
+endchar;
+
+beginchar("m", 15.5u#, stht#,stdp#); "The letter ma";
+  numeric xstem,theta,balld,height;
+  xstem = w-rindent; theta = -30; balld = .25h; height = matra_f*h;
+  matra(0,w);
+% The part leading to the dot
+  z1l = (4/43w,matra_h*h); penpos1(7/43w,0);
+  z2l = (21.5/43w,31/50height);
+  z2r = (26/43w,28/50height);
+  z3l = (16/43w,21/50height); penpos3(.5balld,theta);
+  fill z1l{down}..{down}z2l{down}..z3l--z3r{dir (theta+90)}..z2r..tension1.3..z1r--cycle;
+% The dot
+  fill fullcircle scaled balld shifted z3l;
+% The part to the lower right of the dot
+  z4r = z3l;
+  z4l = z3l + .5balld * dir 90;
+  z5 = (xstem,matra_h*h); 
+  hookstem(z4l,z4r,z5,0,0);
+  penlabels(1,2,3,4,5);
+endchar;
+
+
+beginchar("J",15u#,stht#,stdp#); "The letter antasthya ja";
+  Ja(0,0,w,h,1);
+% The matra
+  matra(0,w);
+endchar;
+
+beginchar("r",14u#,stht#,stdp#); "The letter ra";
+  numeric xstem; xstem = w-rindent;
+  matra(0,w);
+  z6 = (.32w,.15h);
+  fill fullcircle scaled dot_diam shifted (z6);
+  ba(0,0,xstem,h);
+  penlabels (1,2,3,4,5,6);
+endchar;
+
+beginchar("l",18u#,stht#,stdp#); "The letter la";
+  numeric xstem; xstem = w - rindent;
+  la_(0,0,xstem,h);
+  stem(xstem);
+  matra(0,w);
+endchar;
+
+beginchar("H",14.5u#,stht#,stdp#); "The letter ha";
+  numeric height; height = matra_f*h;
+  Ha(0,0,w,height);
+  matra(0,w);
+endchar;
+
+beginchar("X",22u#,stht#,stdp#); "The letter khiyo";
+  khiyo(0,0,w,h);
+  matra(0,w);
+endchar;
+
+beginchar("S", 18u#, stht#,stdp#); "The letter talabya sha";
+  numeric xstem; xstem = w-rindent;
+  stem(xstem);
+  matra(xstem,w);
+  sha_(0,0,xstem,h);
+endchar;
+
+
+beginchar("P", 15u#, stht#,stdp#); "The letter murdhanya sha";
+  numeric xstem; xstem = w-rindent;
+% The upper left portion
+  z1l = (4/42w,matra_h*h); penpos1(11/42w,0);
+  z2l = (22/42w,37.5/50height);
+  z2r = (28/42w,34/50height);
+  fill z1l{down}..{z2l-z1l}z2l--z2r--z1r--cycle;
+% The portion going towards lower left
+  z3 = (12.5/42w,20/50height);
+  cwbar(z2l,z2r,z3,angle(z1r-z2r));
+% The hook
+  z4 = .33[z3,z2r];
+  z5 = (xstem,matra_h*h);
+  hookstem(z4,z3,z5,0,angle(z2r-z2l));
+% The cross through the belly
+  x6 = xstem;
+  y6 = (y1r*(x2r-x6) - y2r*(x1r-x6))/(x2r-x1r);
+  z7 = .13[z2r,z3];
+  cwbar (z7,z2r,z6,90);
+  penlabels(1,2,3,4,5,6,7);
+  picture shape_Sha; shape_Sha = currentpicture;
+  matra(0,w);
+endchar;
+
+beginchar("s",17.5u#,stht#,stdp#); "The letter dantya-sa";
+  numeric xstem,height; xstem = w-rindent; height=matra_h*h;
+  matra(0,w);
+  stem(xstem);
+  sa_(0,0,xstem,height);
+endchar;
+
+beginchar(136, 16u#, stht#,stdp#); "The letter Da-y shunyo Ra";
+  numeric height; height = matra_f*h;
+  Da(0,0,w,height,.88);
+  matra(0,w);
+% The dot
+  z9 = (.61w,-ha_dip);
+  fill fullcircle scaled dot_diam shifted (z9);
+  penlabels(9);
+endchar;
+
+beginchar(137, 13u#, stht#,stdp#); "The letter Dha-y shunyo Ra";
+  numeric balld; balld = .19h;
+  matra(0,w);
+  z1 = (lindent-.5stem_width,matra_f*h-.5matra_thickness);
+  z2 = (lindent+.5stem_width,matra_f*h-.5matra_thickness);
+  z3 = (x1,.25h);
+  z4 = (x2,y3);
+  z5 = (.35w,.09h);
+  z6 = (.39w,.2h);
+  z8 = (.69w,.41h);
+  z7 = (max(.88w,x8+.5balld),.43h);
+  fill z1{down}..{down}z3..z5{right}..tension1.5..z7--z8{down}..z6..z4{up}--z2--cycle;
+  z9 = (x8,y8+.5balld);
+  hookcirc(z9,z7,z8,balld,30);
+% The dot at the bottom
+  z10= (x6,-ha_dip);
+  fill fullcircle scaled dot_diam shifted (z10);
+  penlabels (1,2,3,4,5,6,7,8,9,10);
+endchar;
+
+beginchar("y",14u#,stht#,stdp#); "The letter antasthya ya";
+  matra(0,w);
+  Ja(0,0,w,h,1);
+% The ball
+  z8 = (.42w,.13h);
+  fill fullcircle scaled dot_diam shifted (z8);
+  penlabels(8);
+endchar;
+
+beginchar(133,14u#,stht#,stdp#); "The letter khanda ta";
+% The dot
+  z1r = (.5w,matra_f*h); penpos1(.09h,90);
+  z2r = (.3w,.59h); penpos2(.04h,-150);
+  z3r = (.54w,.39h); penpos3(.1h,-90);
+  z4r = (.75w,.54h); penpos4(.06h,0);
+  penstroke z1e..z2e..z3e..z4e..cycle;
+% The hanging part
+  z5r = (.7lindent,.48h); penpos5(.08h,180);
+  z6l = (x1,.3h);
+  z6r= (.5w,.19h);
+  z7l = (w,0); penpos7(.1w,180);
+  z8l = (.2[x7l,x7r],-ha_dip);
+  z8r = z7r;
+  penstroke z1e..z5e..z6e..{down}z7e..z8e;
+  penlabels(1,2,3,4,5,6,7,8);
+endchar;
+
+
+beginchar("K",9u#,stht#,stdp#); "The letter anuswar";
+  numeric vdiam; vdiam = .3h;
+  x1 = .5w; y1= matra_f*h - .5vdiam;
+  golla (z1,vdiam);
+  z9l = (.07w,.41h); z9r = (.24w,.23h);
+  z10 = (.96w,-.04h);
+  hookjt(z9r,z9l,z10,.03h,.1,45);
+  penlabels(1,2,3,4,5,6,7,8,9,10);
+endchar;
+
+beginchar("h",9u#,stht#,stdp#); "The letter bisargo";
+  numeric balld; balld = .3h;
+  z1 = (.5w,.6h);
+  z2 = (x1,matra_f*h-y1);
+  golla (z1,balld);
+  golla (z2,balld);
+  penlabels(1,2,3,4,5,6,7,8,9,10);
+endchar;
+
+beginchar(132,0stwd#,stht#,stdp#); "The letter candra-bindu";
+  rt z1 = (w,h);
+  z1'= (x1+8,y1);
+  z2 = (-2rindent,matra_f*h+.5matra_thickness);
+  z3 = (-4rindent,h);
+%  baTi(z1,z1',z2,z3);
+  pickup Tiki_pen; draw flex(z1,z2,z3);
+  z5 = (x2,h);
+  fill fullcircle scaled dot_diam shifted (z5);
+  penlabels(1,1',2,3,4,5);
+endchar;
+
+beginchar("B",14u#,stht#,stdp#); "The Asamiya letter ra";
+  numeric wba; wba = w - rindent;
+  z1l = (4/39wba,29/50height);
+  z3r = (8.5/39wba,23.5/50height);
+  z2l = (wba,43/50height); penpos2(5.5/50height,-90);
+  z1r = z1l + length(z2r-z2l) * dir angle(z3r-z1l);
+  path rra_pr; rra_pr = z1r{z2l-z1r}..z2r;
+  path rra_pl; rra_pl = z2l..{z1r-z2l}z1l;
+  penstroke z1e{z2l-z1r}..z2e;
+  z3l = point .2 of rra_pr;
+  fill z1l--z3l--z3r--cycle;
+  z4 = (wba,height);
+  hookstem(z3l,z3r,z4,angle(z3l-z1l),2*angle(z3l-z1l));
+  pickup pencircle scaled .6length(z3l-z3r);
+  lft top z5 = point .65 of rra_pl;
+  rt z6 = (wba,.35h);
+  draw z5--z6;
+  matra(0,w);
+  penlabels (1,2,3,4,5,6);
+endchar;
+
+beginchar("w", 14u#, stht#,stdp#); "The Asamiya letter wa";
+  numeric xstem; xstem = w - rindent;
+  matra(0,w);
+  ba(0,0,xstem,h);
+  pickup pencircle xscaled 0.1pt yscaled 0.4pt;
+  z6 = (.14w,.22h);
+  z7 = (w-2rindent, 0);
+  draw z6{right}..z7;
+  penlabels(6,7);
+endchar;
+
+%%% End of bangconso.mf

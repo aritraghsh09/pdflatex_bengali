@@ -1,0 +1,914 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangdefs.mf: METAFONT file that defines various shapes
+%              for use in various bangla fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+def E(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,balld,ypen,currenttransform; transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+    numeric balld,ypen,height,theta;
+    balld = .3w; ypen = .9pt; height = matra_f*h; theta = 220;
+% The circle
+    z1l = (.5w,.43h); penpos1(.5balld,theta);
+    fill fullcircle scaled balld shifted (z1l);
+% The connector between the circle and the stem
+    z2r = (.7w,height); penpos2(matra_t*h,90);
+    z3 = (w-rindent,.6h); penpos3 (stem_width,0);
+    fill z1r{dir (theta-90)}..tension1.3..{right}z2r..tension1.2..{down}z3r--z3l{up}..{left}z2l..tension1.6..{dir (theta+90)}z1l--cycle;
+% The wavy line
+    x4= w-rindent-.5stem_width;
+    y4 = ypen; penpos4(.07h,90);
+    z5 = (.51w,.18h); penpos5(6/50height,90);
+    z6 = (.27w,.21h); penpos6(6/50height,90);
+    z7 = (4/48w,26/50height); penpos7(3/50height,0);
+    z8 = (6.5/48w,36/50height); penpos8(2/50height,-30);
+    penstroke z5e{left}..z6e..z7e..tension1.2..z8e;
+% The stem
+    hookstem(z5r,z5l,z3,0,0);
+    penlabels(1,2,3,4,5,6,7,8);
+  endgroup
+enddef;
+
+def Estem(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,balld,currenttransform; transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+    numeric balld,height,theta;
+    balld = .7(w-.5stem_width); height = matra_f*h; theta = 180;
+% The circle
+    z1r = (0,.6height); penpos1(.5balld,theta);
+    fill fullcircle scaled balld shifted (z1l);
+% The connector between the circle and the stem
+    x2r = .75[x1l,x3l]; y2r = height;
+    penpos2(matra_t*h,90);
+    z3 = (w,.8height); penpos3 (stem_width,0);
+    z4 = (x3,0); penpos4(stem_width,0);
+    fill z1r{dir (theta-90)}..{right}z2r..tension1.2..{down}z3r--z4r--z4l--z3l{up}..z2l..tension1.6..{dir (theta+90)}z1l--cycle;
+    penlabels(1,2,3,4);
+  endgroup
+enddef;
+
+def O(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,balld,smalld,phia,phib,currenttransform;
+    transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+    numeric balld,phia,phib,height,rballx,rbally;
+    phia=150; phib=-45; height = matra_f*h; % smalld,balld defined later
+% The two circles
+    z1r = (21/52w,33/50height);
+    z4r = z5l = (37/52w,29/50height);
+    balld = .7 * length(z1r-z4r);
+    smalld = .9balld;
+    fill fullcircle scaled smalld shifted (z1r);
+    fill fullcircle scaled balld shifted (z4r);
+% Line between the two circles
+    z2l = (44/52w,45/50height);
+    z3l = (45/52w,36/50height);
+    z3r = (43/52w,40/50height);
+    z2r = (37/52w,46/50height);
+    z1l= z1r + .5smalld * dir (phia);
+    z4l= z4r + .5balld * dir (phib);
+    fill z1l{dir (phia-90)}..z2l..z3l..z4l--z4r..z3r..z2r..tension1.5..z1r--cycle;
+%% The line connecting to the cup
+    z5r= z5l + .5balld * dir (phib+90);
+    z6l = (45/52w,20/50height); 
+    z6r = (47.5/52w,19/50height); 
+    fill z5l..{down}z6l--z6r{up}..z5r--cycle;
+%% The cup
+    z7r = (35/52w,6.5/50height); penpos7(6/50height,-90);
+    z8r = (2.5/52w,45/50height); 
+    z8l = (5.2/52w,43/50height);
+    z9 = (0,63/50height);
+    penstroke z6e{down}..{left}z7e..{z9-z8l}z8e;
+    penlabels(1,2,3,4,5,6,7,8,9);
+%% We now define the x and y co-ordinates for the right ball.
+%% These are not protected. They need to be used sometimes.
+    rballx = x4r; rbally = y4r;
+  endgroup
+enddef;
+
+
+def ka(expr xoff,yoff,wba,h) =
+  begingroup
+    save x,y,xstem,theta,balld,wbar,currenttransform;
+    numeric xstem,theta,balld,height;
+    xstem=wba-rindent; theta=-30; balld=.2height; height = matra_f*h;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+% The first part is equivalent to the definition of "ba"
+    ba(xoff,yoff,xstem,h);
+    z2l = (xstem,43/50height); penpos2(5.5/50height,-90);
+% This part is for the ball at the end of the hook
+    z6 = (43/32xstem,21/50height);
+    fill fullcircle scaled balld shifted (z6);
+% This part is the hook
+    z7l = z6 + .5balld * dir(theta);
+    z7r = z6 + .5balld * dir(theta+70);
+    penstroke z2e{right}..z7e;
+    penlabels(1,2,3,3',4,5,6,7,8,8',9,10);
+  endgroup
+enddef;
+
+def ga_(expr xoff, yoff, w, h) =
+  begingroup
+    numeric xstem,height;
+    xstem=w-rindent; height = matra_f*h;
+    save x,y,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    z1l = (11/35w,18/50height); 
+    z1r = (15.5/35w,15/50height); 
+    z2l = (19/35w,30/50height); 
+    z2r = (24/35w,29/50height); 
+    z3l = (19/35w,34/50height); 
+    z3r = (21/35w,37/50height); 
+    z4l = (16/35w,35.5/50height); 
+    z4r = (13.5/35w,39/50height); 
+    z5l = (4/35w,31/50height);
+    z5r = (8/35w,38/50height);
+    z6l = (1.5/35w,38/50height);
+    z6r = z5r;
+    z7l = (17/35w,height);
+    z7r = (18/35w,46/50height);
+    z8l = (w,35/50height); penpos8(stem_width,-90);
+    fill z1l..z2l..z3l..z4l{left}..tension1.2..{left}z5l..tension2..{up}z6l--z6r--z5r{z4l-z5l}..z4r..z3r..z2r..tension1.3..z1r--cycle;
+    fill z6l{up}..{right}z7l..tension1.5..z8l--z8r..tension1.42..z7r..z6r--cycle;
+    penlabels (1,2,3,4,5,6,7,8);
+  endgroup
+enddef;
+
+
+def unga(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+% The vertical part
+    z2 = (18.5/47w,36/50h); penpos2(stem_width,0);
+    z3l = (25.5/47w,18/50h);
+    z3r= (23/47w,23/50h);
+    z3 = .5[z3l,z3r];
+% The part going up
+    z4l = (36/47w,26/50h);
+    z4r = (34/47w,33/50h);
+    fill z2l{down}..tension0.8..{right}z3l{right}..tension1.5..z4l--z4r..tension1.8..{left}z3r..{up}z2r--cycle;
+% The lower cup
+    z5l = (40/47w,22/50h); penpos5(3/47w,-10);
+    z6l = (28/47w,10/50h);
+    z6r = (29/47w,3/50h);
+    z7l = (6/47w,42/50h);
+    z7r = (4/47w,43/50h);
+    z8 = (0,63/50h);
+    fill z4l..{down}z5l..{left}z6l{left}..{z8-z7l}z7l--z7r{z7r-z8}..{right}z6r{right}..z5r{up}..z4r--cycle;
+% The upper part with the dot
+    z9l = (31/47w,h); penpos9(stem_width,-90);
+    z10l = (38/47w,43/50h); penpos10(.6stem_width,180);
+    z11l = z2r; penpos11(stem_width,90);
+    x12l = x7l; y12r = h; penpos12(.12w,10);
+    penstroke z2e{up}..{right}z9e..z10e{down}..z11e..{z12-z3}z12e;
+    penlabels(1,2,3,4,5,6,7,8,9,10,11,12);
+  endgroup
+enddef;
+
+def ca(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,height,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric height; height = matra_f*h;
+    z1 = (lindent,matra_h*h); penpos1(stem_width,180);
+    z2r = (x1r,41.5/50height); penpos2(stem_width,180); 
+    z3r = (x1r,.24h);
+    z3l = (x2l,.26h);
+    z5r = (33/37w,29/50height);
+    z5l = (27/37w,26.5/50height);
+    z4r = (.3[x3r,x5r],4/50height);
+    z4l = (.3[x3l,x5l],9/50height);
+    z6r = (x1l,.45[y1,y2]);
+    z6l = z2r; z6 = .5[z6l,z6r];
+    penstroke z1e--z2e--z3e{down}..{right}z4e;
+    penstroke z4e{right}..{up}z5e;
+    penstroke z5e{up}..{up}z6e;
+    penlabels(1,2,3,4,5,6);
+  endgroup
+enddef;
+
+
+def cha(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform,ww,hh,hrise;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric ww,hh,hrise,height;
+    height = matra_f*h;
+% The rounded part
+    z7r = (25/44w,39/50height);
+    z7l = (x7r,y7r-matra_t*height); 
+    z8l = (35/44w,30/50height);
+    z8r = (39/44w,28/50height);
+    z9l = (16.5/44w,15/50height);
+    z9r = (x9l,11/50height);
+    z10l = (7/44w,17/50height);
+    z10r = (12/44w,10/50height);
+    penstroke z7e{right}..{down}z8e{down}..{left}z9e..z10e;
+% The part that goes down
+    z11= (w,-ha_dip);
+    hookjt(z10r,z10l,z11,.06h,.2,45);
+% The part that looks like a small "ca"
+    ww = x7l+.8rindent; hrise - y10l = y10l - y9l;
+% hrise = matra_h*(h-hh);
+    hh = h-(hrise/matra_h);
+    ca(xoff,hrise+yoff,ww,hh);
+    penlabels(7,8,9,10);
+  endgroup
+enddef;
+
+def ja_bare(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric height;
+    height = matra_f*h;
+% The upper part
+    z1 = (27/37w,matra_h*h); penpos1(10/37w,0);
+    z2l = (13/37w,35/50height);
+    z2r = (16/37w,32/50height);
+    z3l = (23.5/37w,23/50height);
+    z3r = (20/37w,28/50height);
+    z4r = (30/37w,33.5/50height);
+    z4l = (32.5/37w,28/50height);
+    penstroke z1e{z2l-z1r}..{down}z2e{down}..{right}z3e..z4e;
+% The lower cup
+    z5r = (w,y3l); penpos5(2.5/37w,0);
+    z6r = (26/37w,9/50height); penpos6(7/50height,-90);
+    z7r = (4.5/37w,43/50height);
+    z7l = (6/37w,42/50height);
+    penstroke z5e{down}..{left}z6e..{up}z7e;
+% The part joining the above two parts
+    penstroke z5e{up}..z4e;
+    penlabels(1,2,3,4,5,6,7);
+% The hook
+%   NONE FOR THIS VERSION
+% Definitions to export
+    numeric topl_ja,topr_ja,midlx_ja,midrx_ja,midly_ja,midry_ja;
+    topl_ja = x1l; topr_ja = x1;
+    z91 = .5[z4r,z5r]; penpos91(.3length(z4l-z5r), angle(z5r-z4l));
+    midlx_ja = x91r; midrx_ja = x91l;
+    midly_ja = y91r; midry_ja = y91l;
+  endgroup
+enddef;
+
+def ja_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform;
+    numeric wbare,height;
+    wbare = 37/53w; height = matra_f*h;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    ja_bare(xoff,yoff,wbare,h);
+    z8l = (topl_ja,matra_h*h);
+    z8r = (topr_ja,matra_h*h);
+    z9l = (w,35/50height);
+    z9r = (47/53w,40/50height);
+    z3' = (midlx_ja,midly_ja);
+    penstroke z8e{z3'-z8l}..{right}z9e;
+    penlabels(3',8,9);
+% Definitions to export
+    numeric tiplx,tiply,tiprx,tipry;
+    tiplx = x9l; tiply = y9l;
+    tiprx = x9r; tipry = y9r;
+  endgroup
+enddef;
+
+def ja_full(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform,width,thiv;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric height; height = matra_f*h;
+    ja_(xoff,yoff,w-.5rindent,h);
+    z9l = (tiplx,tiply);
+    z9' = (tiprx,tipry); z9r = .7[z9l,z9'];
+    z10l = (x9r,0);
+    z10r = (x10l-2/56w,1/50height);
+    penstroke z9e{z9r-(w,height)}..z10e;
+    penlabels(10);
+  endgroup
+enddef;
+
+def ina(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform,theta,wE;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric theta,wE; theta = 60; wE=18.5/26w;
+    z1 = (wE-rindent,.41h) + (xoff,yoff); 
+    E(xoff,yoff,wE,h);
+    clover(z1,w-wE,.25h,.08h);
+  endgroup
+enddef;
+
+def Da(expr xoff,yoff,w,h,fracrise) =
+  begingroup
+    save x,y,xstem,currenttransform; transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+    numeric xstem; xstem = .5w; 
+% The vertical part
+    z1 = (xstem,h); penpos1(stem_width,0);
+    z2 = (x1,31/50h); penpos2(stem_width,0);
+    z3l = (27.5/49w,21.5/50h);
+    z3r= (x3l+1/49w,28/50h);
+    fill z1l..{down}z2l..{right}z3l--z3r{left}..{up}z2r--z1r--cycle;
+% The part going up
+    z4l = (42.5/49w,30/50h);
+    z4r = (40/49w,38/50h);
+    fill z3l{right}..tension1.5..z4l--z4r..tension1.8..{left}z3r--cycle;
+% The lower cup
+    z5l = (44/49w,27/50h); penpos5(3/50w,0);
+    z6l = (29.5/49w,12/50h);
+    z6r = (31/49w,5/50h);
+    z7l = (7/49w,(fracrise-.02)*h);
+    z7r = (5/49w,fracrise*h);
+    z8 = (0,(63/44)*fracrise*h);
+    fill z4l..{down}z5l..{left}z6l{left}..{z8-z7l}z7l--z7r{z7r-z8}..{right}z6r{right}..z5r{up}..z4r--cycle;
+    penlabels(1,2,3,4,5,6,7,8);
+  endgroup
+enddef;
+
+def Dha(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,balld,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric balld; balld = .19h;
+    z1 = (lindent,matra_f*h); penpos1(stem_width,0);
+    z2 = (lindent,.27h); penpos2(stem_width,0);
+    z3l = (.35w,.08h);
+    z3r = (.39w,.2h);
+    z4r = (.69w,.41h);
+    z4l = (max(.88w,x4r+.5balld),.47h);
+    penstroke z1e{down}..{down}z2e..tension1.2..z3e{right}..tension1.2..{up}z4e;
+    z5 = (x4l-.5balld,y4l);
+    fill fullcircle scaled (balld) shifted (z5);
+    penlabels (1,2,3,4,5);
+  endgroup
+enddef;
+
+def Na_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,xstem,balld,currenttransform;
+    numeric xstem,balld,height;
+    xstem = w - rindent; height = matra_f*h; balld = max(9/50height,.3w);
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) xscaled(w/xstem) slanted slantval;
+    z1r = (16.5/37w,31/50height);
+    fill fullcircle scaled balld xscaled(xstem/w) shifted (z1r);
+    penpos1(.5balld * xstem/w,180);
+    z2l = z1r - (0,.75balld);
+    penpos2(.5balld,90);
+    z3l = (3.5/37w,36/50height); penpos3(6/37w,0);
+    z4l = (15.5/37w,height);
+    z4r = (17/37w,45/50height);
+    z5r = (xstem,y3); penpos5(.08h,-90);
+    penstroke z1e{down}..z2e..{up}z3e..z4e{right}..{z5l-z4l}z5e;
+    penlabels(1,2,3,4,5);
+  endgroup
+enddef;
+
+def ta(expr xoff,yoff,ww,hh) =
+  begingroup
+    save x,y,balld,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric balld; balld = 14/50hh;
+% The ball
+    z1l = (30/52ww,32/50hh); penpos1(.5balld,180);
+    fill fullcircle scaled balld shifted (z1l);
+% Joining the ball and the cup
+    z2r = (33.5/52ww,43/50hh);
+    z2l = z1l + .5balld * dir(45);
+% The cup at the bottom
+    z3l = (47/52ww,27/50hh);
+    z3r = (50/52ww,26/50hh);
+    z4l = (33/52ww,13.5/50hh);
+    z4r = (35/52ww,7/50hh);
+    z5l = (6/52ww,43/50hh);
+    z5r = (4/52ww,44/50hh);
+    z6 = (0,62/50hh);
+    fill z1l..z2l{right}..{down}z3l{down}..z4l{left}..tension1.2..{z6-z5l}z5l--z5r{z5r-z6}..tension1.2..{right}z4r{right}..{up}z3r{up}..{left}z2r..z1r--cycle;
+    penlabels(1,2,3,4,5,6);
+% Definitions to export
+    numeric top_ta;
+    top_ta = y2l;
+  endgroup
+enddef;
+
+def da(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,height,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric height; height=matra_f*h;
+%% The vertical bar at the left
+    z1 = (lindent,height); penpos1(stem_width,0);
+    z2l = (x1l,20/50height);
+    z2r = (x1r,15/50height);
+    penstroke z1e..z2e;
+%% The diagonal line
+    y4r = .52h;
+    y4l-y4r=y2l-y2r;
+    x4r-x4l=stem_width;
+    .5[x4r,x4l] = w - rindent;
+    z3 = (x4l,height);
+    penstroke z2e{z3-z2l}..z4e;
+%% Calculation for the upper end of the diagonal line
+    x5r = x4l;
+    y5 = y2r;
+    penpos5(.6*length(z4r-z4l),0);
+    x6r = x4r; y6r = 0;
+    penpos6(.4*length(z4r-z4l),-25);
+    penstroke z4e..z5e..z6e;
+    penlabels(1,2,3,4,5,6);
+% Co-ordinates to export
+    numeric da_tiplx, da_tiply, da_tiprx, da_tipry;
+    da_tiplx = x6l; da_tiply = y6l; da_tiprx = x6r; da_tipry = y6r; 
+  endgroup
+enddef;
+
+
+def na(expr xoff,yoff,w,h,frach) =
+  begingroup
+    save x,y,xstem,balld,currenttransform;
+    numeric xstem,balld; xstem=w-rindent;
+    balld = max(15/50h,1/3w); 
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    z1r = (13/42w,21.5/50h); penpos1(.5balld,0);
+    z2r = z1r + .5balld * dir 45;
+    z2l = z1r + .5balld * (.4 dir 0 + 1.5 dir 90);
+    fill fullcircle scaled balld shifted (z1r);
+    fill z1l{up}..{right}z2l--z2r{left}..z1r--cycle;
+    if frach>0:
+      z3 = (xstem,frach*h);
+      hookstem(z2l,z2r,z3,0,0);
+    else:
+      z3 = (w,0); 
+      hookjt(z2r,z2l,z3,0.2h,1,90);
+    fi;
+    penlabels(1,2,3,4);
+  endgroup
+enddef;
+
+
+def na_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,xstem,vdiam,ecc,currenttransform;
+    numeric xstem,balld;
+    xstem=w-rindent; balld = .25h;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    z1r = (13/32w,21.5/50h); penpos1(.5balld,0);
+    z2r = z1r + .5balld * dir 45;
+    z2l = z1r + .5balld * (.4 dir 0 + 1.5 dir 90);
+    z3l = (w,y1); penpos3(.5*length(z2l-z2r),-90);
+    fill fullcircle scaled balld shifted (z1r);
+    fill z1l{up}..{right}z2l--z2r{left}..z1r--cycle;
+    penstroke z2e{right}..tension1.2..z3e;
+    penlabels(1,2,3,4);
+  endgroup
+enddef;
+
+def pa_(expr xoff,yoff,w,h) = 
+begingroup
+  save x,y,height,full_w,currenttransform; transform currenttransform;
+  currenttransform = identity shifted (xoff,yoff) slanted slantval;
+  numeric height;
+  height = matra_f*h; 
+% The upper curve
+  z1l = (3/39w,35/50height);
+  z1r= (11/39w,38/50height);
+  z2l = (20/39w,matra_h*h);
+  z2r = (22/39w,43/50height);
+  z3l = (w-.5stem_width,34/50height);
+  z3r = (x3l,y3l+y2r-y2l);
+  path p; p = z3r{z2l-z3r}..z2r..z1r;
+  penstroke z1e{up}..z2e..tension1.1..z3e;
+% The lower bar
+  z4l = (10.5/39w,21/50height);
+  z4r = (17/39w,19/50height);
+  z5= p intersectionpoint (z4l--(w,matra_f*h));
+  cwbar(z4r,z4l,z5,angle(z3l-z5));
+% The connector
+  z6l= (6.5/39w,32/50height);
+  z6r = z1r;
+  z7r = (16.3/39w,34/50height);
+  z7l = (14.5/39w,33/50height);
+  z8r = .4[z4l,z5];
+  y8l = y8r;
+  x8r - x8l = length(z7r - z7l);
+  penstroke z1e{down}..{right}z6e;
+  penstroke z6e{right}..z7e..{down}z8e;
+  fill z8l..{z4l-z8r}z4l--z4r--z8r--cycle;
+  penlabels (1,2,3,4,5,6,7,8);
+endgroup
+enddef;
+
+def ba(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,height,currenttransform;
+    numeric height; height = matra_f*h;
+    transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+    z1l = (4/39w,29/50height);
+    z3r = (8.5/39w,23.5/50height);
+    z2l = (w,43/50height); penpos2(5.5/50height,-90);
+    z1r = z1l + length(z2r-z2l) * dir angle(z3r-z1l);
+    path ba_pr; ba_pr = z1r{z2l-z1r}..z2r;
+    path ba_pl; ba_pl = z2l..{z1r-z2l}z1l;
+    penstroke z1e{z2l-z1r}..z2e;
+    z3l = point .2 of ba_pr;
+    fill z1l--z3l--z3r--cycle;
+    z4 = (w,height);
+    hookstem(z3l,z3r,z4,angle(z3l-z1l),2*angle(z3l-z1l));
+    penlabels (1,2,3,4);
+    currenttransform := identity slanted slantval;
+    numeric ba_topxl, ba_topxr, ba_topy;
+    ba_topxl = x4 - .5stem_width + xoff;
+    ba_topxr = x4 + .5stem_width + xoff;
+    ba_topy = height + yoff;
+  endgroup
+enddef;
+
+def ba_remove(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,height,currenttransform;
+    numeric height; height = matra_f*h;
+    transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+    z1l = (4/39w,29/50height);
+    z3r = (8.5/39w,23.5/50height);
+    z2l = (w,43/50height); penpos2(5.5/50height,-90);
+    z1r = z1l + length(z2r-z2l) * dir angle(z3r-z1l);
+    path ba_pr; ba_pr = z1r{z2l-z1r}..z2r;
+    path ba_pl; ba_pl = z2l..{z1r-z2l}z1l;
+    z3l = point .2 of ba_pr;
+    z4r = (w+.5stem_width,0); penpos4(.5stem_width,-stem_slope); 
+    z5 = z2 + (.5stem_width,0);  penpos5(5.5/50height,-90);
+    z7 = (x5,0);
+    unfill z5l--ba_pl--z3r{z3l-z1l}..{down}z4l--z4r--cycle;
+    unfill z5l--ba_pl--z3r{z3l-z1l}..{down}z4l--z4r--cycle;
+  endgroup
+enddef;
+
+
+
+def ba_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y;
+    z1l = (4/39w,29/50height);
+    z3r = (8.5/39w,23.5/50height);
+    z2l = (w,43/50height); penpos2(5.5/50height,-90);
+    z1r = z1l + length(z2r-z2l) * dir angle(z3r-z1l);
+    path ba_pr; ba_pr = z1r{z2l-z1r}..z2r;
+    path ba_pl; ba_pl = z2l..{z1r-z2r}z1l;
+    penstroke z1e{z2l-z1r}..z2e;
+    z3l = point .2 of ba_pr;
+    fill z1l--z3l--z3r--cycle;
+    z4 = (w,height);
+    hookstem(z3l,z3r,z4,angle(z3l-z1l),2*angle(z3l-z1l));
+    penlabels (1,2,3,4,5);
+  endgroup
+enddef;
+
+def ba_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,xstem,currenttransform;
+    numeric wba,xstem; wba = w; xstem = w-rindent;
+    transform currenttransform;
+    currenttransform := identity xscaled (wba/xstem) shifted (xoff,yoff) slanted slantval;
+    z1 = (.07wba,.45h);
+    z2 = (.14wba,.35h);
+    z3 = (xstem,.53h);
+    z4 = (xstem,.03h);
+    z5 = z2 + .23wba * (cosd angle(z3-z2), sind angle(z3-z2));
+    cwbar(z1,z2,z3,90);
+    hookjt(z2,z5,z4,.1h,.2,90);
+    penlabels (1,2,3,4,5);
+    currenttransform := identity slanted slantval;
+  endgroup
+enddef;
+
+def bha(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,balld,currenttransform;
+    numeric balld; balld = 12/54w;
+    transform currenttransform;
+    currenttransform := identity shifted (xoff,yoff) slanted slantval;
+% The cup at the bottom
+  z4l = (48/54w,28/50h); z4r = (51/54w,25/50h);
+  z5l = (33/54w,13/50h); z5r = (34/54w,6/50h);
+  z6l = (7/54w,43/50h);  z6r = (5/54w,44/50h); 
+% The ball
+  z1r = (26/54w,34/50h); penpos1(.5balld,0);
+  fill fullcircle scaled balld shifted z1r;
+% Joining the ball and the cup
+  z2l = (31/54w,24/50h); z2r = (32/54w,30/50h);
+  z3l = (45.5/54w,32.5/50h); z3r = (42/54w,39.5/50h);
+  fill z1r..z2r{right}..z3r--z3l..{left}z2l..{up}z1l--cycle;
+  fill z3r..z4r{down}..{left}z5r..tension1.4..{(0,63/50h)-z6r}z6r--z6l{z6l-(0,63/50h)}..tension1.4..z5l{right}..{up}z4l..z3l--cycle;
+  penlabels(1,2,3,4,5,6,7,8);
+  endgroup
+enddef;
+
+
+def ma_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,xstem,theta,balld,height, currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric xstem,theta,balld,height;
+    xstem = w-rindent; theta = -30; balld = .25h; height = matra_f*h;
+% The part leading to the dot
+  z1l = (4/43w,matra_h*h); penpos1(7/43w,0);
+  z2l = (21.5/43w,31/50height);
+  z2r = (26/43w,28/50height);
+  z3l = (16/43w,21/50height); penpos3(.5balld,theta);
+  fill z1l{down}..{down}z2l{down}..z3l--z3r{dir (theta+90)}..z2r..tension1.3..z1r--cycle;
+% The dot
+  fill fullcircle scaled balld shifted z3l;
+% The part to the lower right of the dot
+  z4r = z3l;
+  z4l = z3l + .5balld * dir 90;
+  z5 = (xstem,matra_h*h); 
+  hookstem(z4l,z4r,z5,0,0);
+  penlabels(1,2,3,4,5);
+  endgroup
+enddef;
+
+
+
+def Ja(expr xoff,yoff,w,h,topfrac) =
+  begingroup
+    save x,y,xstem,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric xstem,height; xstem = w-rindent; height = matra_f*h;
+% The upper left portion
+    z1l = (4/42w,matra_h*h); penpos1(11/42w,0);
+    z2l = (22/42w,37/50height);
+    z2r = (28/42w,34/50height);
+    fill z1l{down}..{z2l-z1l}z2l--z2r--z1r--cycle;
+    z3 = (12.5/42w,20/50height);
+% The portion going towards lower left
+    cwbar(z2l,z2r,z3,angle(z1r-z2r));
+% The hook and the stem
+    z4 = 7/21[z3,z2r];
+    z5 = (xstem,topfrac*matra_h*h);
+    hookstem(z4,z3,z5,0,angle(z2r-z2l));
+    penlabels(1,2,3,4,5);
+  endgroup
+enddef;
+
+
+def la_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,xstem,balld,xecc,currenttransform;
+    numeric xstem,balld,xecc,height;
+    height = matra_f*h;
+    xstem = w-rindent; balld = 13/50height; xecc = xstem/w;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) xscaled (1/xecc) slanted slantval;
+% The ball
+    z1 = (.41w,.33h);
+    fill fullcircle scaled balld xscaled (xecc) shifted (z1);
+% The first wavy line coming out of the ball
+    z2l = z1 + .5balld * dir (-90); penpos2(.3balld,90);
+    z3l = (5.8/50w,28/50height);
+    z3r = (9/50w,26/50height);
+    z4l = (16/50w,41.5/50height);
+    z4r = (18/50w,36/50height);
+    z5l = (26.5/50w,36/50height);
+    z5r = (29/50w,27/50height);
+    penstroke z2e..z3e{up}..{right}z4e..{z5r-z4l}z5e;
+% The second wavy line connecting to the stem
+    z6l = (33/50w,y4l-1/100height);
+    z6r= (35/50w,y4r);
+    z7l = (xstem,31/50height);
+    z7r= (xstem,26/50height);
+    penstroke z5e{up}..z6e..tension1.4..{z6r-z6l}z7e;
+    penlabels(1,2,3,4,5,6,7);
+  endgroup
+enddef;
+
+
+def sha_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,height,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric height; height = matra_f*h;
+% The balls
+    z1l = (14.5/40w,40/50height);
+    z1r = (17/40w,42/50height);
+    z2 = (5.5/40w,30/50height);
+    z3 = (11.5/40w,25/50height);
+    z4 = (19/40w,y2);
+    x5 -x4 = x4 - x3; y5 = y3;
+    x6 - x4 = x4 - x2; y6=y2;
+    z7l = z1r;
+    x7r - x4 = x4 - x1l; y7r = y1l;
+    fill z1r--z1l..tension1.4..{down}z2{down}..z3{right}..z4--cycle;
+    fill z7l--z7r..tension1.4..{down}z6{down}..z5{left}..z4--cycle;
+% The antenna to the left
+    z8r = (0,matra_f*h);
+    x8l = abs(cosd(matra_slope))*matra_t*h;
+    y8r-y8l = matra_t*h;
+    penstroke z8e{right}..tension0.9..{z4-z1l}z1e;
+% The line connecting the balls with the stem
+    z9l = (27/40w,y8r);
+    z9r = (29/40w,44.5/50height);
+    z10l = (w,40/50height);
+    z10r = (w,35/50height);
+    penstroke z7e..{right}z9e{right}..tension1.5..{z10r-z9r}z10e;
+    penlabels(1,2,3,4,5,6,7,8,9,10);
+  endgroup
+enddef;
+
+
+def Sha_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,xstem, currenttransform; 
+    numeric xstem,height; xstem = w-rindent; height=matra_f*h;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) xscaled (w/xstem) slanted slantval;
+% The upper left portion
+    z1l = (4/42w,matra_h*h); penpos1(11/42w,0);
+    z2l = (22/42w,37.5/50height);
+    z2r = (28/42w,34/50height);
+    fill z1l{down}..{z2l-z1l}z2l--z2r--z1r--cycle;
+% The portion going towards lower left
+    z3 = (12.5/42w,20/50height);
+    cwbar(z2l,z2r,z3,angle(z1r-z2r));
+% The hook
+    z4 = .33[z3,z2r];
+    z5 = (xstem,.5stem_width*sind(stem_slope));
+    hookjt(z3,z4,z5,.05h,.5,90);
+% The cross through the belly
+    x6 = xstem;
+    y6 = (y1r*(x2r-x6) - y2r*(x1r-x6))/(x2r-x1r);
+    z7 = .13[z2r,z3];
+    cwbar (z7,z2r,z6,90);
+    penlabels(1,2,3,4,5,6,7);
+  endgroup
+enddef;
+
+
+
+
+def sa_(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform;
+    numeric xstem; xstem = w-rindent;
+    numeric midxl_sa,midyl_sa,midxr_sa,midyr_sa;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) xscaled(w/xstem) slanted slantval;
+% The wavy line
+    z5l = (5/46w,26/50h);
+    z5r = (7/46w,27/50h);
+    z6l = (14.5/46w,15/50h);
+    z6r = (12/46w,22/50h);
+    z8r= (xstem,28/50h);
+    z8l= (x8r,22.5/50h);
+    x7r = 2/3[x6r,x8r]; y7r = 38.5/50h;
+    x7l = 2/3[x6l,x8l]; y7l = 31.5/50h;
+    path pr; pr = z7r{left}..tension2..{left}z6r{left}..tension5..z5r;
+    path pl; pl = z5l..tension5..{right}z6l{right}..tension2..{right}z7l;
+    fill pl--pr--cycle;
+    penstroke z7e{right}..{z8l-z7r}z8e;
+% The upper left part 
+    z1l = (3.5/46w,h); penpos1(12.5/46w,0);
+    z2 = (11/46w,43/50h);
+    z3l = ((21/46w,0)--(21/46w,h)) intersectionpoint pr;
+    z3r = ((23/46w,0)--(23/46w,h)) intersectionpoint pr;
+    fill z1l{down}..{right}z2{right}..{down}z3l--z3r{up}..tension1.2..z1r--cycle;
+% Exporting co-ordinates
+    midxl_sa = (x3l+xoff)*(w/xstem); midyl_sa = y3l+yoff;
+    midxr_sa = (x3r+xoff)*(w/xstem); midyr_sa = y3r+yoff;
+    penlabels(1,2,3,4,5,6,7,8);
+  endgroup
+enddef;
+
+def Ha(expr xoff,yoff,w,h) =
+  begingroup
+    save x,y,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric balld,phi; balld = 13/50h; phi=-60; 
+%% The ball 
+    z1r = (14.5/40w,34/50h); penpos1(.5balld,phi);
+    fill fullcircle scaled balld shifted z1r;
+%% The connector    
+    z2 = (16/40w,h); penpos2(6.5/40w,0);
+    z3l = (19.5/40w,42/50h);
+    z3r = (23/40w,42/50h);
+    z4 = z1r + .5balld * dir(-90);
+    fill z4{right}..{up}z3r..z2r--z2l..{down}z3l..z1r--cycle;
+    z5 = (26/40w,37/50h);
+    z6l = (37/40w,31/50h);
+    z6r = (34/40w,32.5/50h);
+    z7l = (19/40w,13.5/50h);
+    z7r = (16.5/40w,19/50h);
+    fill z1l..{right}z3l..{down}z6l--z6r{up}..{left}z5..z1r--cycle;
+%% The swordlike line at the bottom
+    z9l = (10.5/40w,13/50h);
+    z9r = (5/40w,23/50h);
+    z10 = (46/40w,-ha_dip);
+    fill z6l{down}..{left}z7l..z9l--z9r..{right}z7r..{up}z6r--cycle;
+    hookjt(z9l,z9r,z10,.08h,.5,angle(z9r-z9l));
+    penlabels(1,2,3,4,5,6,7,9,10);
+  endgroup
+enddef;
+
+def khiyo(expr xoff,yoff,w,h) = 
+  begingroup
+    save x,y,currenttransform;
+    transform currenttransform;
+    currenttransform = identity shifted (xoff,yoff) slanted slantval;
+    numeric xstem,balld,thinness,height,theta;
+    xstem=42/63w; thinness=.45; height = matra_f*h; balld=11/50height;
+    theta = -60;
+% The two balls
+    z0 = (xstem,height);
+    z1= (11/63w,34.5/50height);
+    z2= (24/63w,20/50height);
+    fill fullcircle scaled balld shifted (z1);
+    fill fullcircle scaled balld shifted (z2);
+% Points on the two circles
+    z1a = z1 + .5 * balld * dir(0);
+    z1b = thinness[z1a,z1];
+    z1c = z1 + .5balld * dir(90);
+    z2a = z2 + .5balld * dir(0);
+    z2b = thinness[z2a,z2];
+    z2c = z2 + .5balld * dir(90);
+% The line from the matra to the first dot
+    z6l = (7/63w,matra_h*h); penpos6(6.5/63w,0);
+    fill z6l..{down}z1b--z1a{up}..z6r--cycle;
+% The line between the two dots
+    fill z1c{right}..{down}z2a--z2b{up}..tension0.8..{left}z1b--cycle;
+% The stem
+    hookstem(z2c,z2a,z0,0,0);
+% This part is for the ball at the end of the hook
+    z3 = (51/63w,23/50height);
+    fill fullcircle scaled balld shifted z3;
+% The hook 
+    z4l = (xstem,34.5/50height); penpos4(.5balld,90);
+    z5 = (x3,y4); penpos5(.45balld,90);;
+    z7 = (24/63w,matra_h*h); penpos7(4/63w,0);
+    z3a = z3 + .5balld * dir(theta);
+    z3b = thinness[z3a,z3];
+    fill z3a{dir (theta+90)}..tension1.4..{left}z5r..z4r{left}..tension0.8..{up}z7r--z7l..{right}z4l..z5l{right}..{dir (theta-90)}z3--cycle;
+    penlabels (0,1,1a,1b,1c,2,2a,2b,2c,3,3',3a,3b,4,5,6,7);
+% definitions to export
+    numeric ballx, bally;
+    ballx = x3; bally = y3;
+  endgroup
+enddef;
+
+
+  
+%%% End of bangdefs.mf

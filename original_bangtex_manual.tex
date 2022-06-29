@@ -1,0 +1,1265 @@
+\documentclass[12pt]{barticle}
+
+
+\textwidth=16cm
+\textheight=22cm
+\oddsidemargin=0mm 
+\evensidemargin=0mm
+\tolerance=10000
+
+
+
+
+\def\tex{{\rm\TeX}}
+\def\latex{{\rm\LaTeX}}
+\def\totype#1{{\tt #1}}
+%\def\cinho#1{{\bng #1} & \totype{#1}}
+\def\cinho#1{\totype{#1} & {\bng #1}}
+\def\demo#1{\framebox{\framebox{\totype{#1}}$\Longrightarrow$\framebox{\bng #1}}} 
+\def\Demo#1#2{\framebox{\framebox{\totype{#1}}$ \Longrightarrow
+$\framebox{\bng #2}}} 
+
+
+\makeindex
+
+
+\begin{document}
+\bng
+\begin{titlepage}
+\begin{center}
+
+{\Lbng {\Large \tex} ba {\Large \latex}-E  baNNGla \*l*ekha}
+
+\vfill
+
+{\lbng polash boron pal}
+
+\vfill\vfill
+
+E\*pR*il 2001
+
+\end{center}
+\end{titlepage}
+\setcounter{page}{2}
+
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%
+\section{shuru korar Aa\*g*e kii kii dorkar}
+%%%%%%%%%%%%%%%%%%%%
+\tex\ ba \latex\ phaI\*l*e baNNGla Horoph bYoboHar kor\*t*e Ho\*l*e
+pRothomoto baNNGla Horophgu\*l*ea\*k*e Aapnar ko\*m/p*iUTa\*r*e
+rakh\*t*e Ho\*b*e. ETa kii ko\*r*e kor\*t*e Ho\*b*e, ta Ekha\*n*e
+Aa\*l*ea\*c*ito Ho\*b*e na. tar pRothom karoN, pRos/tu\*t*ir EI
+ANNGsho\*T*i AAk AAk rokom ko\*m/p*iUTa\*r*e AAk AAk
+rokom. \*dW*itiiyo karoN, EI ANNGsho\*T*i\*t*e ko\*m/p*iUTar
+soNNGkRan/to po\*r*ibhaShar pRo\*y*eajon AA\*t*ea \*b*e\*sh*i Ho\*b*e
+\*J*e Aa\*l*eacona INNG\*r*i\*j*i\*t*e Ho\*l*eI su\*b*i\*dh*e. E kotha
+taI Aalada ko\*r*e Aa\*l*eacona kora Ho\*y*e\*ch*e \*b*i\*bh*in/no
+rokom ko\*m/p*iUTa\*r*er jonYo, {\rm `How to install bangtex'}
+shiir/Shok ANNG\*sh*e.
+
+\tex\ ba \latex\ Jo\*d*i Aap\*n*i Aa\*g*e kokho\*n*ea bYoboHar na
+ko\*r*e tha\*k*en, taHo\*l*e EI \*n*i\*r/d*e\*sh*ika po\*rh*e Aapnar
+khub Upokar Ho\*b*e bo\*l*e mo\*n*e Hoy na. Ar/that//, Aamar dharoNa,
+pRotho\*m*eI baNNGla \*d*i\*y*e \tex\ ba \latex-E \*k*ichu \*l*ekhar
+\*c*eSh/Ta kor\*b*en na. Jo\*d*i \tex\ ba \latex\ na ja\*n*en,
+taHo\*l*e pRotho\*m*e INNG\*r*i\*j*i\*t*e \*k*ichu \*l*i\*kh*e EI
+pod/dho\*t*i\*t*e AbhYos/to Ho\*y*e \*n*in.
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{phaI\*l*er goThon}
+%%%%%%%%%%%%%%%%%%%%
+EI ANNG\*sh*e pRotho\*m*e \latex\ phaI\*l*er goThon som/po\*r/k*e
+bol\*ch*i. EI phaI\*l*er pRothom laIn\*T*i\*t*e
+\verb!\documentclass!-Er Ek\*T*i \*gh*eaShoNa thak\*b*e. EI
+\*gh*eaShoNa \*J*e \*J*e bha\*b*e kora \*J*e\*t*e
+pa\*r*e, tar nomuna \*n*i\*c*e  \*l*i\*kh*e \*d*ekha\*c/ch*i. 
+%%
+\begin{quote}
+\begin{minipage}{.4\textwidth}
+\verb!\documentclass{bbook} ! \\
+\verb!\documentclass[11pt]{bbook} ! \\
+\verb!\documentclass[12pt]{bbook} ! 
+\end{minipage}
+%
+\framebox{\parbox{.4\textwidth}{\*J*e \*k*ea\*n*ea Ek\*T*i matRo.
+\totype{bbook}-Er jaygay \totype{barticle} ba
+\totype{bletter}-O \*d*eOya \*J*e\*t*e pa\*r*e. \*n*i\*c*e porhun.
+}}
+\end{quote}
+%%
+Er
+\*J*e \*k*ea\*n*ea Ek\*T*i laIn \*l*i\*kh*e phaIl shuru kor\*t*e
+pa\*r*en. Ekha\*n*e \totype{bbook} ma\*n*e Ho\*l*ea \totype{bangla 
+book}. Ar/that// EI phaIl\*T*i baNNGlay boI \*l*ekhar Upo\*J*eagii
+ko\*r*e \*t*{oi}\*r*i kora Ho\*y*e\*ch*e. \*J*emon, pRo\*t*i\*T*i
+AdhYa\*y*er shuru\*t*e AdhYa\*y*er nam\*T*i bo\*rh*ea Horo\*ph*e
+bos\*b*e, porobor/tii patagu\*l*ear Opo\*r*e AdhYa\*y*er nam bos\*b*e
+Aapna-Aap\*n*i, Jo\*d*i AboshYo \*s*eI AdhYa\*y*er namTa \latex-Er
+\*b*idhan AnuJayii \verb!\chapter! \*d*i\*y*e \*l*ekha Hoy. E charhaO
+\latex-Er \totype{book} bYoboHar kor\*l*e Ja Ja Hoy, \*m*eaTamu\*T*i
+\*s*eI sob su\*b*idha paOya Ja\*b*e. \*t*em\*n*i \latex-Er
+\totype{article} bYoboHar kor\*l*e Ja Ja Hoy, \*m*eaTamu\*T*i \*s*eI
+sob su\*b*idha paOya Ja\*b*e \totype{barticle} bYoboHar
+kor\*l*e. du\*T*ir mo\*dhY*e pRodhan tophat, \totype{barticle}-E
+\verb!\chapter! bo\*l*e \*k*ea\*n*ea \*b*ibhag Hoy
+na. \totype{bbook}-E Hoy, EboNNG EI \*b*ibhag\*T*i Ek\*T*i notun patay
+shuru Hoy. Aar \totype{bletter} Ho\*l*e paOya Ja\*b*e \*c*i\*Th*i
+\*l*ekhar su\*b*idha, \latex-Er \totype{letter}-E Ja tha\*k*e. nomunar
+jonYo \*J*e sob phaIl Aa\*ch*e \totype{bangtex}-Er bhaN/Da\*r*e, tar
+mo\*dhY*e Er nomuna pa\*b*en.
+
+U\*l/l*i\*kh*ito pRothom laIn\*T*ir por \latex\ phaI\*l*e Ja tha\*k*e,
+ta\*k*e \latex-Er \*n*i\*r/d*e\*sh*ikay bo\*l*e \totype{preamble},
+baNNGlay bola \*J*e\*t*e pa\*r*e `\*g*eouroco\*n/dR*ika'. EI
+ANNG\*sh*e thak\*t*e pa\*r*e \*l*ekha\*T*ir samo\*gR*ik ruup
+som/po\*r/k*e \*k*ichu tothYo, \*J*emon dhora Jak \*sh*eSh Ab\*dh*i
+chapa Ho\*l*e \*s*eI chapar \*d*{oi}r/ghYo pRos/tho ItYa\*d*i ko\*t*ea
+Ho\*b*e, pa\*sh*er ma\*r/j*in ko\*t*ea Ho\*b*e ItYa\*d*i. EI
+ANNGsho\*T*i\*t*e baNNGla \*l*ekhar jonYo \*b*i\*sh*iSh/To \*k*ichu
+kor\*t*e Ho\*b*e na, taI E som/po\*r/k*e \*b*is/ta\*r*ito janbar jonYo
+\latex\ \*n*i\*r/d*e\*sh*ika porhun.
+
+
+phaI\*l*er ba\*k*i ANNG\*sh*er goThon Ho\*b*e EI rokom~:\\
+%%
+\begin{minipage}{\textwidth}
+\begin{quote}
+\begin{verbatim}
+\begin{document}
+\bng
+******
+\end{document}
+\end{verbatim}
+\end{quote}
+\end{minipage}
+%%
+Er mo\*dhY*e tara \*c*in/Ho \*J*ekha\*n*e \*d*eOya Aa\*ch*e,
+\*s*eIkha\*n*e Ja\*b*e \*l*ekhaTa. \*s*eI ANNGshoTa kii ko\*r*e
+\*l*ekha Ho\*b*e, \*s*eITaI Aama\*d*er pRodhan Aa\*l*eacYo, \*s*eI
+kothay Aas\*ch*i.
+
+tar Aa\*g*e shudhu EkTu bo\*l*e \*n*iI, \latex\ na Ho\*y*e \tex\
+Ho\*l*e kii kor\*t*e Ho\*b*e. \*s*e \*kK*e\*tR*e phaI\*l*er goThon
+Ho\*b*e EI rokom:\\
+%%
+\begin{minipage}{\textwidth}
+\begin{quote}
+\begin{verbatim}
+\input bangfont
+\bngx
+******
+\bye
+\end{verbatim}
+\end{quote}
+\end{minipage}
+%%
+\latex-Er mo\*t*ea EI \*kK*e\*tR*eO tara \*c*in/Hogu\*l*ir jaygay
+bos\*b*e Aasol \*l*ekhaTa. \*sh*e\*Sh*er \verb \bye \ Ho\*l*ea phaIl
+\*sh*eSh korar soNNG\*k*et. Aar pRothom laIn\*T*i Ho\*l*ea
+baNNGla Horo\*ph*er \*gh*eaShoNa. EI \*gh*eaShoNar po\*r*e \*J*e
+laIn\*T*i Aa\*ch*e, ta\*t*e \totype{$\backslash$bngx} \*l*ekhar
+pho\*l*e \*l*ekha Ho\*b*e 10 po\*y*e\*n/T*er baNNGla Horo\*ph*e. 
+AnYo ma\*p*er HorophO pRo\*y*eajon Ho\*t*e pa\*r*e. ta kii
+ko\*r*e \*p*e\*t*e Hoy, ta po\*r*e bol\*b*ea. 
+Aapatoto Horo\*ph*er ma\*p*er \*c*in/ta multu\*b*i \*r*e\*kh*e
+kii \*l*ekha Ja\*b*e tar \*c*in/ta kora Jak.
+
+%%%%%%%%%%%%%%%%%%%%
+\section{baNNGla \*l*ekha~: dha\*p*e dha\*p*e}
+\subsection{pRothom dhap~: shud/dho sWor O bYoNJ/jon}
+%%%%%%%%%%%%%%%%%%%%
+baNNGla \*l*ekhar kotha UTh\*l*eI soko\*l*e bYo\*t*ibYos/to Ho\*y*e
+pRosh/no ko\*r*en, `Juk/tobYoNJ/jon kii ko\*r*e \*l*ekha Ho\*b*e bolun
+\*t*ea?' --- Aamar Anu\*r*eadh, E \*c*in/ta multu\*b*i
+rakhun, tar Aa\*g*e Aa\*r*ea A\*n*ek kotha bolar Aa\*ch*e.
+
+sob\*c*e\*y*e Aa\*g*e bola Jak, shud/dho bYoNJ/jongu\*l*ea kiibha\*b*e
+\*l*ekha Ho\*b*e. \ref{t:conso} nom/bor cho\*k*e Aa\*m*i
+po\*r*i\*b*eshon kor\*ch*i EI tothYo. lom/balo\*m/b*i pNNac\*T*i
+bo\*rh*ea bhag Aa\*ch*e chok\*T*i\*t*e. pRo\*t*i bha\*g*er mo\*dhY*e
+du\*T*i ko\*r*e \*j*i\*n*is \*l*ekha --- tiir\*c*i\*n/H*er Dan
+\*d*i\*k*e baNNGla bor/Nogu\*l*ea, bNNa\*d*i\*k*e Aa\*ch*e ta chapar
+jonYo \tex\ ba \latex\ phaI\*l*e kii \*l*ikh\*t*e Ho\*b*e. EkI kayday
+\ref{t:vow} nom/bor cho\*k*e \*d*eOya Ho\*l*ea sob ko\*T*i
+\*b*ishud/dho sWorobor/No.
+%%
+%%
+\begin{table}[hhh]
+\begin{center}
+\caption{baNNGla shud/dho bYoNJ/jon.\label{t:conso}}
+\begin{tabular}
+{||c|@{$\to$}|c||c|@{$\to$}|c||c|@{$\to$}|c||c|@{$\to$}|c||c|@{$\to$}|c||}
+\hline
+\cinho k & \cinho {kh} & \cinho g & \cinho{gh} & \cinho {NG} \\ 
+\hline
+\cinho c & \cinho {ch} & \cinho j & \cinho{jh} & \cinho {NJ} \\ 
+\hline
+\cinho T & \cinho {Th} & \cinho D & \cinho{Dh} & \cinho {N} \\ 
+\hline
+\cinho t & \cinho {th} & \cinho d & \cinho{dh} & \cinho {n} \\ 
+\hline
+\cinho p & \cinho {ph} & \cinho b & \cinho{bh} & \cinho {m} \\ 
+\hline
+\cinho J & \cinho r & \cinho l & \cinho H & \cinho {kK} \\ 
+\hline
+\cinho {sh} & \cinho {Sh} & \cinho s & \cinho{rh} & \cinho {rhh} \\ 
+\hline
+\cinho y & \cinho {t//} & \cinho {NNG} & \cinho{h} & \cinho {NN} \\ 
+\hline
+\end{tabular}
+%%
+\\ \bigskip
+%%
+\caption{baNNGla shud/dho sWorbor/No.\label{t:vow}}
+\begin{tabular}
+{||c|@{$\to$}|c||c|@{$\to$}|c||c|@{$\to$}|c||c|@{$\to$}|c||}
+\hline
+\cinho A & \cinho {Aa} & \cinho I & \cinho{II} \\ 
+\hline
+\cinho U & \cinho {UU} & \cinho {RR} & \multicolumn{2}{|c||}{}\\ 
+\hline
+\cinho E & \cinho {OI} & \cinho O & \cinho{OU} \\ 
+\hline
+\end{tabular}
+%
+\end{center}
+\end{table}
+%%
+
+shudhu EI \*d*i\*y*e AboshYo khub \*b*e\*sh*i shob/do \*l*ekha Ja\*b*e
+na, \*k*enona sWoro\*c*in/Hogu\*l*i \*sh*ekha Hoy\*n*i
+Ekho\*n*ea. \*k*in/tu \ref{t:vow} nom/bor chok \*th*e\*k*eI Ek\*T*i
+sWoro\*c*in/Ho jana Ja\*c/ch*e. jan\*t*e par\*ch*i, Aa-kar \*l*ekhar
+jonYo phaI\*l*e bosa\*t*e Hoy `\verb!a!'. `\totype{A}' TaIp kor\*l*e
+chapa Ho\*b*e `A'. tar Dan\*d*i\*k*e `\totype{a}' bosa\*l*e `A'-Er
+Dan\*d*i\*k*e `Aa'-kar bo\*s*e \*t*{oi}\*r*i Ho\*c/ch*e `Aa'.  EI
+Ek\*T*i sWoro\*c*in/Ho\*k*e som/bol ko\*r*eI \*k*ichu kotha
+\*l*i\*kh*e \*d*ekha Jak. Dan \*d*i\*k*e baNNGla, Aar ta \*l*ekhar
+jonYo phaI\*l*e Ja TaIp kor\*t*e Ho\*b*e ta bNNa\*d*i\*k*e.
+
+%%
+\begin{quote}
+\begin{center}
+\demo{EI}
+\demo{Is}
+\demo{Oh}
+\demo{UT}
+\demo{lal jama}
+\demo{Dan-bNNa} 
+\demo{Aata na, AaTa}
+\demo{Aakash-batas}
+\demo{Aasa-JaOya}
+\demo{Aam-jam-kNNaThal}
+\demo{ma-baba}
+\demo{dadabhaI calbhaja khaI}
+\end{center}
+\end{quote}
+%%
+EI por/Ja\*y*e UdaHoroN Aar ba\*rh*i\*y*e labh \*n*eI. tar \*c*e\*y*e
+boroNNG AnYanYo sWoro\*c*in/Ho kii bha\*b*e \*l*ekha Jay ta \*sh*ekhar
+\*c*eSh/Ta kora Jak.
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{\*dW*itiiyo dhap~: sWor\*c*in/Ho}
+%%%%%%%%%%%%%%%%%%%%
+baNNGlay sWoro\*c*in/Ho \*m*eaT no\*T*i. \*s*egu\*l*ea chapabar jonYo
+kii kii TaIp kor\*t*e Ho\*b*e, ta \*d*eOya Ho\*l*ea \ref{t:vow+}
+nom/bor cho\*k*e.
+%%
+\begin{table}[htb]
+\caption{baNNGla sWor\*c*in/Ho.\label{t:vow+}}
+\begin{center}
+\begin{tabular}{||c|@{$\to$}|c||c|@{$\to$}|c||c|@{$\to$}|c||}
+\hline
+\cinho  a & \cinho  i & \cinho { ii} \\  
+\hline
+\cinho  u & \cinho { uu} & \cinho { rR} \\ 
+\hline
+\cinho e & \cinho { oi} & \cinho { ou} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+%%
+E\*d*er mo\*dhY*e Ek\*T*i Ho\*l*ea `Aa'-ka\*r*er \*c*in/Ho, tar kotha
+Aa\*g*eI bola Ho\*y*e\*ch*e. tar po\*r*e Aa\*ch*e HRosWo-I Aar
+diir/gho-II ka\*r*er \*c*in/Ho, Atohpor HRosWo-U O diir/gho-UU kar. Er
+po\*r*er \*t*in\*T*i Ho\*l*ea JothakRo\*m*e RR-kar, E-kar, OI-kar.
+
+tar po\*r*e O-ka\*r*er jonYo \*k*ichu \*n*eI. karoNTa Aamra sobaI
+ja\*n*i --- \*k*ea\*n*ea bYoNJ/jo\*n*e O-kar \*b*eajha\*t*e \*g*e\*l*e
+Aamra tar bNNa\*d*i\*k*e EkTa E-ka\*r*er \*c*in/Ho bosaI, Aar
+Dan\*d*i\*k*e bosaI Aa-ka\*r*er \*c*in/Ho. Aabar OU-kar \*b*eajha\*t*e
+\*g*e\*l*eO bNNa\*d*i\*k*e EkTa E-ka\*r*er \*c*in/Ho la\*g*e, to\*b*e
+E \*kK*e\*tR*e Dan\*d*i\*k*e Ja bo\*s*e \*s*e\*T*i Ek\*T*i Aalada
+\*c*in/Ho, \ref{t:vow+} nom/bor cho\*k*e \*s*eITaI shudhu
+\*d*ekha\*n*ea Ho\*y*e\*ch*e.  Ja \*H*eak, \ref{t:vow+} nom/bor chok
+Aama\*d*er Ha\*t*e E\*s*e JaOyar pho\*l*e Eba\*r*e boHu shob/do Aamra
+\*l*ikh\*t*e par\*b*ea, ko\*y*ekTa UdaHoroN \*d*eOya Jak.
+%%
+\begin{quote}
+\begin{center}
+\demo{shudhu JaOya-Aasa}
+\demo{suduur Atiit}
+\demo{lal gan, niil sur}
+\demo{rush ciin japan}
+\end{center}
+\end{quote}
+%%
+
+EkTu lokKYo kor\*l*e bujh\*t*e par\*b*en, EI sob UdaHoro\*N*er
+mo\*dhY*e HRosWo-I kar ba E-kar \*n*eI \*k*ea\*n*ea
+sho\*b/d*e. I\*c/ch*e ko\*r*eI Aa\*m*i E\*rh*i\*y*e \*g*e\*ch*i EI
+\*c*i\*n/H*er bYoboHar. tar karoN bol\*ch*i EkTu po\*r*e. tar Aa\*g*e
+AnYo Ek\*T*i kotha bo\*l*e \*n*i\*t*e caI.
+
+dhora Jak Aamra \*l*ikh\*t*e caI `somoy' shob/doTa. kii TaIp kor\*t*e
+Ho\*b*e? \ref{t:conso} nom/bor chok \*th*e\*k*e Er Ut/tor
+po\*r*iSh/kar~: \totype{smy}. taHo\*l*eI
+\totype{s}-Er jaygay chapa Ho\*b*e `s', \totype{m}-Er jaygay `m',
+\totype{y}-Er jaygay `y' --- Ar/that// sob \*m*i\*l*i\*y*e `somoy'.
+
+E Ut/tor \*Th*ik. so\*tY*iI taI chapa Ho\*b*e. mush\*k*ilTa Ho\*l*ea,
+TaIp kora phaIlTar \*d*i\*k*e Jo\*d*i po\*r*e takan, taHo\*l*e
+\*s*ekha\*n*e \totype{smy} \*d*e\*kh*e OTa \*J*e `somoy' ta \*b*eajha
+duhsadhYo Ho\*b*e. ko\*m/p*iUTa\*r*e \*l*ekhar sob\*c*e\*y*e bo\*rh*ea
+su\*b*idhaI Ho\*l*ea EI \*J*e, Ekbar phaI\*l*e \*k*ichu \*l*ekhar
+po\*r*eO barbar ta po\*rh*e tar po\*r*ibor/ton po\*r*imar/jon
+po\*r*ibor/dhon ItYa\*d*i kora Jay. phaI\*l*e \*k*eathay kii Aa\*ch*e
+ta-I Jo\*d*i \*b*eajha ko\*Th*in Hoy, taHo\*l*e EI sob kaj kor\*t*e
+khubI \*b*eg \*p*e\*t*e Ho\*b*e.
+
+EI mush\*k*il Aa\*r*ea maratMok Ho\*b*e HRosWo-I kar ba E-ka\*r*er
+kotha dhor\*l*e. Aamra ja\*n*i, EI sWoro\*c*in/Hogu\*l*ea bo\*s*e
+soNNG\*sh/l*iSh/To bYoNJ/jo\*n*er Aa\*g*e. baNNGla totha AnYanYo
+bharotiiyo bhaShar \*l*ikhonpod/dho\*t*ir E\*T*i Ek\*T*i \*b*i\*sh*eSh
+dur/bolota, \*k*enona Uc/caro\*N*e sWorodhWo\*n*i\*T*i Aa\*s*e
+po\*r*e. \*k*in/tu ta \*n*i\*y*e kNNadu\*n*i \*g*e\*y*e \*t*ea labh
+\*n*eI, \*s*eI bha\*b*eI Aama\*d*erO \*l*ikh\*t*e Ho\*b*e. pRosh/no
+Ho\*c/ch*e, kii kora Ho\*b*e? \totype{ik} ba \totype{es} TaIp kor\*l*e
+`ik' ba `es' chapa Ho\*b*e bo\*T*e, \*k*in/tu muul phaI\*l*e po\*r*e
+ta \*d*e\*kh*e \*c*ena Ja\*b*e \*k*i soHo\*j*e?  poriikKa korar jonYo
+\*n*i\*c*er bakYo ko\*T*ir pa\*Th*ead/dhar ko\*r*e \*d*ekhun,
+E\*t*eakKon Ja Ja bola Ho\*y*e\*ch*e ta bYoboHar ko\*r*e:
+%%
+\begin{quote}
+\totype{smy ker Jid Aaset par toeb edkha Heb.}\\%[4mm]
+\totype{eraed ekhla na koraI bhaela.}
+\end{quote}
+%%
+Hoy\*t*ea bol\*b*en, A\*bhY*es Ho\*y*e Ja\*b*e. Hoy\*t*ea
+Ho\*b*e. tobuO su\*b*i\*dh*e ko\*r*e \*d*eOyar jonYo Aa\*m*i du\*T*i
+bYobos/tha ko\*r*e \*r*e\*kh*e\*ch*i. Eba\*r*e \*s*egu\*l*ea \*d*ekha
+Jak. 
+
+pRothom\*T*i `somoy'-jatiiyo shob/do \*n*i\*y*e. \ref{t:vow} O
+\ref{t:vow+} nom/bor cho\*k*e \*d*e\*kh*e\*ch*en, sWoro\*c*i\*n/H*er
+jonYo bYoboHar kora Ho\*c/ch*e INNG\*r*i\*j*ir \*ch*ea\*T*ea Ha\*t*er
+bor/No, shud/dho sWorodhWo\*n*ir jonYo bo\*rh*ea Ha\*t*er. \*J*emon
+\demo{ u} EboNNG \demo{U}. \*t*em\*n*i \demo{O}, \*k*in/tu `O'-kar
+\*l*ekhar jonYo Aalada \*k*ea\*n*ea \*c*in/Ho la\*g*e na bo\*l*e
+\*ch*ea\*T*ea Ha\*t*er `\totype{o}' \*b*ekar. ETa\*k*eI Aa\*m*i
+ka\*j*e la\*g*i\*y*e\*ch*i. TaIp korar somoy \*J*e \*k*ea\*n*ea jaygay
+Jo\*d*i `\totype{o}' TaIp ko\*r*en, chapay \*s*ekha\*n*e \*k*ichuI
+Aas\*b*e na. Ar/that// `somoy' chapa\*t*e \*g*e\*l*e \totype{smy}
+\*l*ikh\*l*eO \*J*emon col\*b*e, \*t*em\*n*i \totype{somoy}
+\*l*ikh\*l*eO kar/Jo\*s*i\*d/dh*i Ho\*b*e. \*k*in/tu \*dW*itiiyo
+bha\*b*e \*l*ikh\*l*e A\*n*ek soHojpaThYo Ho\*b*e muul \tex\ ba
+\latex\ phaIl. \*k*ichu UdaHoroN \*d*ekha Jak:
+%%
+\begin{quote}
+\begin{center}
+\demo{polash boron pal}
+\demo{somoy Aamar naI}
+\demo{kolkata moHanogorii}
+\demo{bagbajar EboNNG bhobaniipur Elaka}
+\end{center}
+\end{quote}
+%%
+Aamar pRos/tab, EI bha\*b*eI \*l*ikhun, Hat \*p*e\*k*e JaOyar
+po\*r*eO. Hoy\*t*ea mo\*n*e Ho\*t*e pa\*r*e, `\totype{o}' TaIp
+kor\*t*e phaltu somoy noSh/To Ho\*b*e. \*b*ishWas korun, `\totype{o}'
+TaIp na korar jonYo somoy noSh/To Ho\*b*e som/bhoboto Aa\*r*ea A\*n*ek
+\*b*e\*sh*i.  
+
+Ekhon \*k*eU bol\*t*e pa\*r*en, `\totype{o}' TaIp kor\*l*e Jo\*d*i
+chapay \*k*ichuI na \*d*ekha Jay taHo\*l*e \totype{somoy} na
+\*l*i\*kh*e \totype{somoyo} ba \totype{soomooooyo} TaIp kor\*l*eO
+\*t*ea chapay tar phol EkI Ho\*b*e. Ut/tor Ho\*c/ch*e, `HNNYa
+Ho\*b*e'. Jo\*t*eagu\*l*ea `\totype{o}' bosa\*l*e Aapnar porh\*t*e
+su\*b*idha Hoy, to\*t*eagu\*l*eaI bosa\*b*en.
+
+EIbar porobor/tii pRos/tab. Aa\*g*eI bo\*l*e\*ch*i, `\totype{ik}' TaIp
+kor\*l*e `ik' chapa Ho\*b*e. Aa\*m*i Ek\*T*i \*b*ikol/po pRos/tab
+\*d*i\*c/ch*i. UdaHoro\*N*er saHa\*JY*e \*b*eajha Jak~:
+%%
+\begin{quote}
+\begin{center}
+\Demo{$\backslash$*k*i}{\*k*i}
+\Demo{$\backslash$*HNN*e $\backslash$*HNN*e}{\*HNN*e \*HNN*e}
+\Demo{tu$\backslash$*m*i
+E$\backslash$*s*e$\backslash$*ch*i$\backslash$*l*e porshu}
+{tu\*m*i E\*s*e\*ch*i\*l*e porshu}
+\end{center}
+\end{quote}
+%%
+
+
+\tex\ ba \latex\ bYoboHar korar suu\*tR*e Aapnara \*n*ish/coyI
+ja\*n*en, EI pod/dho\*t*i\*t*e $\backslash$ \*c*in/Ho\*T*i \*d*i\*y*e
+\*b*eajha\*n*ea Hoy \*k*ea\*n*ea \*n*i\*r/d*esh. baNNGla
+Horophgu\*l*ear mo\*dhY*eI Aa\*m*i Emon EkTa bYobos/tha ko\*r*e
+\*r*e\*kh*e\*ch*i Ja\*t*e `\totype{$\backslash$*a*b}' jatiiyo Ek\*T*i
+\*j*i\*n*ish TaIp kora Ho\*l*e ko\*m/p*iUTa\*r*er ka\*ch*e Ek\*T*i
+\*b*i\*sh*eSh \*n*i\*r/d*esh Ja\*c/ch*e. \*s*e\*T*i Ho\*l*ea, du\*T*ea
+tara \*c*i\*n/H*er majhkha\*n*e Ja Aas\*b*e, ta \*n*i\*y*e Aapatoto
+\*k*ichu \*k*ea\*r*ea na. \*dW*itiiyo tara \*c*i\*n/H*er po\*r*e Ja
+Aas\*b*e, \*s*eTa\*k*e pRotho\*m*e \*ch*e\*p*e naO. tar po\*r*e
+cha\*p*ea duI tarar modhYobor/tii ANNGsho. tar ma\*n*e
+`\totype{$\backslash$*a*b}' TaIp kor\*l*e chapa Ho\*b*e `\totype{ba}',
+`\totype{$\backslash$*abc*d}' TaIp kor\*l*e chapa Ho\*b*e
+`\totype{dabc}'.  taI `\*k*i' \*l*ikh\*t*e Ho\*l*e TaIp kora Jay
+`\totype{$\backslash$*k*i}', `\*s*e' \*l*ikh\*t*e Ho\*l*e
+`\totype{$\backslash$*s*e}'.
+
+E\*t*e su\*b*idha kii Ho\*l*ea ta \*b*eajhabar jonYo Aa\*g*e \*l*ekha
+du\*T*i bakYo EI bha\*b*e \*l*i\*kh*e \*d*ekha\*c/ch*i.
+%%
+\begin{quote}
+\totype{somoy ko$\backslash$*r*e Jo$\backslash$*d*i
+Aas$\backslash$*t*e paro to$\backslash$*b*e $\backslash$*d*ekha
+Ho$\backslash$*b*e.}\\ 
+\totype{$\backslash$*r*ea$\backslash$*d*e $\backslash$*kh*ela na koraI
+bha$\backslash$*l*ea.} 
+\end{quote}
+%%
+Aasha ko\*r*i \*d*e\*kh*eI \*b*eajha Ja\*c/ch*e su\*b*idhaTa kii. EI
+bha\*b*e \*l*ikh\*l*e phaI\*l*e porha soHoj. Jo\*d*i `$\backslash$'
+EboNNG tara \*c*in/Hogu\*l*ea bad \*d*i\*y*e Jan porhar somoy,
+taHo\*l*e pRay \*r*eamok bor/Nomalay \*l*ekha baNNGlar mo\*t*eaI
+\*d*ekh\*t*e la\*g*e.
+
+`O'-kar \*d*i\*t*e Ho\*l*e bNNa\*d*i\*k*e Jay `E'-kar Aar
+Dan\*d*i\*k*e `Aa'-kar, taI `r'-y `O'-kar \*d*i\*t*e Ho\*l*e TaIp
+kor\*t*e Ho\*b*e `\totype{$\backslash$*r*ea}'. \*dW*itiiyo tarar
+porobor/tii `\totype{e}' co\*l*e Ja\*b*e `r'-Er Aa\*g*e, tar po\*r*e
+chapa Ho\*b*e `Aa'-ka\*r*er \*c*in/Ho. \*t*em\*n*i, `OU'-kar
+\*d*i\*t*e Ho\*l*eO Ek\*T*i `E'-ka\*r*er \*c*in/Ho\*k*e paTha\*t*e
+Ho\*b*e bYoNJ/jo\*n*er Aa\*g*e, taI \*dW*itiiyo tarar po\*r*e TaIp
+kor\*t*e Ho\*b*e `\totype{eou}'. Aabar `OI'-kar \*d*i\*t*e \*g*e\*l*e
+\*d*ekh\*ch*i, `OI'-ka\*r*er \*c*in/Ho\*T*i TaIp kor\*t*e Hoy
+`\totype{oi}' \*l*i\*kh*e. E\*kK*e\*tR*e EI `\totype{o}' EboNNG
+`\totype{i}' du\*T*ea\*k*eI co\*l*e Aas\*t*e Ho\*b*e bYoNJ/jo\*n*er
+Aa\*g*e, taI O du\*T*i\*k*e \*g*eaSh/Thiibod/dho ko\*r*e \*d*i\*t*e
+Ho\*b*e `\verb!{oi}!' \*l*i\*kh*e. E\*t*e TaI\*p*er \*b*eajha Aar
+EkTu bha\*r*i Ho\*b*e bo\*T*e, \*k*in/tu `OI'-kar baNNGlay E\*t*eaI
+kom bYoboHrRto Hoy \*J*e E \*n*i\*y*e matha ghamabar \*k*ea\*n*ea
+Ar/tho Hoy na. ko\*y*ek\*T*i shob/do \*l*i\*kh*e mok\*sh*ea ko\*r*e
+\*n*eOya Jak EI sob sWoro\*c*in/Ho.
+%%
+\begin{quote}
+\begin{center}
+\Demo{tu$\backslash$*m*i
+bo$\backslash$*l*e$\backslash$*ch*i$\backslash$*l*e} {tu\*m*i
+bo\*l*e\*ch*i\*l*e} 
+\Demo{$\backslash$*g*eoutom}{\*g*eoutom}
+\Demo{$\backslash$*ch*eou nac}{\*ch*eou nac}
+\Demo{$\backslash$*kh*$\{$oi$\}$ Aar $\backslash$*d*$\{$oi$\}$ khaO}{\*kh*{oi}
+Aar \*d*{oi} khaO} 
+\Demo{$\backslash$*d*$\{$oi$\}\backslash$*b*e tu$\backslash$*m*i
+kokhon}
+{\*d*{oi}\*b*e tu\*m*i kokhon}
+\end{center}
+\end{quote}
+%%
+Ekha\*n*e EkTa kotha bola Jak. `OI'-kar \*l*ikh\*t*e \*g*i\*y*e
+Aama\*d*er `\totype{oi}' TaIp ko\*r*e ta\*k*e bokRobon/dhoniir
+mo\*dhY*e pu\*r*e \*d*i\*t*e Ho\*c/ch*e. Athoco `\*kh*{oi}'
+\*l*ikh\*t*e \*g*i\*y*e `\totype{kh}' TaIp ko\*r*e ta\*k*e \*k*in/tu
+\*k*ea\*n*ea bon/dhoniir mo\*dhY*e pur\*t*e Ho\*c/ch*e na. du\*T*ea
+tara\*c*i\*n/H*er mo\*dhY*e Ja-I thak na \*k*eno, tar pu\*r*eaTaI
+co\*l*e Ja\*b*e po\*r*e.
+
+E\*t*ea UdaHoroN EboNNG E\*t*ea Aa\*l*eaconar po\*r*e sabalok Ho\*y*e
+\*g*e\*ch*i Aamra, taI Ebar shob/do ba \*ch*ea\*T*ea bakYo
+\*ch*e\*rh*e Aa\*r*ea bo\*rh*easo\*rh*ea \*k*ichu \*l*ekhar \*c*eSh/Ta
+kora Jak. bNNa\*y*e AtulpRosad \*s*e\*n*er Ek\*T*i gan baNNGla
+Horo\*ph*e, DaI\*n*e muul \latex\ phaI\*l*e Ja TaIp ko\*r*e paOya
+\*g*e\*l*ea EI ga\*n*er podgu\*l*ea. \latex\ na Ho\*y*e shudhu \tex\
+Ho\*l*e \verb!\begin{verse}! Aar \verb!\end{verse}! col\*b*e na,
+\*k*enona Ogu\*l*ea \latex-ErI \*b*i\*sh*iSh/To \*n*i\*r/d*esh.
+
+
+
+%%%%%%%%%%%%%%%%
+%
+\begin{minipage}{.4\textwidth}
+\begin{verse}
+Jokhon tu\*m*i gaOyaO gan \\
+tokhon Aa\*m*i gaI.\\
+gan\*T*i Jokhon Hoy somapon \\
+\*t*eamar pa\*n*e caI..
+
+Aa\*r*ea \*k*i \*m*ear gaI\*t*e Ho\*b*e\\
+noyonjo\*l*e naI\*t*e Ho\*b*e\\
+Aa\*r*ea \*k*i \*m*ear caI\*t*e Ho\*b*e \\
+\*d*i\*l*e na Ja taI..
+
+\*J*e sur tu\*m*i \*g*e\*y*e\*ch*i\*l*e\\
+\*J*e kotha\*T*i ko\*y*e\*ch*i\*l*e\\
+ba\*r*e ba\*r*e Aa\*m*i ta\*r*e \\
+JaI \*J*e bhu\*l*e JaI.
+
+Ebar tu\*m*i \*b*ijon ra\*t*e\\
+gan\*T*i dho\*r*ea Aamar sa\*th*e\\
+\*t*eamar O{I} Ektara\*t*e \\
+sur\*T*i \*m*ear \*m*ilaI..
+\end{verse}
+\end{minipage}
+%%
+%%
+\begin{minipage}{.6\textwidth}
+\begin{verbatim}
+\begin{verse}
+Jokhon tu\*m*i gaOyaO gan \\
+tokhon Aa\*m*i gaI.\\
+gan\*T*i Jokhon Hoy somapon \\
+\*t*eamar pa\*n*e caI..
+
+Aa\*r*ea \*k*i \*m*ear gaI\*t*e Ho\*b*e\\
+noyonjo\*l*e naI\*t*e Ho\*b*e\\
+Aa\*r*ea \*k*i \*m*ear caI\*t*e Ho\*b*e \\
+\*d*i\*l*e na Ja taI..
+
+\*J*e sur tu\*m*i \*g*e\*y*e\*ch*i\*l*e\\
+\*J*e kotha\*T*i ko\*y*e\*ch*i\*l*e\\
+ba\*r*e ba\*r*e Aa\*m*i ta\*r*e \\
+JaI \*J*e bhu\*l*e JaI.
+
+Ebar tu\*m*i \*b*ijon ra\*t*e\\
+gan\*T*i dho\*r*ea Aamar sa\*th*e\\
+\*t*eamar O{I} Ektara\*t*e \\
+sur\*T*i \*m*ear \*m*ilaI..
+\end{verse}
+\end{verbatim}
+\end{minipage}\bigskip
+
+Aabar mo\*n*e ko\*r*i\*y*e \*d*i\*c/ch*i, EI bha\*b*eI \*J*e TaIp
+kor\*t*e Ho\*b*e Emon \*k*ea\*n*ea badhokota
+\*n*eI. `\totype{noyonjo$\backslash$*l*e}' TaIp na ko\*r*e
+`\totype{nynjel}' TaIp kor\*l*eO chapay po\*r*iNo\*t*i EkI
+Ho\*t*ea. \*J*e bha\*b*e Opo\*r*e \*d*ekha\*n*ea Ho\*y*e\*ch*e,
+tar su\*b*idha kii \*s*e kotha Aa\*g*eI bola Ho\*y*e\*ch*e.
+
+ga\*n*er EI podgu\*l*ea \*l*ikh\*t*e Aar Ek\*T*i notun \*j*i\*n*ish
+bYoboHar kor\*t*e Ho\*y*e\*ch*e, \*s*e\*T*ir kotha Ebar
+bo\*l*i. \ref{t:vow} nom/bor chok \*th*e\*k*e \*d*ekha Ja\*c/ch*e,
+shudhu `\totype{O}' TaIp kor\*l*e chapa Ho\*b*e `O', shudhu
+`\totype{I}' kor\*l*e chapa Ho\*b*e `I', Athoco pashapa\*sh*i
+du\*T*eaI \*r*e\*kh*e `\totype{OI}' TaIp kora Aa\*ch*e \*d*ekh\*l*eI
+ko\*m/p*iUTar du\*T*ea\*k*eI \*sh*i\*k*ey tu\*l*e chap\*b*e
+`OI'. \*s*eI rokomI bola Aa\*ch*e ko\*m/p*iUTar\*k*e.  pRosh/no
+UTh\*t*e pa\*r*e, taHo\*l*e so\*tY*i so\*tY*iI Jo\*d*i Aa\*m*i `OoI'
+chapa\*t*e caI, taHo\*l*e kii TaIp kor\*b*ea? Er Ek\*T*i Ut/tor
+\*d*eOya Aa\*ch*e ga\*n*er mo\*dhY*e --- `\totype{O$\{$I$\}$}' ba
+`\totype{$\{$O$\}$I}' TaIp kor\*l*eI muul phaI\*l*e `\totype{O}' EboNNG
+`\totype{I}' Aar pashapa\*sh*i thak\*ch*e na, taI ko\*m/p*iUTarO
+\*k*ichuI \*bh*e\*l/k*i \*d*ekha\*b*e na, `O' \*l*i\*kh*e tarpor `I'
+chapa\*b*e, Opo\*r*er UdaHoro\*N*e \*J*emon
+ko\*r*e\*ch*e. ko\*m/p*iUTar\*k*e du\*T*ea \*m*i\*sh*i\*y*e \*d*eOyar
+EI \*bh*e\*l/k*i \*th*e\*k*e \*n*ibrRt/to kora Jay Aa\*r*ea Ek\*T*i
+Upa\*y*e, ta Ho\*l*ea, majhkha\*n*e Ek\*T*i `\totype{o}' Dhu\*k*i\*y*e
+`\totype{OoI}' TaIp ko\*r*e.
+
+Juk/tobYoNJ/jo\*n*er kotha Aa\*l*eacona korar Aa\*g*e Aar EkTu
+\*l*ekha A\*bhY*es ko\*r*e \*n*eOya Jak. Eba\*r*e subhaSh
+mu\*kh*eapadhYa\*y*er Ek\*T*i ko\*b*ita. ko\*b*itar nam `parapar'.
+
+%%%%%%%%%%%%%%%%
+\bigskip
+%
+\begin{minipage}{.32\textwidth}\parskip=10pt
+Aamra \*J*eno baNNGla \*d*e\*sh*er\\ 
+\*c*ea\*kh*er du\*T*i tara.
+\end{minipage}
+%%
+\begin{minipage}{.62\textwidth}
+\begin{verbatim}
+Aamra \*J*eno baNNGla \*d*e\*sh*er\\ 
+\*c*ea\*kh*er du\*T*i tara.
+\end{verbatim}
+\end{minipage}\medskip
+
+%
+\begin{minipage}{.32\textwidth}
+majhkha\*n*e nak UNN\*c*i\*y*e Aa\*ch*e ---\\
+thakuk \*g*e paHara.
+\end{minipage}
+%%
+%%
+\begin{minipage}{.62\textwidth}
+\begin{verbatim}
+majhkha\*n*e nak UNN\*c*i\*y*e Aa\*ch*e ---\\
+thakuk \*g*e paHara.
+\end{verbatim}
+\end{minipage}\medskip
+
+%
+\begin{minipage}{.32\textwidth}
+du\*y*ea\*r*e \*kh*il.\\
+Tan \*d*i\*y*e taI\\
+khu\*l*e \*d*ilam jan:/la. 
+\end{minipage}
+%%
+\begin{minipage}{.62\textwidth}
+\begin{verbatim}
+du\*y*ea\*r*e \*kh*il.\\
+Tan \*d*i\*y*e taI\\
+khu\*l*e \*d*ilam jan:/la.
+\end{verbatim}
+\end{minipage}\medskip
+
+%
+\begin{minipage}{.32\textwidth}
+Opa\*r*e \*J*e baNNGla\*d*esh\\
+Epa\*r*eO \*s*eI baNNGla.
+\end{minipage}
+%%
+%%
+\begin{minipage}{.62\textwidth}
+\begin{verbatim}
+Opa\*r*e \*J*e baNNGla\*d*esh\\
+Epa\*r*eO \*s*eI baNNGla.
+\end{verbatim}
+\end{minipage}
+\medskip
+
+%%%%%%%%%%%%%%%%%%%%
+E\*T*i \*l*ikh\*t*e \*g*i\*y*e Ek\*T*i barh\*t*i pRa\*p/t*i
+Ho\*y*e\*ch*e 7m laI\*n*e. \*s*ekha\*n*e \*d*ekha\*n*ea Ho\*y*e\*ch*e
+Hoson/to \*c*in/Ho kii ko\*r*e TaIp kor\*t*e Hoy.
+%%
+\begin{quote}
+\begin{center}
+\demo{mon:/Ta Aamar}
+\Demo{bak:/$\backslash$*d*ebii}{bak:/\*d*ebii}
+\end{center}
+\end{quote}
+%%
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{trRtiiyo dhap~: Juk/tbYoNJ/jon}
+%%%%%%%%%%%%%%%%%%%%
+Aamra Jo\*d*iO Juk/tobYoNJ/jon \*n*i\*y*e sob\*c*e\*y*e toTos/tho
+tha\*k*i, EI \*kK*e\*tR*e \*s*egu\*l*ea boroNNG `I'-kar ba
+`OI'-ka\*r*er \*c*e\*y*e A\*n*ek soHoj. ko\*y*ekTa UdaHoroN \*d*i\*l*e
+kothaTa po\*r*iSh/kar Ho\*b*e Aasha kora Jay.
+%%
+\begin{quote}
+\begin{center}
+\demo{top/to}
+\demo{mos/to}
+\demo{puros/kar}
+\demo{rok/tak/to}
+\demo{gol/po}
+\demo{bak/so}
+\demo{koN/Tho}
+\demo{Aac/cha}
+\demo{Hod/do}
+\demo{pol/lob}
+\demo{ran/na}
+\demo{Aanon/do}
+\demo{boson/to}
+\demo{Am/bor}
+\demo{Aarom/bho}
+\demo{Ap/sora}
+\demo{mot/to}
+\end{center}
+\end{quote}
+%%
+somos/to som/bhabYo Juk/tobor/No UdaHoro\*N*e \*d*ilam na, \*k*enona
+tar \*k*ea\*n*ea dorkar \*n*eI. UdaHoroNgu\*l*ea \*d*e\*kh*eI
+bujh\*t*e par\*ch*en kii ko\*r*e Juk/tobor/No chapa Ja\*b*e.  Ek
+kothay bola Jay, \*J*e du\*T*i bYoNJ/jon Juk/to Ho\*c/ch*e bana\*n*e,
+shud/dho bYoNJ/jon \*H*i\*s*e\*b*e \*s*e du\*T*i\*k*e \*l*ekhar jonYo
+Ja TaIp korar kotha \*ch*i\*l*ea taI TaIp kor\*t*e Ho\*b*e, shudhu
+majhkha\*n*e bosa\*t*e Ho\*b*e `/' \*c*in/Ho\*T*i. \*J*e sob jaygay EI
+\*n*iyo\*m*er bYo\*t*ikRom Ho\*b*e ba EI \*n*iyom \*n*i\*y*e soNNGshoy
+\*d*ekha \*d*i\*t*e pa\*r*e, \*s*eIgu\*l*eaI shudhu Aa\*l*eacona
+kor\*b*ea.
+
+E rokom \*b*i\*sh*eSh \*kK*e\*tR*er mo\*dhY*e 
+pRothom Aa\*l*eacYo \*J*egu\*l*ea\*k*e `phola' bola Hoy
+\*s*egu\*l*ea. `r'-phola, `J'-phola ItYa\*d*ir \*c*in/Ho
+\*b*eajha Ja\*b*e porobor/tii UdaHoroNgu\*l*ea \*th*e\*k*e:
+%%
+\begin{quote}
+\begin{center}
+\demo{AatMo}
+\demo{podMo}
+\demo{sMoroN}
+\demo{shMoshRu}
+\demo{bakYo}
+\demo{shoJYa}
+\demo{soHYo}
+\demo{HNNYa}
+\demo{pRothom}
+\demo{bokRo}
+\demo{shRii}
+\demo{matRa}
+\demo{kLan/to}
+\demo{pLabon}
+\demo{shWas}
+\demo{sWad}
+\end{center}
+\end{quote}
+%%
+Ar/that//, `r'-phola \*p*e\*t*e TaIp kor\*t*e Ho\*b*e `\totype{R}',
+`J'-phola (Ja\*k*e Aaso\*l*e `y'-phola bola U\*c*it) \*p*e\*t*e
+`\totype{Y}', `m'-phola \*p*e\*t*e `\totype{M}', `l'-phola \*p*e\*t*e
+`\totype{L}', `b'-phola \*p*e\*t*e `\totype{W}'. Aa\*r*ea jo\*T*il
+Juk/tobor/NoO kora \*J*e\*t*e pa\*r*e, \*J*emon
+%%
+\begin{quote}
+\begin{center}
+\demo{son/tRos/to}
+\demo{som/pRodan}
+\demo{dWon/dWo}
+\demo{Uc/chWas}
+\demo{tot/tWo}
+\demo{puN/DRobor/dhon}
+\end{center}
+\end{quote}
+%%
+A\*n*ek somo\*y*e tolay `n'-O bo\*s*e, ta\*k*e `n'-phola bola Hoy Anek
+somoy, \*k*in/tu chapar somo\*y*e E\*T*i\*k*e sadharoN
+Juk/to\*c*i\*n/H*er mo\*t*ea `\totype{/n}' \*d*i\*y*eI \*l*ikh\*t*e
+Ho\*b*e. Jotha~:
+%%
+\begin{quote}
+\begin{center}
+\demo{pRosh/no}
+\demo{mog/no}
+\demo{Jot/no}
+\demo{krRtogh/no}
+\end{center}
+\end{quote}
+%%
+\*t*em\*n*i `N'-pholar kothaO bola \*J*e\*t*e pa\*r*e, Ja \*b*eadhHoy
+shudhumatRo `kK'-Er so\*NG/g*eI bYoboHrRto Hoy. E\*T*iO \*p*e\*t*e
+Ho\*b*e `\totype{/N}' TaIp ko\*r*e:
+%%
+\begin{quote}
+\begin{center}
+\demo{tiikK/No}
+\end{center}
+\end{quote}
+%%
+
+EI `no'-pholar suutRo dho\*r*eI Aamra Ebar Juk/tobor/No \*l*ekhar
+\*dW*itiiyo bYo\*t*ikRom\*T*ir kothay Aas\*ch*i.  `n/H'
+Juk/tobor/No\*T*i soNNGs/krR\*t*er mo\*t*e `H:/+n', \*k*in/tu baNNGlay
+tar Uc/caroN Hoy `n:/H'-Er mo\*t*ea. Aa\*m*i EI \*c*in/Ho\*T*i\*k*e
+baNNGlar Uc/caro\*N*er po\*r*i\*pR*e\*kK*i\*t*e `n:/+H'-Er
+Juk/tobor/No \*H*i\*s*e\*b*eI bhaba soNG/goto mo\*n*e
+ko\*r*i. \*t*em\*n*i `N/H'-\*k*eO `N:/+H' bhabaI soNG/goto. Egu\*l*ea
+chap\*t*e caI\*l*e taI TaIp kor\*t*e Ho\*b*e JothakRo\*m*e
+\totype{n/H} O \totype{N/H}. Aar `g/Y' EI \*c*in/Ho\*T*i\*k*eO `j+NJ'
+bhaba Ju\*k/t*iHiin, taI ETa\*k*e Aa\*m*i `\totype{g/Y}' \*d*i\*y*e
+\*n*i\*r/d*esh ko\*r*e\*ch*i.
+%%
+\begin{quote}
+\begin{center}
+\demo{sayan/Ho}
+\demo{AporaN/Ho}
+\demo{g/Yan}
+\end{center}
+\end{quote}
+%%
+\*k*in/tu `H'-Er so\*NG/g*e AnYanYo phola laga\*n*ear bYapa\*r*e
+Aa\*m*i \*k*ea\*n*ea bYo\*t*ikRom ra\*kh*i\*n*i.
+%%
+\begin{quote}
+\begin{center}
+\demo{AaHLad}
+\demo{AaHWan}
+\demo{baHYo}
+\end{center}
+\end{quote}
+%%
+
+EIbar trRtiiyo \*b*i\*sh*eSh mon/tobYo. bYo\*t*ikRom na Ho\*l*eO
+\*k*ea\*n*ea \*k*ea\*n*ea Juk/tobor/No \*n*i\*y*e khoTka lag\*t*e
+pa\*r*e paTho\*k*er mo\*n*e. \*J*emon dhora Jak, `\*r*eph' kii ko\*r*e
+chapa\*n*ea Ja\*b*e? Er Ut/tor pRokaran/to\*r*e Aa\*g*eI \*d*eOya
+Ho\*y*e \*g*e\*ch*e, \*k*enona \*r*eph-Juk/to bYoNJ/jon ma\*n*e
+Aaso\*l*e ta Ek\*T*i Juk/tobYoNJ/jon Jar pRothom ANNGsho\*T*i `r'. taI
+`\totype{r/k}' TaIp kor\*l*e chapa Ho\*b*e `r/k', ItYa\*d*i. 
+
+E rokom Aa\*r*ea soNNGshoy Ho\*t*e pa\*r*e `Sh/N' \*l*ikh\*t*e
+Ho\*l*e. Er jonYo TaIp kor\*t*e Ho\*b*e `\totype{Sh/N}'.  E\*T*iO 
+bYo\*t*ikRom noy, pu\*r*eapu\*r*i \*n*iyom \*m*e\*n*e cola. tobu
+U\*l/l*ekh korlam, \*k*enona Aa\*m*i \*d*e\*kh*e\*ch*i, A\*n*e\*k*erI
+dharoNa \*J*e E\*T*i `Sh+NJ'-r Juk/toruup. E dharoNa \*Th*ik noy,
+`Sh+NJ' Juk/tobor/No soNNGs/krR\*t*e \*ch*i\*l*ea na, baNNGlayO
+\*n*eI. E\*T*i `Sh+N'.
+%%
+\begin{quote}
+\begin{center}
+\demo{gor/to}
+\demo{porobor/tii}
+\demo{krRSh/No}
+%\demo{USh/NiiSh}
+\end{center}
+\end{quote}
+%%
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{\*k*ichu \*k*ichu bo\*r/N*er AakrR\*t*i}
+%%%%%%%%%%%%%%%%%%%%
+Ebar Aa\*r*ea ko\*y*ek\*T*i UdaHoroN \*d*ekha Jak.
+%%
+\begin{quote}
+\begin{center}
+\demo{loghu-guru}
+\demo{poshu}
+\demo{baHulYo}
+\demo{bos/tu}
+\demo{ruup}
+\demo{HrRdoy}
+\end{center}
+\end{quote}
+%%
+pRothom laI\*n*e ro\*y*e\*ch*e `U'-kar Juk/to \*k*ichu bor/No. EI
+\*c*in/Hogu\*l*ea baNNGlay AnYo bha\*b*eO chapa Hoy. pu\*r*ea\*n*ea
+\*b*idYasagorii dhNNa\*c*er chapay `g+U' \*J*e bha\*b*e \*d*ekha Jay,
+ta\*t*e `U'-karTa mu\*rh*e \*g*i\*y*e A\*n*ekTa baNNGla `3'-Er
+mo\*t*ea \*d*ekhay. `sh', `r' ba `Ho'-y `U'-ka\*r*er jonYoO
+\*t*em\*n*i \*b*i\*sh*eSh \*b*i\*sh*eSh \*c*in/Ho Aa\*ch*e.
+
+Ek kothay E\*d*er\*k*e bola Jay `AsWoc/cho' \*c*in/Ho. Ar/that//
+`go'-Er \*c*i\*n/H*er sa\*th*e `U'-ka\*r*er \*c*in/Ho ju\*rh*e paOya
+Ja\*b*e na `gu'-Er jonYo \*n*i\*r/d*iSh/To \*b*idYasagorii
+\*c*in/Ho\*T*i. EkI kotha `ru' `Hu' ItYa\*d*i som/po\*r/k*eO. EI sob
+\*c*in/Ho AkaroN baHulYo, taI E\*d*er\*k*e Aa\*m*i bor/jon
+ko\*r*e\*ch*i. Ekhon boHu som/bhRan/to pRokashon soNNGs/thaO OoI
+ruupgu\*l*ea bYoboHar ko\*r*en na, baNNGla Aaka\*d*e\*m*iO Egu\*l*ear
+\*b*i\*r*eadhii. `\totype{ruu}' ba `\totype{HrR}' TaIp kor\*l*eO Ja
+chapa Ho\*b*e, ta JothakRo\*m*e `ro'-Er \*n*i\*c*e po\*r*iSh/kar
+Ek\*T*i diir/gho-UU kar EboNNG `Ho'-Er tolay po\*r*iSh/kar
+Ek\*T*i `RR'-kar.
+
+Juk/tobYoNJ/jo\*n*er \*kK*e\*tR*eO AsWoc/cho \*c*in/Hogu\*l*i\*k*e
+Jothasom/bhob bor/jon kora Ho\*y*e\*ch*e. UdaHoroN \*d*ekhun Ebar.
+%%
+\begin{quote}
+\begin{center}
+\demo{ANG/ko}
+\demo{ANG/go}
+\demo{pRobon/dho}
+\demo{sus/tho}
+\demo{pan/tho}
+\demo{Aabod/dho}
+\demo{lob/dho}
+\demo{goN/Dar}
+\end{center}
+\end{quote}
+%%
+ko\*y*ek\*T*i AsWoc/cho \*c*in/Ho AboshYo Aa\*ch*e, \*J*emon `tR',
+`bhR' ItYa\*d*i. Aamar AboshYo mot Ho\*l*ea \*J*e Egu\*l*ear mayaO
+Jo\*t*ea tarhata\*rh*i ka\*T*i\*y*e OTha Jay to\*t*eaI moNG/gol.
+
+EI bha\*b*e Juk/to\*c*in/Ho korar EkTa su\*b*i\*dh*e Ho\*l*ea EI
+\*J*e, dorkar porh\*l*e notun notun \*c*in/Ho \*t*{oi}\*r*i ko\*r*e
+\*n*eOya Jay. ko\*y*ek\*T*i som/bhabYo UdaHoroN \*d*ekha Jak.
+%%
+\begin{quote}
+\begin{center}
+\demo{UIl/son}
+\demo{Ish/kul}
+\Demo{$\backslash$*H*el/th $\backslash$*s*en/Tar}{\*H*el/th \*s*en/Tar}
+\end{center}
+\end{quote}
+%%
+E kothagu\*l*ear EI rokom bananI \*l*ekha U\*c*it ta bol\*ch*i
+na. \*k*in/tu Jo\*d*i EI rokomI banan can, taHo\*l*e ko\*m/p*iUTar
+\*n*i\*j*eI tar jonYo Juk/tobor/No \*t*{oi}\*r*i ko\*r*e \*n*e\*b*e, E
+sob Juk/tobor/No Aa\*g*e \*th*e\*k*e bana\*n*ea \*n*eI bo\*l*e
+\*k*ea\*n*ea Asu\*b*idha Ho\*b*e na.
+
+EboNNG \*Th*ik EI karo\*N*eI JNNara EI \*n*i\*r/d*e\*sh*ikay somos/to
+Juk/tobo\*r/N*er Ek\*T*i ta\*l*ika khNNuj\*b*en, tNNara ta pa\*b*en
+na. \*k*enona Juk/tobor/No A\*n*ek Ho\*t*e pa\*r*e, \*J*e sob
+Juk/tobor/No baNNGlay bYoboHrRto Hoy na taO \*l*ekha \*J*e\*t*e
+pa\*r*e. 
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{AnYanYo \*c*in/Ho}
+\subsubsection{soNNGkhYa\*c*in/Ho, Jo\*t*i\*c*in/Ho}
+%%%%%%%%%%%%%%%%%%%%
+E charhaO Aa\*r*ea \*c*in/Ho Aa\*ch*e. soNNGkhYa\*c*in/Ho
+som/po\*r/k*e bolar dorkar \*n*eI. Jo\*t*i\*c*i\*n/H*er mo\*dhY*e AnYo
+sobI pRay INNG\*r*i\*j*ir mo\*t*ea, tophat shudhu EI \*J*e
+INNG\*r*i\*j*i\*t*e Ja TaIp kor\*l*e `phuls/Top' chapa Ho\*t*ea,
+baNNGlar \*b*elay \*s*ekha\*n*e chapa Ho\*b*e dNNa\*rh*i. du\*T*i
+`phuls/Top' TaIp kor\*l*e chapa Ho\*b*e Dobol dNNa\*rh*i. Aar porpor
+\*t*in\*T*e `phuls/Top' TaIp kor\*l*e paOya Ja\*b*e \*t*in\*T*e
+\*b*in/du, Ja A\*n*ek somo\*y*e baNNGla \*l*ekhay \*b*iram
+\*c*i\*n/H*er mo\*t*ea bYoboHrRto Hoy. 
+%%
+\begin{quote}
+\begin{center}
+\demo{.}
+\demo{..}
+\demo{...}
+\end{center}
+\end{quote}
+%%
+pRosh/no\*c*in/Ho, \*b*isMoy\*c*in/Ho, koma, \*s*e\*m*i\*k*ealon
+ItYa\*d*i AnYanYo Jo\*t*i\*c*in/Ho \*t*ea baNNGlay INNG\*r*i\*j*i
+\*th*e\*k*eI E\*s*e\*ch*e, \*s*egu\*l*ea INNG\*r*i\*j*ir mo\*t*eaI
+chapa Ho\*b*e. \*t*em\*n*i INNG\*r*i\*j*i \*l*ekhar mo\*dhY*e \*J*eag
+\*c*in/Ho, bon/dhonii, ItYa\*d*i chapar jonYo Ja TaIp kor\*t*e Hoy,
+baNNGla \*l*ekhar mo\*dhY*eO \*s*eI EkI TaIp kor\*t*e Ho\*b*e.
+
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Asomiiya bhaSha}
+%%%%%%%%%%%%%%%%%%%%
+Asomiiya bhaShar \*l*i\*p*i baNNGlarI mo\*t*ea, shudhu du\*T*i tophat
+Aa\*ch*e. Ek\*T*i Ho\*l*ea An/tohs/tho bo, Jar jonYo baNNGlay Aalada
+\*k*ea\*n*ea \*c*in/Ho \*n*eI. AnYo\*T*i Ho\*l*ea `ro', ta AnYo
+bha\*b*e \*l*ekha Hoy. E du\*T*iO paOya Ja\*b*e JothakRo\*m*e
+`\totype{w}' EboNNG `\totype{rW}' TaIp kor\*l*e. Ar/that// AsomiiyaO
+\*l*ekha Ja\*b*e EI soph:/TOyar \*d*i\*y*e.
+%%
+\begin{quote}
+\begin{center}
+\demo{guwaHaTii}
+\Demo{$\backslash$*sh*ilcorW}{\*sh*ilcorW}
+\end{center}
+\end{quote}
+%%
+
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection{bho\*b*iShYo\*t*er kotha \*bh*e\*b*e}
+%%%%%%%%%%%%%%%%%%%%
+E charha Aar Ek\*T*i notun \*c*in/Ho Aa\*m*i \*r*e\*kh*e\*ch*i,
+bho\*b*iShYo\*t*e Er som/bhabYo bYoboHa\*r*er kotha
+\*bh*e\*b*e. baNNGlay boHu\*d*in \*th*e\*k*eI `AYa' Uc/caroN
+\*b*eajha\*n*ear jonYo Ek\*T*i bo\*r/N*er pRo\*y*eajoniiyotar kotha
+bola Ho\*y*e Aas\*ch*e. Aa\*m*i Er jonYo Ek\*T*i \*p*eTkaTa `E'
+(EboNNG \*p*eTkaTa `E'-kar) bYoboHa\*r*er pokKopatii. EI du\*T*ea
+paOya Ja\*b*e JothakRo\*m*e `\totype{AA}' O `\totype{aa}' TaIp
+kor\*l*e. UdaHoroN~:
+%%
+\begin{quote}
+\begin{center}
+\Demo{AAka $\backslash$*k*$\{$aa$\}$no E$\backslash$*l*e}
+{AAka \*k*{aa}no E\*l*e}
+\end{center}
+\end{quote}
+%%
+\*c*in/Ho\*T*i Jo\*d*i pochon/do na Hoy, \*b*ico\*l*ito Ho\*b*en
+na. Aap\*n*i bYoboHar kor\*b*en na, ta Ho\*l*eI Ho\*l*ea!
+
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection{phNNak}
+%%%%%%%%%%%%%%%%%%%%
+sob\*sh*e\*Sh*e Aar Ek\*T*i \*b*i\*sh*eSh \*c*i\*n/H*er kotha
+bol\*b*ea. E\*T*i Ho\*l*ea `paIp' \*c*in/Ho, lom/ba Ek\*T*i dNNa\*rh*i
+(`$\mid$') \*d*i\*y*e Ja \*l*ekha Hoy ko\*m/p*iUTar soNNGkRan/to
+\*l*ekhay. baNNGla Horo\*ph*e \*l*ekhar somo\*y*e EI \*c*in/Ho\*T*i
+TaIp kor\*l*e chapay \*s*ekha\*n*e Aas\*b*e kha\*n*ikTa phNNak, \tex\
+ba \latex-E \verb!\kern! \*d*i\*y*eO Ja kora Jay. baNNGla \*l*ekhar
+somo\*y*e EI \*c*in/Ho\*T*i kiibha\*b*e ka\*j*e lag\*t*e pa\*r*e, ta
+\*b*eajha\*c/ch*i \*n*i\*c*er UdaHoroNgu\*l*ear madhYo\*m*e~:
+%%
+\begin{quote}
+\begin{center}
+\demo{khoT|Wa}
+\demo{IkK|Waku}
+\end{center}
+\end{quote}
+%%
+baNNGla bhaShay `To'-y `bo'-phola Hoy na khub EkTa, shudhu EI
+soNNGs/krR\*t*er `khoT|Wa' shob/doTa ka\*l*ebho\*dR*e \*d*ekha Jay. Er
+jonYo `To'-y `bo'-pholar EkTa Aalada \*c*in/Ho bana\*n*ea
+batulota. Athoco soraso\*r*i \totype{TW} TaIp kor\*l*e `bo'-pholaTa
+`To'-Er ga\*y*e \*Th*e\*k*e Jay. taI `T' Aar `\,\,W'-Er majhkha\*n*e
+`paIp' Dhu\*k*i\*y*e `bo'-pholar \*c*in/Ho\*T*i\*k*e EkTu duu\*r*e
+so\*r*i\*y*e \*d*eOya Ho\*y*e\*ch*e. to\*b*e E sob jaygay soraso\*r*i
+`\totype{kern}' bYoboHar kor\*t*eO pa\*r*en --- ta\*t*e ko\*t*eaTa
+sora\*b*en tar \*H*i\*s*eb Aapnar Ha\*t*eI thak\*b*e.
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{nana ma\*p*er, nana roko\*m*er Horoph}
+%%%%%%%%%%%%%%%%%%%%
+Er Aa\*g*e \totype{bangfont} bo\*l*e Ek\*T*i phaI\*l*er kotha bola
+Ho\*y*e\*ch*e --- \tex-E \*l*ikh\*t*e \*g*e\*l*e Ja\*k*e Aalada
+ko\*r*e bhor\*t*e Hoy, \latex-E Ja Aapna-Aap\*n*iI bhora Ho\*y*e Jay
+\totype{bbook} ba \totype{barticle}-Er madhYo\*m*e. EI phaIl\*T*ir
+pu\*r*ea nam \totype{bangfont.tex}, E\*T*i \totype{bangtex}-Er
+AnYotomo phaIl.  Er mo\*dhY*e nana baNNGla Horo\*ph*er soNNGg/Ya
+\*s/th*ir ko\*r*e \*d*eOya Ho\*y*e\*ch*e. Horophgu\*l*i \*t*in\*T*i
+\*shR*eNii\*t*e \*b*ibhok/to. pRothom\*T*i sadharoN Horoph,
+\*dW*itiiyo\*T*i bNNaka ba \*H*ela\*n*ea, trRtiiyo\*T*i kha\*n*ikTa
+coOrha Horoph. \*J*e \*J*e ma\*p*er Horoph Aa\*ch*e, ta cho\*k*er
+Aaka\*r*e \*l*i\*kh*e \*d*i\*c/ch*i, ta\*d*er nam so\*m*et.
+%%
+\begin{center}
+\begin{tabular}{|r|l|l|l|}
+\hline 
+\multicolumn{1}{|c|}{map} & \*s*eaja Horoph & bNNaka Horoph & coOrha Horoph \\ 
+\hline\hline 
+6 po\*y*en/T & \verb+\bngvi+ & \verb+\bnsvi+ & \verb+\bnwvi+ \\ 
+7 po\*y*en/T & \verb+\bngvii+ & \verb+\bnsvii+ & \verb+\bnwvii+ \\ 
+8 po\*y*en/T & \verb+\bngviii+ & \verb+\bnsviii+ & \verb+\bnwviii+ \\ 
+9 po\*y*en/T & \verb+\bngix+ & \verb+\bnsix+ & \verb+\bnwix+ \\ 
+10 po\*y*en/T & \verb+\bngx+ & \verb+\bnsx+ & \verb+\bnwx+ \\ 
+11 po\*y*en/T & \verb+\bngxi+ & \verb+\bnsxi+ & \verb+\bnwxi+ \\ 
+12 po\*y*en/T & \verb+\bngxii+ & \verb+\bnsxii+ & \verb+\bnwxii+ \\ 
+14 po\*y*en/T & \verb+\bngxiv+ & \verb+\bnsxiv+ & \verb+\bnwxiv+ \\ 
+18 po\*y*en/T & \verb+\bngxviii+ & \verb+\bnsxviii+ & \verb+\bnwxviii+ \\ 
+22 po\*y*en/T & \verb+\bngxxii+ & \verb+\bnsxxii+ & \verb+\bnwxxii+ \\ 
+25 po\*y*en/T & \verb+\bngxxv+ & \verb+\bnsxxv+ & \verb+\bnwxxv+ \\ 
+30 po\*y*en/T & \verb+\bngxxx+ & \verb+\bnsxxx+ & \verb+\bnwxxx+ \\ 
+\hline
+\end{tabular}
+\end{center}
+%%
+namgu\*l*ea mo\*n*e rakha khub shok/to noy. sadharoN baNNGla
+Horo\*ph*er nam sobI \verb!\bng! \*d*i\*y*e shuru, \*H*ela\*n*ea ({\rm
+slanted}) Horo\*ph*er nam shuru \verb~\bns~ \*d*i\*y*e, Aar coOrha
+({\rm wide}) Horo\*ph*er nam shuru \verb~\bnw~
+\*d*i\*y*e. Horophgu\*l*ear na\*m*e tar po\*r*e Ja Aa\*ch*e, ta
+Ho\*l*ea Horo\*ph*er saIj, \*r*eamok soNNGkhYa\*l*ikhon
+pod/dho\*t*i\*t*e \*l*ekha. phaI\*l*er \*J*e \*k*ea\*n*ea jaygay
+Upo\*r*eak/to \*J*e \*k*ea\*n*ea Horo\*ph*er \*n*i\*r/d*esh Jo\*d*i
+\*d*en, taHo\*l*eI tar por \*th*e\*k*e sob \*l*ekha Ho\*t*e thak\*b*e
+\*s*eI Horo\*ph*e. Aar 
+khub Al/po somo\*y*er jonYo Ek\*T*i Horoph bYoboHar ko\*r*e Aabar Jo\*d*i
+phaI\*l*er muul Horo\*ph*e \*ph*i\*r*e \*J*e\*t*e can, to\*b*e \*s*eI
+Horo\*ph*er \*n*i\*r/d*esh\*T*i bokRobon/dhoniir mo\*dhY*e \*d*i\*l*eI
+bha\*l*ea. UdaHoroN \*d*ekhun~:
+%%
+\begin{quote}
+\begin{center}
+\Demo{bRuTas, $\{\backslash$bnsxii tu$\backslash$*m*iO!$\}$ Hay!}
+{bRuTas, {\bnsxii tu\*m*iO!} Hay!}
+\end{center}
+\end{quote}
+%%
+\tex\ phaI\*l*e Jo\*d*i \*g*earha \*th*e\*k*eI 10
+po\*y*e\*n/T*e na \*l*i\*kh*e 12 po\*y*e\*n/T*e \*l*ikh\*t*e
+can, taHo\*l*e phaI\*l*er \*g*earhay \*J*ekha\*n*e \verb!\bngx!
+\*l*ikh\*t*e bola Ho\*y*e\*ch*i\*l*ea, \*s*ekha\*n*e \verb!\bngxii!
+\*l*i\*kh*e shuru kora Jay.
+
+\latex-Er Ju\*k/t*ir dhara EkTu AnYo rokom. Ekha\*n*e sob somo\*y*eI
+shuru\*t*e \verb!\bng! TaIp ko\*r*e \*n*i\*t*e Ho\*b*e. \*k*in/tu
+phaI\*l*er E\*k*eba\*r*e shuru\*t*e \verb!\documentclass! kothaTar
+po\*r*e Jo\*d*i \verb![11pt]! tha\*k*e, taHo\*l*e \verb!\bng!
+\*gh*eaShoNar pho\*l*e \*l*ekha shuru Ho\*b*e 11
+po\*y*e\*n/T*e. Jo\*d*i \verb![12pt]! tha\*k*e, taHo\*l*e \verb!\bng!
+\*gh*eaShoNar pho\*l*e \*l*ekha shuru Ho\*b*e 12 po\*y*e\*n/T*e. Aar
+Jo\*d*i \*k*ea\*n*ea po\*y*e\*n/T*er kothaI na bola tha\*k*e,
+taHo\*l*e 10 po\*y*e\*n/T*er Horo\*ph*e \*l*ekha shuru Ho\*b*e. Er
+po\*r*e \*ch*ea\*T*ea-bo\*rh*ea Horoph paOya Ja\*b*e \*J*e sob
+\*n*i\*r/d*esh bYoboHar ko\*r*e, ta Eba\*r*e \*l*ikh\*ch*i cho\*k*er
+Aaka\*r*e.
+%%
+\begin{center}
+\begin{tabular}{|r|l|l|l|}
+\hline 
+\multicolumn{1}{|c|}{Aanupa\*t*ik map} 
+& \*s*eaja Horoph & bNNaka Horoph & coOrha Horoph \\ 
+\hline\hline 
+{\rm tiny} & \verb+\tbng+ & \verb+\tbns+ & \verb+\tbnw+ \\ 
+{\rm small} & \verb+\sbng+ & \verb+\sbns+ & \verb+\sbnw+ \\ 
+{\rm normal} & \verb+\bng+ & \verb+\bns+ & \verb+\bnw+ \\ 
+{\rm large} & \verb+\lbng+ & \verb+\lbns+ & \verb+\lbnw+ \\ 
+{\rm Large} & \verb+\Lbng+ & \verb+\Lbns+ & \verb+\Lbnw+ \\ 
+{\rm LARGE} & \verb+\LBng+ & \verb+\LBns+ & \verb+\LBnw+ \\ 
+{\rm huge} & \verb+\hbng+ & \verb+\hbns+ & \verb+\hbnw+ \\ 
+{\rm Huge} & \verb+\Hbng+ & \verb+\Hbns+ & \verb+\Hbnw+ \\ 
+\hline
+\end{tabular}
+\end{center}
+%%
+AboshYo \tex-Er mo\*t*ea ko\*r*e \*n*i\*r/d*esh \*d*i\*l*eO
+\latex-E kaj Ho\*b*e, \*k*in/tu EIbha\*b*e \*l*ekhar EkTu su\*b*idha
+Aa\*ch*e. \*J*emon dhora Jak \verb+\Lbng+
+\*n*i\*r/d*esh\*T*i. phaI\*l*er shuru\*t*e \verb!\documentclass!-Er
+laI\*n*e 10 na 11 na 12 po\*y*en/T \*d*i\*y*e \*l*ekha shuru
+Ho\*y*e\*ch*e, tar Opor \*n*ir/bhor kor\*b*e EI Horoph\*T*ir
+map. \*k*in/tu Ja \*d*i\*y*eI shuru \*H*eak, \verb+\Lbng+ bol\*l*e
+ko\*m/p*iUTar Aanupa\*t*ikbha\*b*e Ek\*T*i bo\*rh*ea ma\*p*er Horoph
+\*b*e\*ch*e \*n*e\*b*e. 
+
+E\*t*e su\*b*i\*dh*eTa Ho\*l*ea EI \*J*e, \*g*eaTa phaIl\*T*i \*l*ekha
+Ho\*y*e JaOyar po\*r*eO Jo\*d*i Horo\*ph*er map bodla\*t*e I\*c/ch*e
+Hoy, taHo\*l*e shudhu \verb!\documentclass!-Er laI\*n*e
+po\*y*e\*n/T*er mapTa bod\*l*e \*d*i\*l*eI col\*b*e. \*g*eaTa
+phaI\*l*eI Horo\*ph*er saIj bod\*l*e Ja\*b*e ko\*m/p*iUTa\*r*er
+\*H*i\*s*eb mo\*t*ea. 
+
+to\*b*e \latex-E \verb!\chapter! ba \verb!\section! ItYa\*d*i
+\*n*i\*r/d*esh \*d*i\*y*e \*J*e sob AdhYay ba \*b*ibha\*g*er nam
+\*l*ekha Ho\*b*e, tar jonYo Horo\*ph*er ma\*p*er \*k*ea\*n*ea
+\*n*i\*r/d*esh 
+\*d*i\*t*e Ho\*b*e na. dhora Jak EkTa AdhYa\*y*er nam `nana
+kotha'. taHo\*l*e
+%%
+\begin{quote}
+\begin{verbatim}
+\chapter{nana kotha}
+\end{verbatim}
+\end{quote}
+%%
+\*l*ikh\*l*eI col\*b*e. ko\*m/p*iUTar \*n*i\*j*eI jan\*b*e Er jonYo
+kii ma\*p*er Horoph \*n*i\*t*e Ho\*b*e. \latex-\*k*e Jo\*d*i
+suu\*c*ipotRo bana\*t*e bo\*l*en \verb!\tableofcontents!
+\*n*i\*r/d*e\*sh*er dWara, \*s*eI suu\*c*ipo\*tR*e EI AdhY\*y*er nam
+\*k*ean ma\*p*er Horo\*ph*e Ja\*b*e, taO \totype{bangtex}-Er
+An/tor/goto \*b*i\*b*idho phaI\*l*er 
+kolYa\*N*e ko\*m/p*iUTar \*n*i\*j*eI \*Th*ik ko\*r*e \*n*i\*t*e
+par\*b*e. 
+
+\*J*e \*J*e ma\*p*er Horo\*ph*er kotha Opo\*r*e bola Ho\*l*ea, ta
+charha AnYo \*k*ea\*n*ea ma\*p*er HorophO dorkar Ho\*t*e
+pa\*r*e. \*J*emon dhora Jak, Aap\*n*i 15 po\*y*e\*n/T*er Horoph
+can. \*J*ekha\*n*e EI Horoph pRothom bYoboHrRto Ho\*b*e, tar Aa\*g*e
+EI ko\*T*i kotha TaIp kor\*t*e Ho\*b*e taHo\*l*e~:
+%%
+\begin{quote}
+\begin{verbatim}
+\font\bngxv=bang10 scaled 1500
+\end{verbatim}
+\end{quote}
+%%
+namTa Aa\*m*i \verb!\bngxv! \*d*ilam, ta na Ho\*l*eO col\*b*e. Aapnar 
+Ja I\*c/ch*e taI nam \*d*in. Er po\*r*e Jokhon \*s*eI Horoph bYoboHar
+kor\*t*e can, tokhon \*s*eI na\*m*er \*n*i\*r/d*esh \*d*i\*y*e shuru
+kor\*b*en. E som/po\*r/k*e Aa\*r*ea \*b*is/ta\*r*ito jan\*t*e Ho\*l*e 
+\tex\ \*n*i\*r/d*e\*sh*ika \*d*ekhun. 
+
+\*m*eaTa ({\rm bold}) Horoph Ekho\*n*ea Aa\*m*i \*t*{oi}\*r*i ko\*r*e
+UTh\*t*e pa\*r*i\*n*i. kRomosho kor\*b*ea. \*k*in/tu Aapatoto
+du\*dh*er sWad \*gh*ea\*l*e \*m*eTa\*n*ear mo\*t*ea EkTa bYobos/tha
+ko\*r*e \*r*e\*kh*e\*ch*i. \verb!\sh! \*l*i\*kh*e bokRobon/dhoniir
+mo\*dhY*e Ja \*l*ekha Ja\*b*e, chapar somo\*y*e ta EkTu
+Dan\*d*ik-bNN\*d*ik ko\*r*e khub kachaka\*ch*i \*t*inbar chapa
+Ho\*b*e. ta\*t*e \*m*eaTa Horo\*ph*er mo\*t*eaI \*d*ekha\*b*e. 
+UdaHoroN \*d*i\*c/ch*i~:
+%%
+\begin{quote}
+\begin{center}
+\Demo{EI bon $\backslash$sh$\{$AtYon/to$\}$ ghono}{EI bon
+\sh{AtYon/to} ghono} 
+\end{center}
+\end{quote}
+%%
+to\*b*e EI \*T*eaTka\*T*ir Ek\*T*i Asu\*b*idha Aa\*ch*e. Ek\*T*i
+\verb!\sh!  \*n*i\*r/d*e\*sh*er An/tor/goto Jo\*t*eaTuku \*l*ekha
+thak\*b*e, tar sobTaI EkI laI\*n*e chapa Ho\*b*e. \*b*e\*sh*i
+po\*r*imaN \*l*ekha Ho\*y*e \*g*e\*l*e \verb!\sh! col\*b*e na. tokhon
+pRo\*t*i\*T*i sho\*b/d*e Aalada ko\*r*e \verb!\sh! bosa\*t*e
+Ho\*b*e. EI jonYoI Aaladabha\*b*e \*m*eaTa Horoph bana\*n*ea
+dorkar. ta Aa\*m*i kor\*b*eaO bho\*b*iShYo\*t*e. Jo\*t*ea\*d*in ta na
+Ho\*c/ch*e, to\*t*ea\*d*in EI koSh/To sWiikar kora charha Upay
+\*n*eI.
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{punosh/co}
+%%%%%%%%%%%%%%%%%%%%
+Aamar Aa\*g*e \tex\ O \latex-E baNNGla Horoph ko\*y*ekjon
+\*t*{oi}\*r*i ko\*r*e\*ch*en. ENN\*d*er mo\*dhY*e A\*bh*i\*j*it//
+da\*s*er Horoph Aa\*m*i khNNu\*T*i\*y*e \*d*e\*kh*e\*ch*i. 
+\*t*i\*n*i Ja Ja ko\*r*e\*ch*en, EboNNG Ja Ja kor\*t*e pa\*r*en\*n*i,
+duI{I} Aama\*k*e Anu\*pR*eroNa ju\*g*i\*y*e\*ch*e.
+
+EI Horoph banabar somo\*y*e Aama\*k*e nana bha\*b*e saHaJYo
+ko\*r*e\*ch*e Aamar bon/dhu A\*m*itabho la\*H*irhii EboNNG Aamar bhaI
+pol/lob boron pal.  E\*d*er saHaJYo charha E kaj Aa\*m*i \*sh*eSh
+\*t*ea kor\*t*e partamI na, Hoy\*t*ea shuru kor\*t*eO partam na. EkTa
+mush\*k*il \*th*e\*k*e Ud/dhar ko\*r*e\*ch*i\*l*ea Aamar bon/dhu 
+\*tR*is/tan Hub:/sh:/. E\*d*er ka\*ch*e Aa\*m*i krRtog/Yo.
+
+sob \*sh*e\*Sh*e \*d*i\*c/ch*i \*k*ean gho\*r*e kii bha\*b*e \*k*ean
+\*c*in/Ho rakha Ho\*y*e\*ch*e tar ta\*l*ika.
+
+\def\showfont#1#2{%
+\begin{center}
+\begin{minipage}{.7\textwidth}
+{\offinterlineskip
+\halign{\strut\hfil\bf## && \vrule\enskip\hfil{\newfont{\char##}}\hfil\enskip\cr
+&\multispan{16}\hfil {\large\tt #1~:} {\lbng #2}\hfil\cr
+\noalign{\smallskip}
+& \omit\bf\hfil0\hfil& \omit\bf\hfil1\hfil& \omit\bf\hfil2\hfil& \omit\bf\hfil3\hfil
+& \omit\bf\hfil4\hfil& \omit\bf\hfil5\hfil& \omit\bf\hfil6\hfil& \omit\bf\hfil7\hfil
+& \omit\bf\hfil8\hfil& \omit\bf\hfil9\hfil& \omit\bf\hfil10\hfil& \omit\bf\hfil11\hfil
+& \omit\bf\hfil12\hfil& \omit\bf\hfil13\hfil& \omit\bf\hfil14\hfil& \omit\bf\hfil15\hfil\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+0& 0& 1& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11& 12& 13& 14& \omit\vrule\enspace\hfil\newfont\char15\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr 
+16& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& \omit\vrule\enspace\hfil\newfont\char31\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+32& 32& 33& 34& 35& 36& 37& 38& 39& 40& 41& 42& 43& 44& 45& 46& \omit\vrule\enspace\hfil\newfont\char47\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+48& 48& 49& 50& 51& 52& 53& 54& 55& 56& 57& 58& 59& 60& 61& 62& \omit\vrule\enspace\hfil\newfont\char63\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+64& 64& 65& 66& 67& 68& 69& 70& 71& 72& 73& 74& 75& 76& 77& 78& \omit\vrule\enspace\hfil\newfont\char79\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+80& 80& 81& 82& 83& 84& 85& 86& 87& 88& 89& 90& 91& 92& 93& 94& \omit\vrule\enspace\hfil\newfont\char95\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+96& 96& 97& 98& 99& 100& 101& 102& 103& 104& 105& 106& 107& 108& 109& 110& \omit\vrule\enspace\hfil\newfont\char111\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+112& 112& 113& 114& 115& 116& 117& 118& 119& 120& 121& 122& 123& 124& 125& 126& \omit\vrule\enspace\hfil\newfont\char127\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+128& 128& 129& 130& 131& 132& 133& 134& 135& 136& 137& 138& 139& 140& 141& 142& \omit\vrule\enspace\hfil\newfont\char143\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+144& 144& 145& 146& 147& 148& 149& 150& 151& 152& 153& 154& 155& 156& 157& 158& \omit\vrule\enspace\hfil\newfont\char159\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+160& 160& 161& 162& 163& 164& 165& 166& 167& 168& 169& 170& 171& 172& 173& 174& \omit\vrule\enspace\hfil\newfont\char175\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+176& 176& 177& 178& 179& 180& 181& 182& 183& 184& 185& 186& 187& 188& 189& 190& \omit\vrule\enspace\hfil\newfont\char191\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+192& 192& 193& 194& 195& 196& 197& 198& 199& 200& 201& 202& 203& 204& 205& 206& \omit\vrule\enspace\hfil\newfont\char207\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+208& 208& 209& 210& 211& 212& 213& 214& 215& 216& 217& 218& 219& 220& 221& 222& \omit\vrule\enspace\hfil\newfont\char223\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+224& 224& 225& 226& 227& 228& 229& 230& 231& 232& 233& 234& 235& 236& 237& 238& \omit\vrule\enspace\hfil\newfont\char239\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+240& 240& 241& 242& 243& 244& 245& 246& 247& 248& 249& 250& 251& 252& 253& 254& \omit\vrule\enspace\hfil\newfont\char255\hfil\enspace\vrule\cr
+\omit\hfil& \multispan{16}\hrulefill\cr
+}}\end{minipage}\end{center}}
+
+\begin{center}
+\def\newfont{\bng}
+\showfont{\Large\tt bang10.mf}{\*s*eaja Horoph}
+\bigskip
+
+\def\newfont{\bns}
+\showfont{\Large\tt bangsl10.mf}{\*H*ela\*n*ea Horoph}
+\bigskip
+
+\def\newfont{\bnw}
+\showfont{\Large\tt bangwd10.mf}{coOrha Horoph}
+
+\end{center}
+
+
+
+
+\end{document}

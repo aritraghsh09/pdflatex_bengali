@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% banghalf.mf: METAFONT file that defines the broken form for
+%              consonants to be used in conjuncts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+beginchar(160,12u#,stht#,stdp#); "k+";
+  numeric hh,hrise; hh=.6h;
+  hrise = matra_f*h-.75hh;
+  ka(0,hrise,w-rindent,hh);
+  matra(0,w);
+endchar;
+
+beginchar(161,8u#,stht#,stdp#); "g+";
+  numeric hh,hrise; hh = .75h; hrise = matra_f*(h-hh);
+  ga_(0,hrise,w+lindent,hh);
+endchar;
+
+beginchar(162,9u#,stht#,stdp#); "unga+";
+  numeric ww,hh,hrise; ww=w+lindent; hh=.5h;
+  hrise = (matra_f+.5matra_t)*h-hh;
+  unga(0,hrise,ww,hh);
+endchar;
+
+beginchar(163,7u#,stht#,stdp#); "c+";
+  numeric ww,hh,hrise; ww = w+lindent; hh=.65h;
+  hrise = matra_h*(h-hh);
+  matra(0,w);
+  ca(0,hrise,ww,hh);
+endchar;
+
+beginchar(164,10u#,stht#,stdp#); "j+";
+  numeric hh,hrise; hh=.7h; hrise=matra_f*(h-hh);
+  ja_(0,hrise,w+lindent,hh);
+  matra(0,w);
+endchar;
+
+beginchar(165,12u#,stht#,stdp#); "ina+";
+  numeric hE,hrise; hE=.5h; hrise = matra_f*(h-hE);
+  ina(0,hrise,w+lindent,hE);
+endchar;
+
+beginchar(166,12u#,stht#,stdp#); "T+";
+  numeric hh,hrise; hh = .9h; hrise = matra_f*(h-hh);
+  Dha(0,hrise,w,hh);
+  matra(0,w);
+  Tiki(.9w,.1w);
+endchar;
+
+beginchar(167,14u#,stht#,stdp#); "D+";
+  numeric hrise,hh; hh = .75matra_f*h; hrise = matra_f*h-hh;
+  Da(0,hrise,w,hh,.88);
+  matra(0,w);
+endchar;
+
+beginchar(168,6u#,stht#,stdp#); "N+";
+  numeric hrise,hh; hh = .7h; hrise = matra_f*(h - hh)-matra_thickness;
+  Na_(.001w,hrise,w+lindent,hh);
+endchar;
+
+beginchar(169,14u#,stht#,stdp#); "t+";
+  numeric hrise,hta; hta = .65h; hrise = matra_f*(h - hta);
+  ta(.04w,hrise,.9w,matra_f*hta);
+  matra(0,w);
+endchar;
+
+beginchar(170,8u#,stht#,stdp#); "d+";
+  numeric hh,hrise; hh = .7h; hrise = matra_f*(h-hh);
+  matra(0,w);
+  da(0,hrise,w+lindent,hh);
+endchar;
+
+beginchar(171,5u#,stht#,stdp#); "n+";
+  numeric ww,hh,hrise; ww = w+lindent; hh=.8h;
+  matra(0,w);
+  hrise = matra_f*(h-hh);
+  na_(0,1.5hrise,ww,matra_f*hh);
+endchar;
+
+beginchar(172,10u#,stht#,stdp#); "p+";
+  numeric hh,hrise; hh = .8h; hrise = matra_h*(h-hh);
+  pa_(0,hrise,w+lindent,hh);
+endchar;
+
+beginchar(173,9u#,stht#,stdp#); "b+";
+  numeric hh,hrise,ww;
+  hh = .7h; hrise = matra_f*(h-hh); ww = w - .5stem_width;
+  ba(0,hrise,ww,hh);
+  matra(0,w);
+endchar;
+
+beginchar(174,11u#,stht#,stdp#); "m+";
+  numeric balld,height;
+  balld = .35w; height = matra_f*h;
+  y1 = matra_h*h; x1r = x2l;
+  penpos1(.3balld,0);
+  z2l = (16/43w,37/50height); penpos2(.5balld,0);
+  fill z1l..{down}z2--z2r{up}..z1r--cycle;
+% The dot
+  fill fullcircle scaled balld shifted z2l;
+% The part to the right of the dot
+  pickup pencircle xscaled .5balld yscaled .25balld rotated -50;
+  top z3 = z2l + .5balld*dir 90;
+  z4 = (.75[x2l,w],30/50height);
+  rt z5 = (w+lindent,y3);
+  top z6 = (w,height);
+  draw z3{right}..{right}z4..{up}z5..z6;
+  penlabels(1,2,3,4,5,6);
+  picture shape_halfma; shape_halfma = currentpicture;
+  matra(0,w);
+endchar;
+
+beginchar(176,10u#,stht#,stdp#); "l+";
+  numeric hh,hrise; hh=.8h;
+  hrise = matra_f*h-.75hh;
+  matra(0,w);
+  la_(0,hrise,w+lindent,hh);
+endchar;
+
+beginchar(177,9u#,stht#,stdp#); "sh+";
+  numeric hh,hrise; hh = .8h; hrise = matra_f*(h-hh);
+  sha_(0,hrise,w+lindent,hh);
+endchar;
+
+beginchar(178,8u#,stht#,stdp#); "Sh+";
+  numeric balld; balld = w;
+  z1 = (w+rindent-.5balld,matra_f*h-.5balld);
+  golla(z1,balld);
+  matra(0,w);
+  pickup pencircle scaled .1w;
+  lft top z2 = z1 + .5balld * dir (135);
+  rt bot z3 = z1 + .5balld * dir (-45);
+  draw z2--z3;
+  penlabels(1,2,3);
+endchar;
+
+beginchar(179,9u#,stht#,stdp#); "s+";
+  numeric ww,hh,hrise; ww = w+lindent; hh=.55h;
+  hrise = matra_h*h-hh;
+  sa_(0,hrise,ww,hh);
+  matra(0,w);
+endchar;
+
+beginchar(154,13u#,stht#,stdp#); "small bha";
+  numeric ww,hh,hrise; ww = w; hh=.7h;
+  hrise = matra_f*(h-hh);
+  bha(0,hrise,ww,matra_f*hh);
+  matra(0,w);
+endchar;
+
+beginchar(155,14u#,stht#,stdp#); "small ma";
+  numeric hh,hrise;
+  hh=.85h; hrise = matra_f*(h-hh); 
+  ma_(0,hrise,w,hh);
+  matra(0,w);
+endchar;
+
+beginchar(156,14u#,stht#,stdp#); "small sa";
+  numeric hh,hrise,xstem;
+  hh=.5h; hrise = matra_h*h-hh; xstem = w - rindent;
+  sa_(0,hrise,xstem,hh);
+  matra(0,w);
+  stem(w-rindent);
+endchar;
+
+
+%%% End of banghalf.mf

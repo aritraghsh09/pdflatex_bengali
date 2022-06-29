@@ -1,0 +1,183 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% banglig.mf: METAFONT file defining ligature tables for Bangla
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% double dNNarhi
+ligtable ".": "." =: 14;
+
+%% dot dot dot
+ligtable 14 : "." =: 15;
+
+%% peT-kaTa "e"
+ligtable "a": "a" =: 146;
+ligtable "A": "A" =: 147;
+
+%% bha
+ligtable "b": "h" =: "v", "/" =: 173;
+
+%% cha
+ligtable "c": "h" =: "q", "/" =: 163;
+
+%% dha, da + (fala)
+ligtable "d": "h" =: "z", "R" =: 22, "W" =: 216, "M"=:| 170, "/" =: 170;
+
+%% Dha, Da + (fala)
+ligtable "D": "h" =: "Z", "/" =: 167, "L" =:| 167, "R" =:| 167, "W" =:| 167;
+
+%% pha + (fala)
+ligtable "f": "R" =: 227, "L" =: 228;
+
+%% gha
+ligtable "g": "h" =: "G", "/" =: 161;
+
+%% Ha + (fala)
+ligtable "H": "R" =: 244, "W" =: 246, "M" =: 243, "L" =: 245;
+
+%% dirgha-i 
+ligtable "i": "i" =: 140;
+ligtable "I": "I" =: 141; 
+
+%% jha, ja + (fala)
+ligtable "j": "h" =: "C", "R" =: 197, "W" =: 198, "/" =: 164;
+
+%% kha, khiyo, ka + (fala)
+ligtable "k": "h" =: "x", "K" =: "X", "W" =: 186, "R" =: 184, "L" =: 185, "M" =:| 160, "/" =: 160;
+
+%% la +
+ligtable "l": "/" =: 176, "M" =:| 176;
+
+%% ma +
+ligtable "m": "/" =: 174, "M" =:| 174, "L" =:| 155, "W" =: 232;
+
+%% anuswar, unga, ina, candro-bindu
+ligtable "N": "G" =: 130, "J" =: 131, "N" =: 132, "/" =: 168;
+
+%% na +
+ligtable "n": "/" =: 171, "M" =:| 171, "W" =: 224;
+
+%% OI, OU
+ligtable "o": "i" =: 148, "u" =: 150;
+ligtable "O": "I" =: 149, "U" =: 151; 
+
+%% pha, pa + (fala)
+ligtable "p": "R" =: 23, "h" =: "f", "/" =: 172, "M" =:| 172;
+
+%% murdhanya Sha +
+ligtable "P": "/" =: 178;
+
+%% cha + (fala)
+ligtable "q": "R" =: 192, "W" =: 193;
+
+%% ref, day-shunyo ra, ri, asamiya ra
+ligtable "r": "/" =: 175, "h" =: 136, "R" =: 144, "W" =: "B";
+ligtable "R": "R" =: 145;
+
+%% talabya sha, dantyo sa + (fala)
+ligtable "s": "h" =: "S", "/" =: 179, "M" =:| 179, "L" =:| 156, "W" =:| 156, "|" =:| 156;
+
+%% sha + (fala), murdhonyo sha
+ligtable "S": "R" =: 24, "h" =: "P", "/" =: 177, "M" =:| 177, "|" =: "S";
+
+%% tha, ta + (fala)
+ligtable "t": "h" =: "Q", "R" =: 213, "W" =:| 169, "L" =:| 169, "M" =:| 169, "/" =: 169;
+
+%% Tha, Ta + (fala)
+ligtable "T": "h" =: "F", "R" =:| 166, "W" =:| 166, "/" =: 166, "i" kern 3u#;
+
+%% dirgho-u
+ligtable "u": "u" =: 142;
+ligtable "U": "U" =: 143;
+
+%% bha + (fala)
+ligtable "v": "R" =: 231, "L" =:| 154, "W" =:| 154;
+
+%% khiyo + (fala)
+ligtable "X": "M" =: 189;
+
+%% dha + wa
+ligtable "z": "W" =: 217;
+
+%% double quotation
+ligtable "`": "`" =: 2;
+ligtable "'": "'" =: 1;
+
+%% endash, emdash
+ligtable "-": "-" =: 8;
+ligtable 8: "-" =: 9;
+
+ligtable 47: "n" =: 26, "N" =:25;
+ligtable 58: "/" =: 13;
+ligtable 124: "W" =: 153;
+ligtable 130: "/" =: 162;
+ligtable 131: "/" =: 165;
+ligtable 132: "G" =: "K";
+ligtable 136: "h" =: 137, "u" kern 5u#;
+ligtable 137: "u" kern 5u#;
+ligtable 155: "n" |=: 26;
+ligtable 160: "k" =: 180, "t" =: 181, "T" kern -7u#, "n" =: 183, "M" kern -7u#, "s"=: 187;
+ligtable 161: "g" =: 190, "Y" =: 196, "m" |=: "M", "n" |=: 26, 26 =:| "g";
+ligtable 164: "j" =: 194;
+ligtable 165: "c" =: 199, "j" =: 201;
+ligtable 166: "T" =: 203, "W" kern 4.5u#;
+ligtable 167: "D" kern -3u#;
+ligtable 168: "T" =: 204, "D" =: 206, "N" =: 208, "H" =: 241;
+ligtable 169: "t" =: 209, "n" =: 212, "r" =: 213, "M" |=: 27,
+27 kern -1u#, "/" =: 133;
+ligtable 170: "d" =: 214, "b" =: 216, "M" |=: 27, 27 kern1u#, "h" |=: 122;
+ligtable 171: "H" =: 242, "t" =: 218, "d" =: 221, "n" =: 223, "h" |=: "Q";
+ligtable 172: "t" =: 225, "p" =: 226, "l" |=: "L", "L" =:| "p", "n" |=: 26, 26 =:| "p";
+ligtable 173: "j" =: 229, "d" kern -3u#, "b" =: 230;
+ligtable 174: "b" =: 232, "n" |=: 26, 26 =:| 155, "m" |=: 77, "l" |=: "L", "L" =:| 155;
+ligtable 176: "l" =: 234, "g" kern 1.5u#, "p" kern .5u#, "m" |=: "M";
+ligtable 177: "l" |=: "L", "L" =:| "S", "n" |=: 26, 26 =:| "S", "m" |=: "M";
+ligtable 178: "T" =: 235, "N" =:237, "m" |=: 77;
+ligtable 179: "t" =: 239, "h" |=: "Q", "k" =: 238, "n" |=: 26, 26 =:| 156;
+ligtable 181: "R" =: 182;
+ligtable 194: "W" =: 195;
+ligtable 199: "h" =: 200;
+ligtable 201: "h" |=: 67, 67 =:| 165;
+ligtable 204: "h" =: 205;
+ligtable 206: "R" =: 207;
+ligtable 209: "W" =: 210, "h" =: 211;
+ligtable 214: "h" =:| 170;
+ligtable 216: "h" =: 215;
+ligtable 218: "R" =: 219, "W" =: 220, "h" =:| 171;
+ligtable 221: "h" |=: 122, 122 =:| 171, "R" =: 222, "W" |=: 216, 216 =:| 171;
+ligtable 232: "h" =: 233;
+ligtable 233: "R" |=: 231, 231 =:| 174;
+ligtable 235: "h" =: 236;
+ligtable 238: "h" |=: "x", "x" =:| 179, "R" |=: 184, 184 =:| 179;
+ligtable 239: "h" =:| 179, "R" =: 240;
+
+%%% End of banglig.mf

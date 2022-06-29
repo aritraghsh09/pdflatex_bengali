@@ -1,0 +1,209 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangnum.mf: METAFONT file that defines the Bangla numerals
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+beginchar("0",16u#,stht#,stdp#); "The number 0";
+  numeric balld; balld = .55h;
+  z1 = (.5w,matra_f*h/2);
+  golla (z1,balld);
+  penlabels(1);
+endchar;
+
+beginchar("1",16u#,stht#,stdp#); "The number 1";
+  numeric phi,xs,ys; xs = 20/45w; ys = 10/50h;
+  z1 = (13/45w,matra_f*45/50h);
+  z2l = z1 - (.5numball_two,0); penpos2(.8numball_two,0);
+  z3 = (34/45w,matra_f*18/50h); penpos3(3/45w,0);
+  z4 = .5[z3r,(w,y3r)];
+  z5l = (22/45w,matra_f*7/50h);
+  phi = angle(z4-z5l);
+  penpos5(.5ys,phi-90); 
+  fill fullcircle scaled numball_two shifted z1;  
+  fill z2l{down}..z3l..z5l--z5r..z3r{up}..{up}z2r--cycle;
+  fill fullcircle xscaled xs yscaled ys rotated phi shifted z5l;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+beginchar("2",16u#,stht#,stdp#); "The number 2";
+  z1 = (17/45w,matra_f*45/50h);
+  z2l = z1 - (.5numball_two,0); penpos2(.8numball_two,0);
+  z3 = (34/45w,matra_f*26/50h); penpos3(3/45w,0);
+  z4l = (22/45w,matra_f*20/50h);
+  z4r = (19/45w,matra_f*14/50h);
+  z5l = (6/45w,matra_f*26/50h);
+  z5r = (10/45w,matra_f*16/50h);
+  z6 = (43/45w,-ha_dip); penpos6(length(z3l-z3r),angle(z5r-z5l));
+  fill fullcircle scaled numball_two shifted z1;  
+  fill z2l{down}..{down}z3l..{left}z4l..z5l--z5r..z4r{right}..z3r{up}..{up}z2r--cycle;
+  fill z5l..{z6l-z4l}z6l--z6r{z4r-z6r}..z5r--cycle;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+beginchar("3",16u#,stht#,stdp#); "The number 3";
+  numeric balld; balld = 1.2numball_one;
+  z1r =  (21/45w,matra_f*33/50h); penpos1(.5balld,0);
+  z2l = (25/45w,matra_f*44/50h);
+  z2r = (28/45w,matra_f*39/50h);
+  z5r = (38/45w,matra_f*25/50h);
+  z5l = (41/45w,matra_f*23/50h);
+  z6r = (26/45w,matra_f*12/50h);
+  z6l = (26/45w,matra_f*5.5/50h);
+  z7r = (3.5/45w,matra_f*39/50h);
+  z7l = (1/45w,matra_f*40/50h);
+  fill fullcircle scaled balld shifted z1r;
+  fill z1l{up}..tension0.95..z2l{right}..{down}z5l--z5r{up}..z2r{left}..z1r--cycle;
+  fill z5r{down}..{left}z6r..{z7l-(x2l,0)}z7r--z7l{(x1r,0)-z7r}..tension1.2..z6l{right}..{up}z5l--cycle;
+  penlabels(1,2,3,4,5,6,7);
+endchar;
+
+beginchar("4",16u#,stht#,stdp#); "The number 4";
+  numeric w_one, w_two; w_one = matra_f*2.5/50h; w_two = 5/45w;
+  z1l = (22/45w,matra_f*48/50h); penpos1(w_one,-90);
+  z2 = (11/45w,matra_f*36/50h); penpos2(w_two,0);
+  z3l = (18/45w,matra_f*24/50h);
+  z3r = (28/45w,matra_f*26/50h); z3 = .5[z3l,z3r];
+  z4 = (35/45w,matra_f*13/50h); penpos4(w_two,0);
+  z5r = (x1,matra_f*h-y1l); penpos5(w_one,-90);
+  z6 = (11/45w,y4); penpos6(w_two,180);
+  z7l = (21/45w,matra_f*22/50h);
+  z7r = (24.5/45w,matra_f*27/50h); z7 = z3;
+  z8 = (34/45w,y2); penpos8(w_two,180);
+  pickup pencircle xscaled (length(z3l-z3r)) yscaled (matra_f*3/50h) rotated (angle(z3r-z3l));
+  penstroke z1e..z2e..z3e..z4e..z5e..z6e..z7e..z8e..cycle;
+  penlabels(1,2,3,4,5,6,7,8);
+endchar;
+
+beginchar("5",16u#,stht#,stdp#); "The number 5";
+  z1l = (30/45w,matra_f*48/50h);
+  z1r = (23.5/45w,matra_f*41/50h);
+  z2 = (6.5/45w,matra_f*20/50h); penpos2(4/45w,0);
+  z3l = (22/45w,matra_f*2.5/50h);
+  z3r = (26/45w,matra_f*5/50h);
+  z4l = (35/45w,matra_f*4.5/50h);
+  z5l = (31/45w,matra_f*7/50h);
+  z4r = z5l;
+  z5r = z3r;
+  penstroke z1e..{down}z2e..z3e..z4e;
+  fill z5l--z4l--z3r--cycle;
+  z6l = (24/45w,matra_f*14/50h);
+  z6r = (19/45w,matra_f*18/50h);
+  z7l = (29/45w,matra_f*27/50h);
+  z7r = (x6l,matra_f*30/50h);
+  z8l = (40/45w,matra_f*33/50h);
+  z8r = (x7l,matra_f*33/50h);
+  z9l = (31/45w,matra_f*40/50h);
+  z9r = (25/45w,matra_f*36/50h);
+  penstroke z5e..z6e{up}..z7e..z8e;
+  penstroke z8e..z9e..{up}z1e;
+  penlabels(1,2,3,4,5,6,7,8,9);
+endchar; 
+
+beginchar("6",16u#,stht#,stdp#); "The number 6";
+  z1l = (14/45w,matra_f*43/50h); penpos1(.5numball_two,0);
+  z2l = (16/45w,matra_f*31/50h); penpos2(4/45w,0);
+  z3l = (25/45w,matra_f*21/50h);
+  z3r = (22.5/45w,matra_f*26/50h);
+  z4l = (36/45w,matra_f*29/50h);
+  z4r = (33.5/45w,matra_f*37/50h);
+  z5l = (39/45w,matra_f*22/50h);
+  z5r = (41.5/45w,matra_f*22/50h);
+  z6l = (26/45w,matra_f*10.5/50h);
+  z6r = (26/45w,matra_f*4.5/50h);
+  z7l = (3.5/45w,matra_f*39/50h);
+  z7r = (1/45w,matra_f*40/50h);
+  fill fullcircle scaled numball_two shifted z1l;
+  fill z1l--z2l{z2l-z1l}..z3l..tension2..z4l--z4r..tension2..z3r..z2r..tension3..z1r--cycle;
+  fill z4r..{down}z5r--z5l{up}..z4l--cycle;
+%  baTi(z5l,z5r,z6r,z7r);
+  fill z5r{down}..{left}z6r..{z7l-(x2l,y6l)}z7r--z7l{(x2l,y6r)-z7r}..z6l{right}..{up}z5l--cycle;
+  penlabels(1,2,3,4,5,6,7);
+endchar;
+
+
+beginchar("7",16u#,stht#,stdp#); "The number 7";
+  z5r = (33/45w,matra_f*7/50h); penpos5(.5numball_two,0);
+  z4l = (28/45w,matra_f*26/50h); penpos4(stem_width,0);
+  z3' = (x4l,matra_f*30/50h);
+  z3l = (16/45w,y4l);
+  z3r = (x3l,y3');
+  z2l = (6.5/45w,matra_f*34/50h);
+  z2r = (11/45w,matra_f*31/50h);
+  z1l = (19/45w,matra_f*47/50h);
+  z1r = (22/45w,matra_f*43/50h);
+  fill fullcircle scaled numball_two shifted z5r;
+  fill z5l..z4l--z4l{left}..z3l..z2l{up}..{right}z1l..{down}z4r..z5r--cycle;
+  unfill z3'{left}..{left}z3r..z2r..tension1.5..z1r..tension2..cycle;
+  penlabels(1,2,3,3',4,5);
+endchar;
+
+beginchar("8",16u#,stht#,stdp#); "The number 8";
+  z1l = (6/45w,matra_f*43/50h); penpos1(.5numball_two,0);
+  z2r = (x1r,matra_f*27/50h); penpos2(stem_width,0);
+  z4l = (14/45w,matra_f*4/50h);
+  z4r = (x4l,matra_f*9/50h); z4 = .5[z4l,z4r];
+  z3r = (x1r,.7[y2,y4]); penpos3(stem_width,0);
+  z5l = (30/45w,matra_f*20/50h);
+  z5r = (26/45w,matra_f*23.5/50h);
+  z6l = (18/45w,matra_f*32/50h);
+  z6r = (x2r,matra_f*25/50h);
+  z7 = (32/45w,matra_f*28/50h);
+  z8 = (40/45w,matra_f*28.7/50h);
+  z9 = (43/45w,matra_f*33/50h);
+  fill fullcircle scaled numball_two shifted z1l;
+  path p; p = z4l..{up}z5l..tension1.2..{left}z6l{left};
+  fill z1l..{down}z2l..z3l{down}..{right}z4l..p..z2r--z1r--cycle;
+  unfill z6r{down}..{down}z3r..{right}z4r..tension1.8..z5r..tension2..z6r--cycle;
+  z10 = p intersectionpoint (z5r--z7);
+  pickup Tiki_pen;
+  draw z10..z7..z8..z9;
+  penlabels(1,2,3,4,5,6,7,8,9,10);
+endchar;
+
+beginchar("9",16u#,stht#,stdp#); "The number 9";
+  z1r = (15/45w,matra_f*7/50h); penpos1(.5numball_one,90);
+  z2l = (17/45w,matra_f*1/2h);
+  z2r = (16/45w,matra_f*22/50h);
+  z3l = (30/45w,matra_f*10/50h);
+  z3r = (25/45w,matra_f*3.5/50h);
+  z4 = (37.5/45w,matra_f*18/50h); penpos4(3/45w,0);
+  z5 = (x3r,matra_f*34/50h); penpos5(matra_f*5/50h,90);
+  z6l = (5/45w,matra_f*43/50h); penpos6(.5numball_two,0);
+  fill z1l{left}..{right}z2l..{down}z3l--z3r{up}..z2r{left}..z1r--cycle;
+  fill z3l..{up}z4l..z5l..{up}z6l--z6r{z4-z6}..z5r..z4r{down}..z3r--cycle;
+  fill fullcircle scaled numball_one shifted z1r;
+  fill fullcircle scaled numball_two shifted z6r;
+  penlabels(1,2,3,4,5,6,7);
+endchar;
+
+%%% End of bangnum.mf

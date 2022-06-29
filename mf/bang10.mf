@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bang10.mf: METAFONT file that defines the Bengali alphabet (regular)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+def makebox(text rule) =
+  for y=0,h,matra_f*h,matra_f*h/2,-d:
+    rule((0,y)t_,(w,y)t_);
+  endfor % horizontals
+  for x=0,w:
+    rule((x,-d)t_,(x,h)t_);
+  endfor % verticals
+  for rv=1 upto floor(w/1pt):
+    for x=1pt*rv:
+      rule((x,-d)t_,(x,h)t_);
+    endfor
+  endfor% more verticals
+enddef;
+
+
+
+mode_setup;
+font_size 10pt#;
+u# = 1/3pt#;
+s# = 1/3pt#;
+em# := 20pt#; cap# := 20pt#;
+thin# := 1/3pt#; thick# := 5/6pt#;
+o# := 1/5pt#;
+define_pixels(em,cap);
+define_blacker_pixels(thin,thick);
+define_corrected_pixels(o);
+numeric stwd, stht, stdp, penth;
+numeric stem_width, stem_slope;
+numeric matra_thickness, matra_f, matra_h,matra_t, matra_slope;
+numeric dot_diam, ball_hang, ha_dip;
+numeric lindent, rindent;
+numeric xmag; xmag = 1;
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% matra_thickness should be removed at the end
+%%%%%%%%%%%%%%%%%%%%%%%%%
+stwd# = 10pt#; stht# = 8pt#; stdp# = 2pt#;
+penth# = 0.4pt; dflt_pen := savepen;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+stem_width = xmag*.55pt;
+stem_slope = 45;
+dot_diam = 1pt; % diameter of dots in "ra", "ya" etc.
+matra_thickness = .75pt;
+matra_slope = 115;
+matra_f = .75; % fraction of h where normally the top end of matras rest
+matra_t = 3/50; % thickness of matras as a fraction of matra_f
+matra_h = matra_f-.5matra_t; 
+ball_hang = .7pt;
+ha_dip = .7pt; % the depth by which the end of "ha" dips below baseline
+lindent = 1.5stem_width;
+rindent = 1.5stem_width;
+numball_one = 9/50*8pt; % large balls used in numerals
+numball_two = 0.8*numball_one; % small balls used in numerals
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+font_quad 18u#+2s#;
+font_normal_space 9u#+3s#;
+font_normal_stretch 3u#;
+font_normal_shrink 2u#;
+numeric slantval; slantval = 0;
+
+
+
+input bangbase;
+end;
+
+%%% End of bang10.mf

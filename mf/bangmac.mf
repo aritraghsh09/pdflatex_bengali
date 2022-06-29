@@ -1,0 +1,267 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangmac.mf: METAFONT file that defines various macros
+%              for use in bangla fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+def matra(expr wa,wb) =
+  begingroup
+    save x,y,lslope,rslope;
+    lslope =  matra_slope;
+    rslope =  matra_slope;
+    z1'r = (wa,matra_f*h);
+    z2'r = (wb,matra_f*h);
+    if wa>0: x1'r := x1'r - 0.5*stem_width; lslope := 90;
+      x12=x1'r + stem_width;
+      y12 = matra_h*h + .5matra_t*h/sind(lslope);
+      x13=x1'r;
+      y13=y12;
+      x11=x1'r;
+      y11 = y12 + stem_width/sind(lslope);
+      fill z13--z11--z12--cycle;
+    fi
+    if wb<w: x2' := x2' + 0.5*stem_width; rslope := 90;    fi
+    penpos1'(matra_t*h/sind(lslope),lslope);
+    penpos2'(matra_t*h/sind(rslope),rslope);
+    penstroke z1'e--z2'e;
+    penlabels(11,12,13);
+  endgroup
+enddef;
+
+
+def stem(expr xstem) =
+  begingroup
+    save x,y; 
+    z1' = (xstem,matra_f*h);
+    penpos1'(stem_width,0);
+    x2'r = x1'r; y2'r = 0;
+    x2'l = x1'l; y2'l = y2'r + stem_width * sind(stem_slope);
+    penstroke z1'e--z2'e;
+    penlabels(1',2');
+  endgroup
+enddef;
+
+
+def halfstem(expr xstem,a,b) =
+  begingroup
+    save x,y;
+    z1 = (xstem,a);
+    penpos1(stem_width,0);
+    x2r = x1r; y2r = b; 
+    x2l = x1l; y2l = b + stem_width * sind(stem_slope);
+    fill z1l--z2l--z2r--z1r--cycle;
+  endgroup
+enddef;
+
+
+def cwbar(expr za,zb,zc,th) =
+  begingroup
+    save x,y,phiab,phibc,width,lab,lcd;
+    phiab = angle(za-zb);
+    phibc = angle(zb-zc);
+    lab =  length(za-zb);
+    width = lab * sind(abs(phibc - phiab));
+    lcd = width / sind(abs(th - phibc));
+    z4' = zc + dir(th) * lcd;
+    z1l = za; z1r = zb; z2l = z4'; z2r = zc;
+    penstroke z1e--z2e;
+  endgroup
+enddef;
+
+
+%% Macro for a hook hanging from two points, with a curvature at the
+%% middle. The two upper points are za and zb. 
+def hookjt(expr za,zb,zc,lift,thinness,thf) =
+  begingroup
+    save x,y,lab,lcd,thab,thcd,lmid,thmid,dist;
+    dist = 0.8;
+    z4 = zc + thinness*length(za-zb) * dir(thf);
+    z11' = .5[za,zb]; z12' = .5[zc,z4];
+    lab = length(za-zb); lcd = length(zc-z4);
+    thab = angle(zb-za); thcd = angle(z4-zc);
+    lmid = (1-dist)*lab + dist*lcd;
+    thmid = (1-dist)*thab + dist*thcd;
+    penpos11'(lab,thab); penpos12'(lcd,thcd);
+    z13'l = dist[za,zc] + (0,dist*lift);
+    penpos13'(lmid,thmid);
+    penstroke z11'e..z13'e..z12'e;
+    penlabels(11',12',13');
+  endgroup
+enddef;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% macro for a hook with a stem attached to it.
+
+def hookstem(expr za,zb,zc,phia,phib) =
+  begingroup
+    save x,y;
+    z1r = za;
+    z1l = zb;
+    zc = z3; penpos3(stem_width,0);
+    z2l = (x3,.5stem_width*sind(stem_slope));
+    z2r = (x3+.5stem_width,0);
+    path hs_pl; hs_pl = z1l{dir phia}..tension1.2..{down}z2l;
+    path hs_pr; hs_pr = z2r{up}..tension1.2..{dir (180+phib)}z1r;
+    fill hs_pl--hs_pr--cycle;
+    z4r = z2r;
+    z4l = hs_pl intersectionpoint (z3l--(x3l,0));
+    penstroke z3e--z4e;
+    penlabels(1,2,3,4);
+  endgroup
+enddef;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%  macro for a ball with a hook attached to it. The ball is centered at
+%  za, with radius rad. The points zb and zc are the two end points of
+%  the hook. The angle `th' is the angular co-ordinate of the point on
+%  the circumference of the circle where the hook attaches to the
+%  circle.
+
+def hookcirc(expr za,zb,zc,rad,th) =
+  begingroup
+    save x,y,phi,psi,chdir,thickness;
+    z1 = za;
+    fill fullcircle scaled rad shifted (z1);
+    thickness = length(zb-zc);
+    z5 = z1 + .5rad * dir(th);
+    z4 = z5 - thickness * dir(th);
+    z2=zb; z3=zc;
+    chdir:=1;
+    if angle(z5-z1)>angle(z2-z1): chdir:=-1; fi
+    phi =  th + chdir*90;
+    if phi>0: psi=phi-180; else: psi=phi+180; fi
+    fill z2--z3..{dir psi}z4--z5{dir phi}..cycle;
+  endgroup
+enddef;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% macro for the Tiki to be used for the letters "Ta", hraswa i and u
+%% etc. xa is the x-coordinate of the right end of the Tiki and xb is
+%% the same for the left end. 
+
+def Tiki(expr xa,xb) =
+  begingroup
+    save x,y;
+    bot z1 = (xa,matra_f*h);
+    z2 = (xb,h);
+    z1'= (.5[x1,x2],.5[y1,y2]);
+    pickup pencircle xscaled .7pt yscaled .3pt rotated 90;
+    Tiki_pen := savepen;
+    draw z1{up}..{left}z1'{left}..{dir 60}z2;
+    penlabels(1,2);
+  endgroup
+enddef;
+
+
+def baTi(expr za,zb,zc,zd) =
+  begingroup
+    save x,y,lab,phi;
+    z1 = za; z2 = zb; z3 = zc; z4 = zd;
+    lab = length(z1-z2);
+    phi = 100;
+    x3' = x3; y3'-y3 = min(2.3*lab,.3[y2,y3]);
+    z4' = z4 + .4*lab * dir (phi-120);
+    fill z2{down}..{left}z3{left}..{dir 100}z4--z4'{dir (phi-180)}..{right}z3'{right}..{up}z1--cycle;
+    penlabels(1,2,3,4);
+  endgroup
+enddef;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is the golla to be used for bisarga, anuswar etc.
+
+def golla(expr za,balld) =
+  begingroup
+    save x,y;
+    z1r = za + .5balld * dir (45);
+    z2r = za + .5balld * dir (135);
+    z3r = za + .5balld * dir (-135);
+    z4r = za + .5balld * dir (-45);
+    penpos1(.15balld,45);
+    penpos2(.25balld,135);
+    penpos3(.15balld,-135);
+    penpos4(.25balld,-45);
+    penstroke z1e..z2e..z3e..z4e..cycle;
+  endgroup
+enddef;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The base of E, also used as ra-fala
+
+def Ebase(expr za,zb,t) =
+  begingroup
+    save x,y,w,h;
+    numeric w,h;
+    w=abs(xpart(za) - xpart(zb)); h=abs(ypart(za) - ypart(zb));
+    x1 = xpart(za); y1l= ypart(za); penpos1(t,90);
+    z2l = z1 + (-.3w,.13h); penpos2(1.4t,90);
+    y3 = y2; x3 = x2 -.4w; penpos3(1.4t,90);
+    z4l = zb; penpos4(t/3,-40);
+    penstroke z1e..{left}z2e{left}..z3e;%..z4e;
+    fill z3l{left}..z4l--z4l--z4l..{right}z3r--cycle;
+    penlabels(1,2,3,4);
+  endgroup
+enddef;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The shape at the right of ina, Sh+N etc.
+%% The starting point is za, the x-distance between za and the
+%% highest/lowest point is w, the total height is 2h, and t is the
+%% thickness of the lines.
+
+def clover(expr za,w,h,t) =
+  begingroup
+    save x,y,currenttransform;
+    transform currenttransform;
+    currenttransform := identity shifted za slanted slantval;
+    numeric theta,balld; theta = 60; balld = .7w-.7t;
+    z1 = (0,0); penpos1(0,-90);
+    z2r = (x1+.5w,y1-h); penpos2(t,-90);
+    z3r = (w,y1-.5h); penpos3(.7t,0);
+    z4l = (x2,y1); penpos4(.5balld,theta);
+    fill fullcircle scaled (balld) shifted z4l;
+    penstroke z1e..z2e..{up}z3e{up}..{dir (theta+90)}z4e;
+    z4'l = z4l; penpos4'(.5balld,-theta);
+    x3' = x3; y3' - y4l = y4l - y3; penpos3'(.7t,0);
+    x2' = x2; y2' -y4l = y4l - y2; penpos2'(t,90);
+    penstroke z1e..z2'e..{down}z3'e{down}..{dir (-theta-90)}z4'e;
+    penlabels(1,2,2',3,3',4,4');
+  endgroup
+enddef;
+
+
+
+%% End of file bangmac.mf

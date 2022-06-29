@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangfala.mf: METAFONT file that defines various "fala"s that
+%               typically go below another consonant
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+beginchar(175,0u#,stht#,stdp#); "ref";
+  z1l = (4lindent,matra_f*h+.5matra_thickness);
+  penpos1(1.4stem_width,145);
+  z2l = (6.5lindent,h);
+  penpos2(.7stem_width,70);
+  penstroke z1e--z2e;
+  penlabels(1,2);
+endchar;
+
+beginchar("R", 0, stht#,stdp#); "ra-fala";
+  numeric Ewidth; Ewidth = .06h;
+  x1 = -rindent; y1=0; 
+  z3 = (-5.5rindent,.2h);
+  Ebase(z1,z3,Ewidth);
+  halfstem(x1,y3,y1-.5Ewidth);
+endchar;
+
+
+beginchar("Y", 7.3u#, stht#,stdp#); "Ja-fala";
+  matra(0,w);
+  z1 = (14/20w,matra_h*h); penpos1(4/20w,0);
+  z2l = (8/20w,matra_f*35/50h); 
+  z2r = (13/20w,matra_f*38/50h); 
+  z3l = (11/20w,matra_f*10/50h); penpos3(4.7/20w,0);
+  z4l = (0,0); z4r = (1.5/20w,-matra_h*2/50h);
+  pickup penrazor scaled 1.3stem_width rotated 40;
+  fill z1l..{down}z2l..{down}z3l..tension1.2..z4l--z4r..tension1.2..z3r{up}..{up}z2r..{(w,y1)-z2l}z1r--cycle;
+  penlabels(1,2,3,4);
+endchar;
+
+beginchar("W",0u#, stht#,stdp#); "Ba-fala, or Wa-fala";
+  numeric ww,hh,xstem,xshift;
+  ww=3rindent; hh=.6h; xstem=ww; xshift = ww+rindent;
+  ba(-xshift,0,ww,hh);
+endchar;
+
+beginchar(153,6u#, stht#,stdp#); "Ba-fala, or Wa-fala (with matra)";
+  numeric ww,hh,xstem,xshift;
+  ww=2.5rindent; hh=.5h; xstem=ww; xshift = ww+rindent-w;
+  ba(-xshift,-ha_dip,ww,hh);
+  matra(0,w);
+endchar;
+
+beginchar("M", 9u#, stht#, stdp#); "Ma-fala";
+  numeric xstem,balld;
+  xstem = w - rindent; balld = .5w;
+  matra(0,w);
+  z1 = (lindent,.3h);
+  x2 = x1 + .5(stem_width - balld); y2 = y1;
+  z3 = z2 + .5balld * dir(90);
+  z4 = (xstem,matra_f*h);
+  halfstem(x1,matra_f*h,y1);
+  fill fullcircle scaled balld shifted z2;
+  hookstem(z3,z2,z4,0,0);
+  penlabels(1,2,3,4);
+endchar;
+
+beginchar("L", 0u#, stht#,stdp#); "la-fala";
+  numeric ww,hh; ww=5rindent; hh=.7h;
+  la_(-ww,-.15h,ww,hh);
+  halfstem(-rindent,.2h,0);
+endchar;
+
+beginchar(25, 0u#, stht#,stdp#); "murdhanya na-fala";
+  numeric ww,hh; ww=3rindent; hh=.5h;
+  Na_(-4rindent,-.15h,ww,hh);
+endchar;
+
+beginchar(26, 0u#, stht#,stdp#); "na-fala";
+  numeric ww,hh; ww = 5rindent; hh = .25h;
+  na(-ww,0,ww,hh,.7);
+endchar;
+
+beginchar(27, 5u#, stht#, stdp#); "special form for Ma-fala";
+  numeric xstem,balld,ww,lshift; lshift = 2rindent; ww = w + lshift;
+  xstem = ww - rindent; balld = .4ww;
+  z1 = (lindent,.27h);
+  x2 = x1 + .5(stem_width - balld); y2 = y1;
+  z3 = z2 + .5balld * dir(90);
+  z4 = (xstem,matra_f*h);
+  fill fullcircle scaled balld shifted z2;
+  hookstem(z3,z2,z4,0,0);
+  matra(0,ww);
+  picture sp_ma_fala; sp_ma_fala = currentpicture;
+  currentpicture := currentpicture shifted (-lshift,0);
+  penlabels(1,2,3,4);
+endchar;
+
+beginchar(13,0stwd#, stht#, stdp#); "hass (consonant) sign";
+  numeric width; width = stem_width/abs(sind(stem_slope));
+  z1r = (-rindent,0); penpos1(.8width,stem_slope);
+  z2r = (+1.1rindent,-d); penpos2(.5width,-20);
+  penstroke z1e..z2e;
+  penlabels(1,2);
+endchar;
+    
+%%% End of bangfala.mf

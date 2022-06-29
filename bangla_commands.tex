@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This section is based on the bbk10.clo file
+% of Palash Baran Pal's bangtex
+% http://www.saha.ac.in/theory/palashbaran.pal/bangtex/bangtex.html
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\sbng{\bngviii}
+\def\tbng{\bngvi}
+\def\bng{\bngx}
+\def\lbng{\bngxiv}
+\def\Lbng{\bngxviii}
+\def\LBng{\bngxxii}
+\def\hbng{\bngxxv}
+\def\Hbng{\bngxxx}
+%
+\def\sbns{\bnsviii}
+\def\tbns{\bnsvi}
+\def\bns{\bnsx}
+\def\lbns{\bnsxiv}
+\def\Lbns{\bnsxviii}
+\def\LBns{\bnsxxii}
+\def\hbns{\bnsxxv}
+\def\Hbns{\bnsxxx}
+%
+\def\sbnw{\bnwviii}
+\def\tbnw{\bnwvi}
+\def\bnw{\bnwx}
+\def\lbnw{\bnwxiv}
+\def\Lbnw{\bnwxviii}
+\def\LBnw{\bnwxxii}
+\def\hbnw{\bnwxxv}
+\def\Hbnw{\bnwxxx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This section is based on the bangfont.tex file
+% of Palash Baran Pal's bangtex
+% http://www.saha.ac.in/theory/palashbaran.pal/bangtex/bangtex.html
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% Defining the normal bangla fornts
+%%
+
+\font\bngv=bang10 scaled 500
+\font\bngvi=bang10 scaled 600
+\font\bngvii=bang10 scaled 700
+\font\bngviii=bang10 scaled 800
+\font\bngix=bang10 scaled 900
+\font\bngx=bang10
+\font\bngxi=bang10 scaled 1100
+\font\bngxii=bang10 scaled 1200
+\font\bngxiv=bang10 scaled 1400
+\font\bngxviii=bang10 scaled 1800
+\font\bngxxii=bang10 scaled 2200
+\font\bngxxv=bang10 scaled 2500
+\font\bngxxx=bang10 scaled 3000
+
+%%
+%% Defining the slanted bangla fonts
+%%
+\font\bnsv=bangsl10 scaled 500
+\font\bnsvi=bangsl10 scaled 600
+\font\bnsvii=bangsl10 scaled 700
+\font\bnsviii=bangsl10 scaled 800
+\font\bnsix=bangsl10 scaled 900
+\font\bnsx=bangsl10
+\font\bnsxi=bangsl10 scaled 1100
+\font\bnsxii=bangsl10 scaled 1200
+\font\bnsxiv=bangsl10 scaled 1400
+\font\bnsxviii=bangsl10 scaled 1800
+\font\bnsxxii=bangsl10 scaled 2200
+\font\bnsxxv=bangsl10 scaled 2500
+\font\bnsxxx=bangsl10 scaled 3000
+
+%%
+%% Defining the wide bangla fonts
+%%
+\font\bnwv=bangwd10 scaled 500
+\font\bnwvi=bangwd10 scaled 600
+\font\bnwvii=bangwd10 scaled 700
+\font\bnwviii=bangwd10 scaled 800
+\font\bnwix=bangwd10 scaled 900
+\font\bnwx=bangwd10
+\font\bnwxi=bangwd10 scaled 1100
+\font\bnwxii=bangwd10 scaled 1200
+\font\bnwxiv=bangwd10 scaled 1400
+\font\bnwxviii=bangwd10 scaled 1800
+\font\bnwxxii=bangwd10 scaled 2200
+\font\bnwxxv=bangwd10 scaled 2500
+\font\bnwxxx=bangwd10 scaled 3000
+
+
+%%
+%% Inhibiting linebreak within words
+%%
+%\hyphenpenalty=10000 \pretolerance=-1 \tolerance=10000
+
+%%
+%% Defining the macro for e-kar, i-kar etc
+%%
+\def\*#1*#2{o\null{#2}{#1}}
+
+%%
+%% Redefining some macros to make them consistent with bangla fonts
+%%
+\def\d#1{\oalign{\smash{#1}\crcr\hidewidth{$\!$\rm.}\hidewidth}}
+
+
+%%
+%% Emulating the bold font
+%%
+\def\sh#1{\setbox0=\hbox{#1}%
+     \kern-.02em\copy0\kern-\wd0
+     \kern.04em\copy0\kern-\wd0
+     \kern-.02em\raise.0433em\box0 }

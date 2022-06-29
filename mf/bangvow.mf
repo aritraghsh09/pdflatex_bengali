@@ -1,0 +1,227 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bangvow.mf: METAFONT file that defines bangla vowels
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  This file is part of the package BANGTEX, containing Bangla fonts
+%%  and style files for the TeX/LaTeX typesetting systems
+%%
+%%  Copyright (C) 2001, 2002 Palash Baran Pal 
+%%  e-mail: pbpal@theory.saha.ernet.in internet:
+%%  internet: http://tnp.saha.ernet.in/~pbpal
+%%  Address: Saha Institute of Nuclear Physics
+%%	     1/AF Bidhan Nagar
+%%	     Calcutta 700064, INDIA
+%%
+%%  Original release: January 2001
+%%  Latest modification released: January 2002
+%%
+%%  This program is free software; you can redistribute it and/or modify
+%%  it under the terms of the GNU General Public License as published by
+%%  the Free Software Foundation; either version 2 of the License, or
+%%  (at your option) any later version.
+%%
+%%  This program is distributed in the hope that it will be useful,
+%%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%%  GNU General Public License for more details.
+%%
+%%  You should have received a copy of the GNU General Public License
+%%  along with this program; if not, write to the Free Software
+%%  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%  02111-1307 USA
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+beginchar("A", 21u#, stht#, stdp#); "The letter a";
+  numeric xstem,balld,wta,height;
+  wta=31/40w; height = matra_f*h;
+  xstem = w-rindent; balld = 14/50height; 
+  matra(0,w);
+% The ball
+  z1l = (25/57w,35/50height); penpos1(.5balld,120);
+  fill fullcircle scaled balld shifted (z1l);
+% Joining the ball and the cup
+  z2r = z1l + .5balld * (1.1dir(90) + .5 dir(0)) ; 
+  z2l = z1l + .5balld * dir(35); z2 = .5[z2l,z2r];
+% The cup at the bottom
+  z3l = (40/57w,28/50height);
+  z3r = (43/57w,26.5/50height);
+  z4l = (29/57w,18/50height);
+  z4r = (32/57w,11/50height);
+  z5l = (5/57w,42/50height);
+  z5r = (3/57w,43/50height);
+  z6 = (0,63/50height);
+  path p; p = z4r{right}..{up}z3r{up}..{left}z2r;
+  fill z1l..z2l{right}..{down}z3l{down}..z4l{left}..tension1.4..{z6-z5l}z5l--z5r{z5r-z6}..tension1.4..{right}p{left}..z1r--cycle;
+% The stem and the hook
+  z7 = p intersectionpoint ((0,25/50height)--(w,25/50height));
+  z8 = p intersectionpoint ((0,20/50height)--(w,20/50height));
+  z9 = (xstem,height);
+  phil = angle(z3l-z2r); phir = angle(z3l-z2l);
+  hookstem(z7,z8,z9,phil,phir);
+% The little Tiki at the top
+  z12l = (18/57w,matra_h*h); penpos12(6/57w,0);
+  fill z2r{z2r-z2l}..z12r--z12l{z2r-z12l}..z2l--cycle;
+  penlabels(1,2,3,4,5,6,7,8,9,10,11,12);
+endchar;
+
+beginchar("I", 14.5u#, stht#, stdp#); "The letter hraswa i";
+  numeric height; height = matra_f*h;
+  Ha(0,0,w,height);
+% The matra and the Tiki
+  matra(0,w);
+  Tiki(.9w,.07w);
+endchar;
+
+beginchar(141,18u#, stht#,stdp#); "The letter dirgha I";
+  numeric balld,height,phii,phiii; 
+  height=matra_f*h; balld = 13/50height; phii=0; phiii = 120;
+  matra(0,w);
+%% The ball
+  z2l = (12/50w,35/50height); penpos2(.5balld,phii);
+  fill fullcircle scaled balld shifted z2l;
+%% The line from matra to ball
+  z1l = (6/50w,(matra_h-.5matra_t)*h); penpos1(8/50w,0);
+  fill z1l{right}..z2l--z2r{dir (phii+90)}..z1r--cycle;
+%% The upward going part
+  z5l = (8.5/50w,23/50height); 
+  z5r = (7.5/50w,22/50height); z5 = .5[z5l,z5r];
+  z6l = (14/50w,19/50height); 
+  z6r = (17/50w,12/50height); z6 = .5[z6l,z6r];
+  penstroke z5e..{right}z6e;
+  z7l = (41/50w,41/50height); 
+  z7r = (46/50w,37/50height); z7 = .5[z7l,z7r];
+  path ptop,pbot;
+  ptop = z6l{right}..tension1.5..{z7r-z5l}z7l;
+  pbot = z7r{z5l-z7r}..tension1.5..{left}z6r;
+  fill ptop--pbot--cycle;
+%% The part connecting the ball with the upward going line
+  z3l = z2l; penpos3(.5balld,phiii);
+  z4r = (ptop intersectionpoint ((28/50w,height)--(28/50w,0))) - .05(0,y6l-y6r);
+  z4l = (ptop intersectionpoint ((19/50w,height)--(19/50w,0))) - .05(0,y6l-y6r);
+  fill z3r{dir (phiii-90)}..{down}z4r--z6r--z4l{z4r-z4l}..z3l--cycle;
+%% The downward going part at the right end
+  z8l = (34/50w,24/50height); 
+  z8r = (37.5/50w,23/50height); 
+  z9l = (38/50w,2/50height); 
+  z9r = (41/50w,0);
+  fill flex(z7l,z8l,z9l)--flex(z9r,z8r,z7r)--cycle;
+%% The Tiki
+  Tiki(x7,.05w);
+  penlabels(1,2,3,4,5,6,7,8,9);
+endchar;
+
+
+beginchar("U",18u#, stht#,stdp#); "The letter hraswa u";
+  numeric height; height = matra_f*h;
+  Da(0,0,w,height,.88);
+  matra(0,w);
+  Tiki(.9w,.1w);
+endchar;
+
+beginchar(143,19u#, stht#,stdp#); "The letter dirgha u";
+% %%% The first part is the definition of "Da"
+  numeric xstem,height,shift;
+  xstem = .5w; height=matra_f*h; shift = .06w;
+% The vertical part
+    z1 = (xstem,height); penpos1(stem_width,0);
+    z2 = (x1,31/50height); penpos2(stem_width,0);
+    z3l = (27.5/49w,21.5/50height);
+    z3r= (x3l+1/49w,28/50height);
+    fill z1l..{down}z2l..{right}z3l--z3r{left}..{up}z2r--z1r--cycle;
+% The part going up
+    z4l = (42.5/49w,30/50height);
+    z4r = (40/49w,38/50height);
+    fill z3l{right}..tension1.5..z4l--z4r..tension1.8..{left}z3r--cycle;
+% The first cup
+    z5l = (44/49w,27/50height); penpos5(3/50w,0);
+    z6l = (29.5/49w,12/50height);
+    z6r = (31/49w,5/50height);
+    z7l = (7/49w,43/50height) + (shift,0); 
+    z7r = (5/49w,44/50height) + (shift,0);
+    z8 = (0,63/50height); penpos8(shift,0);
+    fill z4l..{down}z5l..{left}z6l{left}..{z8r-z7l}z7l--z7r{z7r-z8r}..{right}z6r{right}..z5r{up}..z4r--cycle;
+% The second cup
+    z8' = (0,height);
+    z7'l = (7/49w,43/50height) - (shift,0); 
+    z7'r = (5/49w,44/50height) - (shift,0);
+    fill z4l..{down}z5l..{left}z6l{left}..{z8l-z7'l}z7'l--z7'r{z7'r-z8l}..{right}z6r{right}..z5r{up}..z4r--cycle;
+% matra and tiki
+    matra(0,w);
+    Tiki(.9w,.1w);
+    penlabels(1,2,3,4,5,6,7,7',8,8');
+endchar;
+
+beginchar(145,20u#, stht#,stdp#); "The letter RI";
+  numeric xstem,balld,phi,wkha; wkha = 16/20w;
+  xstem=wkha-rindent; balld=.18h; phi=-90;
+  matra(xstem,xstem);
+  z1 = (.17wkha,.6h);
+  z2 = z1 + .5balld * dir(phi) + .02wkha * dir(phi+90); 
+  z3 = z1 + .5balld * dir(phi+90);
+  z4 = (.5wkha,matra_f*h);
+  z5 = (.55wkha,.6h);
+  z6 = (.56wkha,.52h);
+  z7 = (.68wkha,y6);
+  z8 = (.12wkha,.41h);
+  z9 = (.28wkha,.25h);
+  z10 = (.48wkha,.34h);
+  z11 = (xstem,.5stem_width*sind(stem_slope));
+  stem(xstem);
+  hookcirc(z1,z2,z3,balld,-90);
+  fill z5..{left}z2..z3{right}..z4--cycle;
+  fill z5..z6--z7{up}..z4--cycle;
+  fill z6{down}..{z8-z7}z8--z9--z10..{up}z7--cycle;
+  hookjt(z9,z10,z11,.1h,.3,90);
+% The right stem and the connector
+  z12 = (w-rindent,.15h);
+  z13 = (xstem,.43h);
+  z14 = (x13,.35h);
+  hookjt(z14,z13,z12,.07h,.4,90);
+  halfstem(x12,matra_f*h,.13h);
+  matra(x12,x12);
+  penlabels(1,2,3,4,5,6,7,8,9,10,11,12,13,14);
+endchar;
+
+beginchar(147,17.5u#, stht#,stdp#); "The letter peT-kaTa e (ae)";
+  E(0,0,w,h);
+% The cross line
+  z9 = (w,.4h); z10 = (w-2rindent,y9);
+  pickup penrazor xscaled 1.5stem_width rotated 90;
+  draw z9--z10;
+  penlabels(9,10);
+endchar;
+
+beginchar("E",17.5u#, stht#,stdp#); "The letter e";
+  E(0,0,w,h);
+endchar;
+
+beginchar(149,17.5u#, stht#,stdp#); "The letter oi";
+  numeric height; height = matra_f*h;
+  pickup Tiki_pen;
+  z1 = (w-rindent,38/50height);
+  rt x2 = w; y2 = height;
+  z3 = (19/48w,1.1h);
+  draw z1..{up}z2{up}..{dir 60}z3;
+  penlabels(1,2,3);
+  E(0,0,w,h);
+endchar;
+
+beginchar("O",18.5u#,stht#,stdp#); "The letter o";
+  O(0,0,w,h);
+endchar;
+
+beginchar(151,18.5u#, stht#,stdp#); "The letter ou";
+  numeric height; height = matra_f*h;
+  pickup Tiki_pen;
+  z1 = (rballx,rbally);
+  rt x2 = w; y2 = height;
+  z3 = (18/52w,1.1h);
+  draw z1..{up}z2..{dir 60}z3;
+  penlabels(1,2,3,4,5,6,7,8,9);
+  O(0,0,w,h);
+endchar;
+
+%% end of bangvow.mf
