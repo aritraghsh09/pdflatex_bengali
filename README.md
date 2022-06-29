@@ -58,4 +58,6 @@ while also not needing any extensive installation or dependencies on other softw
 - Note that if you are trying to write a more extensive document with advanced features, you should not expect this simple repository to work properly
 and should use the original [bangtex](http://www.saha.ac.in/theory/palashbaran.pal/bangtex/bangtex.html) package instead. 
 
+# Contact
 
+You can reach out to me using the contact information on [my website](http://www.ghosharitra.com/)
