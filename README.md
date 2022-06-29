@@ -3,7 +3,7 @@ Writing বাংলা in LaTeX is pretty straightforward these days using XeLa
 
 This is especially true with respect to many academic institutions (e.g., [arXiv](https://arxiv.org/)), which still support only pdflatex. 
 
-This short repository is meant to provide an example of how to write বাংলা using only pdflatex. The examples in this repository have also been written/tested to work with
+This short repository is meant to help you write বাংলা using only pdflatex. The examples in this repository have also been written/tested to work with
 [Overleaf](https://www.overleaf.com/)
 
 Note that this repository is entirely based on the Bengali font and code developed by [Palash Baran Pal](http://www.saha.ac.in/theory/palashbaran.pal/)
