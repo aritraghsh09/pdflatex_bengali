@@ -46,6 +46,10 @@ for his excellent [bangtex package](http://www.saha.ac.in/theory/palashbaran.pal
 \end{document}
 ```
 
+> **Warning**
+> Line 97 of [bangla_commands.tex](https://github.com/aritraghsh09/bangtex_overleaf/blob/main/bangla_commands.tex) gives an option to put an extremely high penalty on splitting words (so that your LaTeX compiler doesn't choose to do this). This line is commented out by default. But, if your document has many paragraphs of বাংলা text, it's recommended to uncomment this line.
+
+
 # Transliteration 
 - Note that in order to write Bengali using bangtex, you cannot type using the বাংলা script directly. You need to write it using transliteration-esque Roman
 characters. This scheme is extensively outlined in the [original bangtex manual](https://github.com/aritraghsh09/bangtex_overleaf/blob/main/original_bangtex_manual.pdf).
