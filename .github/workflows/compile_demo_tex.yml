@@ -10,9 +10,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Compile demo.tex
-        uses: xu-cheng/latex-action@master
+        uses: xu-cheng/latex-action@v2
         with:
           # The root LaTeX file to be compiled
           root_file: demo.tex
@@ -32,7 +32,7 @@ jobs:
 
         # Wildcards are not supported yet: https://github.com/actions/upload-artifact/issues/11
       - name: Upload demo.pdf
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: demo
           path: demo.pdf
