@@ -54,7 +54,10 @@ for his excellent [bangtex package](http://www.saha.ac.in/theory/palashbaran.pal
 - Note that in order to write Bengali using bangtex, you cannot type using the বাংলা script directly. You need to write it using transliteration-esque Roman
 characters. This scheme is extensively outlined in the [original bangtex manual](https://github.com/aritraghsh09/bangtex_overleaf/blob/main/original_bangtex_manual.pdf).
 
-- As you may notice, the above scheme takes a little bit of time to learn and master. [Abhijit Dasgupta](https://www.udmercy.edu/about/people/university/ces/math/dasgupta-abhijit.php) 
+- As you may notice, the above scheme takes a little bit of time to learn and master; and there are a few options you have to automatically transform বাংলা text to the transliteration-esque Roman
+characters:
+  - [Md. Abdur Rakib Mollah](https://github.com/rakib-mollah) has developed a `pip` installable Python package that converts UTF-8 Bangla (i.e., বাংলা ) to the bangtex commands. You can find the package and installation instructions [here](https://github.com/rakib-mollah/Transliteration) 
+  - [Abhijit Dasgupta](https://www.udmercy.edu/about/people/university/ces/math/dasgupta-abhijit.php) 
 has developed a way to type directly in বাংলা and then convert the same into the bangtex commands using a perl script. You can access the details 
 [here](http://dasgupab.faculty.udmercy.edu/uni2bangtex/index.html)
 
